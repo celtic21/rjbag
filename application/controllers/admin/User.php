@@ -50,9 +50,9 @@ public function tambah()
 				  'min_length' => '%s minimal 11 karakter',
 				  'max_length' => '%s maksimal 13 karakter'));
 
-		$valid->set_rules('username','Username','required|min_length[6]|max_length[32]|is_unique[tb_user.username]',
+		$valid->set_rules('username','Username','required|min_length[3]|max_length[32]|is_unique[tb_user.username]',
 			array('required'   => '%s harus diisi',
-				  'min_length' => '%s minimal 6 karakter',
+				  'min_length' => '%s minimal 3 karakter',
 				  'max_length' => '%s maksimal 21 karakter',
 				  'is_unique'  => '%s sudah ada. Buat username baru.'));
 

@@ -31,7 +31,7 @@
 		
 		</ul>
 
-			</div>
+	</div>
 </div>
 
 <div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
@@ -80,8 +80,9 @@
 				</a>
 
 					<span class="block2-price m-text6 p-r-5">
-						IDR <?php echo number_format($produk->harga,'0',',','.') ?>
+					<b>	IDR <?php echo number_format($produk->harga,'0',',','.') ?></b>
 					</span>
+					
 				</div>
 			</div>
 			<!-- closing form --> 
