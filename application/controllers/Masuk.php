@@ -11,11 +11,6 @@ class Masuk extends CI_Controller {
 	}
 
 
-
-
-
-
-
 	//login pelanggan
 	public function index()
 	{

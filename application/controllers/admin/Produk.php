@@ -15,10 +15,6 @@ public function __construct()
 
 
 
-
-
-
-
 //data produk
 	public function index()
 	{

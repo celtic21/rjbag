@@ -36,14 +36,15 @@
       <!-- menu dasbor -->
         <li><a href="<?php echo base_url('admin/dasbor') ?>"><i class="fa fa-dashboard text-aqua"></i> <span>DASHBOARD</span></a></li>
 
-
+ 
       <!-- menu transaksi -->
         <li><a href="<?php echo base_url('admin/transaksi') ?>"><i class="fa fa-check text-aqua"></i> <span>TRANSAKSI</span></a></li>
+
 
         <!-- menu produk -->
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-sitemap"></i> <span>PRODUK</span>
+            <i class="fa fa-sitemap text-aqua"></i> <span>PRODUK</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -51,9 +52,13 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('admin/produk') ?>"><i class="fa fa-table"></i> Data Produk</a></li>
             <li><a href="<?php echo base_url('admin/produk/tambah') ?>"><i class="fa fa-plus"></i> Tambah Produk</a></li>
-             <li><a href="<?php echo base_url('admin/kategori') ?>"><i class="fa fa-tags"></i> kategori produk</a></li>
+            <li><a href="<?php echo base_url('admin/kategori') ?>"><i class="fa fa-tags"></i> kategori produk</a></li>
           </ul>
         </li>
+
+                <!-- menu profil -->
+        <li><a href="<?php echo base_url('admin/profil') ?>"><i class="fa fa-table text-aqua"></i> <span>Profil</span></a></li>
+
       
         
 <?php } ?>

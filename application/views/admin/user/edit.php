@@ -4,8 +4,7 @@ redirect(base_url('admin/user/blok'),'refresh');
 }
 
 ?>
-
-
+ 
 <?php 
 //notifikasi error
 echo validation_errors('<div class="alert alert-warning">','</div>');
@@ -48,7 +47,7 @@ echo form_open(base_url('admin/user/edit/'.$user->id_user),' class="form-horizon
  <div class="form-group">
   <label  class="col-md-2 control-label">Username</label>
   <div class="col-md-5">
-    <input type="text" name="username" class="form-control" placeholder="username" value="<?php echo $user->username ?>" readonly >
+    <input type="text" name="username" class="form-control" placeholder="username" value="<?php echo $user->username ?>" >
   </div>
 </div>
 

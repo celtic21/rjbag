@@ -35,7 +35,7 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Masukkan Username Dab Password</p>
+    <p class="login-box-msg">Masukkan Username Dan Password</p>
 
 <?php 
 //notifikasi error

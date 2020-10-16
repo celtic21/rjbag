@@ -4,8 +4,8 @@
 		<div class="container-menu-header">
 			<div class="topbar">
 				<div class="topbar-social">
-					<a href="<?php echo $site->facebook ?>" class="topbar-social-item fa fa-facebook"></a>
-					<a href="<?php echo $site->instagram ?>" class="topbar-social-item fa fa-instagram"></a>
+				<!-- <a href="<?php echo $site->facebook ?>" class="topbar-social-item fa fa-facebook"></a> -->
+					<a href="https://www.instagram.com/rj.bag" target="blank"class="topbar-social-item fa fa-instagram"></a>
 				</div>
 
 				<span class="topbar-child1">

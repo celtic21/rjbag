@@ -51,8 +51,9 @@
 					<a href="<?php echo base_url('admin/transaksi/kirim/' .$header_transaksi->kode_transaksi) ?> " 
 					target="_blank" class="btn btn-info btn-sm"><i class="fa fa-print"></i> Pengiriman</a>	
 
-					<a href="<?php echo base_url('admin/transaksi/word/' .$header_transaksi->kode_transaksi) ?> " 
-					class="btn btn-warning btn-sm"><i class="fa fa-file-word-o"></i> Word</a>		
+					<!-- <a href="<?php echo base_url('admin/transaksi/word/' .$header_transaksi->kode_transaksi) ?> " 
+					class="btn btn-warning btn-sm"><i class="fa fa-file-word-o"></i> Word</a>  -->
+							
 				</div>
 			</td>
 		</tr>
