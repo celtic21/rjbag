@@ -52,7 +52,7 @@
 								<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
 							</button>
 
-							<input class="size8 m-text18 t-center num-product" type="number" name="qty" value="<?php echo $keranjang['qty'] ?>">
+							<input class="size8 m-text18 t-center num-product" min="24" max="<?php echo $produk->stok?>" type="number" name="qty" value="<?php echo $keranjang['qty'] ?>">
 
 							<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
 								<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
