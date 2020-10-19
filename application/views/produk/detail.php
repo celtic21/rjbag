@@ -60,6 +60,8 @@
 	//echo form_hidden('qty', 1);
 	echo form_hidden('price', $produk->harga);
 	echo form_hidden('name', $produk->nama_produk);
+	echo form_hidden('weight', $produk->berat);
+
 	//elemen redirect
 	echo form_hidden('redirect_page', str_replace('index.php/','',current_url()));
 	?>

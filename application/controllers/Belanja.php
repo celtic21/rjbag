@@ -160,6 +160,7 @@ class Belanja extends CI_Controller {
 		$qty 			= $this->input->post('qty');
 		$price 			= $this->input->post('price');
 		$name 			= $this->input->post('name');
+		$weight         = $this->input->post('weight');
 		$redirect_page 	= $this->input->post('redirect_page');
 
 		//memasukkan ke kranjang
@@ -167,6 +168,7 @@ class Belanja extends CI_Controller {
 			'id'      => $id,
 			'qty'     => $qty,
 			'price'   => $price,
+			'weight'  => $weight,
 			'name'    => $name
 		);
 

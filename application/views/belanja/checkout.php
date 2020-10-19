@@ -103,12 +103,20 @@ $kode_transaksi = random_string('alnum', 11);
 
 				<!-- looping data keranjang -->
 				<?php 
+				//echo "<pre>";
+				//print_r ($keranjang);
+				//echo "</pre>";
+
+				$berat_total = 0;
 				foreach($keranjang as $keranjang) {
 					//ambil data produk
 					$id_produk = $keranjang['id'];
 					$produk    = $this->produk_model->detail($id_produk);
+					$berat_subtotal = $keranjang['weight']*$keranjang['qty'];
+					$berat_total += $berat_subtotal;
 
-					//form update
+					
+			//form update
 					echo form_open(base_url('belanja/update_cart/' .$keranjang['rowid']));
 
 				?>
@@ -223,8 +231,18 @@ $kode_transaksi = random_string('alnum', 11);
 
 <table class="table">
 <tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
-			<td colspan="4" class="column-1">Total Pembayaran</td>
+			<td colspan="4" class="column-1">BIAYA PENGIRIMAN</td>
+			<td colspan="2" class="column-2" id="ongkir1"></td>
+</tr>
+
+<tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
+			<td colspan="4" class="column-1">TOTAL BELANJA</td>
 			<td colspan="2" class="column-2">Rp. <?php echo number_format($this->cart->total(),'0',',','.') ?></td>
+</tr>
+
+<tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
+			<td colspan="4" class="column-1">TOTAL PEMBAYARAN</td>
+			<td colspan="2" class="column-2" id="total_pembayaran"></td>
 </tr>
 </table>
 
@@ -235,8 +253,9 @@ $kode_transaksi = random_string('alnum', 11);
 
 		<script>
 		$('document').ready(function(){
-			var jumlah_pembelian = 1;
+			var total_belanja = <?= $this->cart->total() ?>;
 			var harga = <?= $produk->harga ?>;
+			var berat = <?= $berat_total ?>;
 			var ongkir = 0;
 			$("#provinsi").on('change', function(){
 				$("#kabupaten").empty();
@@ -277,7 +296,7 @@ $kode_transaksi = random_string('alnum', 11);
 					data : {
 						'origin': 209,
 						'destination' : id_city,
-						'weight' : 1000,
+						'weight' : berat,
 						'courier' : 'jne'
 
 					},
@@ -305,7 +324,11 @@ $kode_transaksi = random_string('alnum', 11);
 					console.log(estimasi);
 					ongkir = parseInt($(this).val());
 					$("#ongkir").val(ongkir);
+					document.getElementById('ongkir1').innerHTML=new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(ongkir);
 					$("#estimasi").val(estimasi+"hari");
+					var total_pembayaran = total_belanja+ongkir;
+					document.getElementById('total_pembayaran').innerHTML=new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(total_pembayaran);
+
 
 			});
 
