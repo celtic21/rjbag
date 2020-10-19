@@ -100,8 +100,10 @@ class Dasbor extends CI_Controller {
 		$valid->set_rules('alamat','Alamat Lengkap','required',
 			array('required'   => '%s harus diisi'));
 
-		$valid->set_rules('telepon','Nomor Telepon','required',
-			array('required'   => '%s harus diisi'));
+		$valid->set_rules('telepon','Telepon','required|min_length[11]|max_length[13]',
+			array('required'   => '%s harus diisi',
+				  'min_length' => '%s minimal 11 karakter',
+				  'max_length' => '%s maksimal 13 karakter'));
 
 
 		if($valid->run()===FALSE){

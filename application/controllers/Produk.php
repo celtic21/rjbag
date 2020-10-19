@@ -1,8 +1,9 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Produk extends CI_Controller {
 
+class Produk extends CI_Controller {
 	//load database
 	public function __construct()
 	{
@@ -10,9 +11,6 @@ class Produk extends CI_Controller {
 		$this->load->model('produk_model');
 		$this->load->model('kategori_model');
 	}
-
-
-
 
 
 
@@ -66,12 +64,6 @@ class Produk extends CI_Controller {
 					  );
 		$this->load->view('layout/wrapper', $data, FALSE);
 	}
-
-
-
-
-
-
 
 
 
@@ -130,19 +122,16 @@ class Produk extends CI_Controller {
 
 
 
-
-
-
-
-
 	//detai_produk
 	public function detail($slug_produk)
 	{
+
 		$site 			= $this->konfigurasi_model->listing();
 		$produk 		= $this->produk_model->read($slug_produk);
 		$id_produk 		= $produk->id_produk;
 		$gambar 		= $this->produk_model->gambar($id_produk);
 		$produk_related = $this->produk_model->home();
+		
 
 			$data = array (  'title'				=> $produk->nama_produk,
 						 	'site'					=> $site,
@@ -157,7 +146,8 @@ class Produk extends CI_Controller {
 
 
 
-}
 
+
+}
 /* End of file Produk.php */
 /* Location: ./application/controllers/Produk.php */

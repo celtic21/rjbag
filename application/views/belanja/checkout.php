@@ -2,18 +2,93 @@
 <section class="cart bgwhite p-t-70 p-b-100">
 <div class="container">
 	<!-- Cart item -->
-	<div class="container-table-cart pos-relative">
+	
 		<div class="wrap-table-shopping-cart bgwhite">
-
-			<h1><?php echo $title ?></h1><hr>
-			<div class="clearfix"></div>
-			<br><br>
 
 			<?php if($this->session->flashdata('sukses')) {
 				echo '<div class="alert alert-warning">';
 				echo $this->session->flashdata('sukses');
 				echo '</div>';
 			} ?>
+
+			<h1><?php echo $title ?></h1><hr>
+			<div class="clearfix"></div>
+			<br><br>
+
+
+<?php 
+echo form_open(base_url('belanja/checkout'));
+$kode_transaksi = random_string('alnum', 11);
+?>
+<input type="hidden" name="id_pelanggan" value="<?php echo $pelanggan->id_pelanggan; ?>" >
+<input type="hidden" name="jumlah_transaksi" value="<?php echo $this->cart->total() ?>" >
+<input type="hidden" name="tgl_transaksi" value="<?php echo date('Y-m-d'); ?>" >
+
+<table class="table">
+					<thead>
+
+				<tr class="table-row bg-success" style="font-weight: bold; color;white !important;">
+					<td colspan="4" class="column-1" style="text-align: center">PENERIMA</td>
+					
+				</tr>
+						<tr>
+							<th width="25%">Kode Transaksi</th>
+							<th>
+								<input type="text" name="kode_transaksi" class="form-control"  value="<?php echo $kode_transaksi ?>" readonly required>
+							</th>			
+						</tr>
+
+						<tr>
+							<th width="25%">Nama Penerima</th>
+							<th>
+								<input type="text" name="nama_pelanggan" class="form-control" placeholder="NAMA Lengkap"
+							value="<?php echo $pelanggan->nama_pelanggan ?>" required>
+						   </th>			
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>Email Penerima</td>
+							<td><input type="email" name="email" class="form-control" placeholder="Email"
+							value="<?php echo $pelanggan->email ?>" required></td>
+						</tr>
+						
+						<tr>
+							<td>Telepon Penerima</td>
+							<td><input type="text" name="telepon" class="form-control" placeholder="Telepon"
+							value="<?php echo $pelanggan->telepon ?>" required></td>
+						</tr>
+						<tr>
+							<td>Alamat Pengiriman</td>
+							<td><input name="alamat" class="form-control" placeholder="Alamat" value="<?php echo $pelanggan->alamat ?>">
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<button class="btn btn-success" type="submit">
+									<i class="fa fa-save"></i> Check Out Sekarang
+								</button>
+
+								<button class="btn btn-default" type="reset">
+									<i class="fa fa-times"></i> Reset
+								</button>
+							</td>
+						</tr>
+					</tbody>
+
+
+				</table>
+
+
+<?php echo form_close(); ?>
+
+<table class="table">
+<tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
+	<td colspan="4" class="column-1" style="text-align: center">PRODUK</td>					
+</tr>
+</table>
 
 
 			<table class="table-shopping-cart">
@@ -77,6 +152,7 @@
 						</a>
 					</td>
 				</tr>
+
 				<?php 
 				//form close
 				echo form_close();
@@ -90,88 +166,155 @@
 
 			</table>
 			<br>
-		
-<?php 
-echo form_open(base_url('belanja/checkout'));
-$kode_transaksi = random_string('alnum', 11);
-?>
-<input type="hidden" name="id_pelanggan" value="<?php echo $pelanggan->id_pelanggan; ?>" >
-<input type="hidden" name="jumlah_transaksi" value="<?php echo $this->cart->total() ?>" >
-<input type="hidden" name="tgl_transaksi" value="<?php echo date('Y-m-d'); ?>" >
+
+
+
+<!--pengiriman-->
+
+
+<table class="table">
+<tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
+	<td colspan="4" class="column-1" style="text-align: center">PENGIRIMAN</td>					
+</tr>
+</table>
 
 <table class="table">
 					<thead>
 						<tr>
-							<th width="25%">Kode Transaksi
-							<th><input type="text" name="kode_transaksi" class="form-control"  value="<?php echo $kode_transaksi ?>" readonly required></th>			
+							<td >Provinsi
+							<td>
+
+								<select class="selection-1" name="provinsi" id="provinsi">
+								<option>Silahkan Pilih Provinsi</option>
+								<?php foreach($provinsi as $p): ?>
+								<option value="<?= $p->province_id ?>"><?= $p->province ?></option>
+								<?php endforeach ?>
+							
+							</select>
+							</td>			
 						</tr>
 						<tr>
-							<th width="25%">Nama Penerima
-							<th><input type="text" name="nama_pelanggan" class="form-control" placeholder="NAMA Lengkap"
-							value="<?php echo $pelanggan->nama_pelanggan ?>" required></th>			
+							<td>Kabupaten
+							<td>
+
+							<select class="selection-1" name="kabupaten" id="kabupaten"><select></td>			
 						</tr>
 					</thead>
 
 					<tbody>
 						<tr>
-							<td>Email Penerima</td>
-							<td><input type="email" name="email" class="form-control" placeholder="Email"
-							value="<?php echo $pelanggan->email ?>" required></td>
+							<td>Ekpedisi</td>
+							<td><select class="selection-1" name="service" id="service" ><select></td>
 						</tr>
 						
 						<tr>
-							<td>Telepon Penerima</td>
-							<td><input type="text" name="telepon" class="form-control" placeholder="Telepon"
-							value="<?php echo $pelanggan->telepon ?>" required></td>
+							<td>Estimasi</td>
+							<td><input class="sizefull s-text7 p-l-22 p-r-22" type="text" readonly name="estimasi" id="estimasi"></td>
 						</tr>
 						<tr>
-							<td>Alamat Pengiriman</td>
-							<td><textarea name="alamat" class="form-control" placeholder="Alamat">
-							<?php echo $pelanggan->alamat ?></textarea></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td>
-								<button class="btn btn-success" type="submit">
-									<i class="fa fa-save"></i> Check Out Sekarang
-								</button>
-
-								<button class="btn btn-default" type="reset">
-									<i class="fa fa-times"></i> Reset
-								</button>
-							</td>
+							<td>Ongkir</td>
+							<td><input class="sizefull s-text7 p-l-22 p-r-22" type="text" readonly name="ongkir" id="ongkir"></td>
 						</tr>
 					</tbody>
 
-
 				</table>
 
+<!--pengiriman-->
 
-<?php echo form_close(); ?>
-		</div>
-	</div>
+<table class="table">
+<tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
+			<td colspan="4" class="column-1">Total Pembayaran</td>
+			<td colspan="2" class="column-2">Rp. <?php echo number_format($this->cart->total(),'0',',','.') ?></td>
+</tr>
+</table>
 
-	<div class="flex-w flex-sb-m p-t-25 p-b-25 bo8 p-l-35 p-r-60 p-lr-15-sm">
-		<div class="flex-w flex-m w-full-sm">
-		<!-- 	<div class="size11 bo4 m-r-10">
-				<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="coupon-code" placeholder="Coupon Code">
-			</div>
 
-			<div class="size12 trans-0-4 m-t-10 m-b-10 m-r-10">
-			
-				<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-					Apply coupon
-				</button>
-			</div> -->
-		</div>
 
-		<div class="size10 trans-0-4 m-t-10 m-b-10">
-			<!-- Button -->
+
+<!--ONGKIR-->
+
+		<script>
+		$('document').ready(function(){
+			var jumlah_pembelian = 1;
+			var harga = <?= $produk->harga ?>;
+			var ongkir = 0;
+			$("#provinsi").on('change', function(){
+				$("#kabupaten").empty();
+				var id_province = $(this).val();
+				$.ajax({
+					url : "<?= site_url('belanja/getcity')?>",
+					type : 'GET',
+					data : {
+						'id_province': id_province,
+					},
+					dataType : 'json',
+					success : function(data){
+						var parse = JSON.parse(data);
+						// console.log(data);
+						var results = parse.rajaongkir.results;
+
+						for(var i=0; i<results.length; i++)
+						{
+							$("#kabupaten").append($('<option>',{
+								value : results[i]["city_id"],
+								text : results[i]["city_name"]
+							}));
+						}
+
+					},
+
+				});
+			}); 
+
+			$("#kabupaten").on('change',function(){
+				$("#ekpedisi").empty();
+				$("#estimasi").empty();
+				$("#ongkir").empty();
+				var id_city = $(this).val();
+				$.ajax({
+					url : "<?= site_url('belanja/getcost')?>",
+					type : 'GET',
+					data : {
+						'origin': 209,
+						'destination' : id_city,
+						'weight' : 1000,
+						'courier' : 'jne'
+
+					},
+					dataType : 'json',
+					success : function(data){
+					var parse = JSON.parse(data);
+					// console.log(parse.rajaongkir.results[0].costs);
+					var costs = parse.rajaongkir.results[0].costs;
+					for(var i=0; i<costs.length; i++)
+						{
+							var text = costs[i]["description"]+"("+costs[i]["service"]+")";
+							$("#service").append($('<option>',{
+								value : costs[i]["cost"][0]["value"],
+								text : text,
+								etd : costs[i]["cost"][0]["etd"]
+							}));
+						}
+					},
+
+				});
+			});
+
+			$("#service").on('change',function(){
+					var estimasi = $('option:selected',this).attr('etd');
+					console.log(estimasi);
+					ongkir = parseInt($(this).val());
+					$("#ongkir").val(ongkir);
+					$("#estimasi").val(estimasi+"hari");
+
+			});
+
+		});
+		</script>
+<!--ONGKIR-->
+
 		
-		
-		</div>
-	</div>
 
 	
-</div>
+
 </section>

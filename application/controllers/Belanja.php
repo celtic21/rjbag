@@ -3,6 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Belanja extends CI_Controller {
 
+	private $url = "https://api.rajaongkir.com/starter/";
+	private $apiKey = "0a319e7d177011bab0b23a89f8652cce";
+
 	//load model
 	public function __construct()
 	{
@@ -19,8 +22,6 @@ class Belanja extends CI_Controller {
 
 
 
-
-
 	//halaman belanja
 	public function index()
 	{
@@ -33,8 +34,6 @@ class Belanja extends CI_Controller {
 		$this->load->view('layout/wrapper', $data, FALSE);
 
 	}
-
-
 
 
 
@@ -70,6 +69,7 @@ class Belanja extends CI_Controller {
 			$email 			= $this->session->userdata('email');
 			$nama_pelanggan = $this->session->userdata('nama_pelanggan');
 			$pelanggan 		= $this->pelanggan_model->sudah_login($email,$nama_pelanggan);
+			$provinsi		= $this->rajaongkir('province');
 
 			$keranjang = $this->cart->contents();
 
@@ -96,6 +96,7 @@ class Belanja extends CI_Controller {
 				$data = array(  'title'		=> 'Check Out',
 					'keranjang' => $keranjang,
 					'pelanggan'	=> $pelanggan,
+					'provinsi'				=> json_decode($provinsi)->rajaongkir->results,
 					'isi'		=> 'belanja/checkout'
 				);
 				$this->load->view('layout/wrapper', $data, FALSE);
@@ -111,6 +112,7 @@ class Belanja extends CI_Controller {
 					'tgl_transaksi'    => $i->post('tgl_transaksi'),
 					'jumlah_transaksi' => $i->post('jumlah_transaksi'),
 					'status_bayar'     => 'Belum',
+					'provinsi'				=> json_decode($provinsi)->rajaongkir->results,
 					'tgl_post'         => date('Y-m-d H:i:s')
 				);
 				//proses masuk ke header transaksi
@@ -124,6 +126,7 @@ class Belanja extends CI_Controller {
 						'harga'			=> $keranjang['price'],
 						'jumlah'			=> $keranjang['qty'],
 						'total_harga'	=> $sub_total,
+						'provinsi'				=> json_decode($provinsi)->rajaongkir->results,
 						'tgl_transaksi'	=> $i->post('tgl_transaksi')
 					);
 					$this->transaksi_model->tambah($data);
@@ -176,12 +179,6 @@ class Belanja extends CI_Controller {
 
 
 
-
-
-
-
-
-
 	//update cart
 	public function update_cart($rowid)
 	{
@@ -224,6 +221,93 @@ class Belanja extends CI_Controller {
 	}
 
 
+
+
+private function rajaongkir($method, $id_province=null)
+{
+			$endPoint = $this->url.$method;
+
+			if($id_province!=null)
+			{
+				$endPoint = $endPoint."?province=".$id_province;
+			}
+
+			$curl = curl_init();
+
+		curl_setopt_array($curl, array(
+		  CURLOPT_URL => $endPoint,
+		  CURLOPT_RETURNTRANSFER => true,
+		  CURLOPT_ENCODING => "",
+		  CURLOPT_MAXREDIRS => 10,
+		  CURLOPT_TIMEOUT => 30,
+		  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		  CURLOPT_CUSTOMREQUEST => "GET",
+		  CURLOPT_HTTPHEADER => array(
+		    "key: ".$this->apiKey
+		  ),
+		));
+
+		$response = curl_exec($curl);
+		$err = curl_error($curl);
+
+		curl_close($curl);
+		return $response;
+}
+
+
+public function getCity()
+{
+
+		$id_province = $this->input->get('id_province');
+		$data = $this->rajaongkir('city', $id_province);
+		echo json_encode($data);
+		// echo "<pre>";
+		// print_r ($data);
+		// echo "</pre>";
+}
+
+public function getCost()
+{
+		$origin = $this->input->get('origin');
+		$destination = $this->input->get('destination');
+		$weight = $this->input->get('weight');
+		$courier = $this->input->get('courier');
+		$data = $this->rajaongkircost($origin, $destination, $weight, $courier );
+		echo json_encode($data);
+		
+		// echo "<pre>";
+		//print_r ($data);
+		// echo "</pre>";
+}
+
+
+private function rajaongkircost($origin, $destination, $weight, $courier)
+{
+			$curl = curl_init();
+
+		curl_setopt_array($curl, array(
+		  CURLOPT_URL => "https://api.rajaongkir.com/starter/cost",
+		  CURLOPT_RETURNTRANSFER => true,
+		  CURLOPT_ENCODING => "",
+		  CURLOPT_MAXREDIRS => 10,
+		  CURLOPT_TIMEOUT => 30,
+		  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		  CURLOPT_CUSTOMREQUEST => "POST",
+		  CURLOPT_POSTFIELDS => "origin=".$origin."&destination=".$destination."&weight=".$weight."&courier=".$courier,
+		  CURLOPT_HTTPHEADER => array(
+		    "content-type: application/x-www-form-urlencoded",
+		    "key: ".$this->apiKey,
+		  ),
+		));
+
+		$response = curl_exec($curl);
+		$err = curl_error($curl);
+
+		curl_close($curl);
+
+		return $response;
+
+}
 
 
 

@@ -6,16 +6,20 @@ $site  =  $this->konfigurasi_model->listing();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<script src="<?php echo base_url() ?>assets/template/js/jquery-3.5.1.min.js"></script>
+
+
 	<title><?php echo $title ?></title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
 <!-- icon -->
 	<link rel="icon" type="image/png" href="<?php echo base_url('assets/upload/image/' .$site->icon) ?>"/>
-
-
-	<!-- seo google -->
+<!-- seo google -->
 	<meta name="deskripsi" content="<?php echo $title ?>, <?php echo $site->deskripsi ?>">
+
+
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/template/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -71,5 +75,6 @@ $site  =  $this->konfigurasi_model->listing();
 		background-color: black;
 	}
 </style>
+
 </head>
 <body class="animsition">
