@@ -64,21 +64,11 @@ $kode_transaksi = random_string('alnum', 11);
 							<td><input name="alamat" class="form-control" placeholder="Alamat" value="<?php echo $pelanggan->alamat ?>">
 							</td>
 						</tr>
-						<tr>
-							<td></td>
-							<td>
-								<button class="btn btn-success" type="submit">
-									<i class="fa fa-save"></i> Check Out Sekarang
-								</button>
-							</td>
-						</tr>
+						
 					</tbody>
-
-
 </table>
 
 
-<?php echo form_close(); ?>
 
 <table class="table">
 <tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
@@ -87,14 +77,14 @@ $kode_transaksi = random_string('alnum', 11);
 </table>
 
 
-			<table class="table-shopping-cart">
+			<table class="table-shopping-cart" >
 				<tr class="table-head">
-					<th class="column-1"			>GAMBAR</th>
-					<th class="column-2"			>PRODUK</th>
-					<th class="column-3"			>HARGA</th>
-					<th class="column-4 p-l-70"		>JUMLAH</th>
-					<th class="column-5" width="15%">SUB TOTAL</th>
-					<th class="column-6" width="20%">ACTION</th>
+					<th class="column-1"  style="text-align: center"		>GAMBAR</th>
+					<th class="column-2"  style="text-align: center"		>PRODUK</th>
+					<th class="column-3"  style="text-align: center"	 	>HARGA</th>
+					<th class="column-4"  style="text-align: center"		>JUMLAH</th>
+					<th class="column-5"  style="text-align: center" width="15%">SUB TOTAL</th>
+					
 				</tr>
 
 				<!-- looping data keranjang -->
@@ -111,13 +101,10 @@ $kode_transaksi = random_string('alnum', 11);
 					$berat_subtotal = $keranjang['weight']*$keranjang['qty'];
 					$berat_total += $berat_subtotal;
 
-					
-			//form update
-					echo form_open(base_url('belanja/update_cart/' .$keranjang['rowid']));
 
 				?>
 
-				<tr class="table-row">
+				<tr class="table-row" style="text-align: center">
 					<td class="column-1">
 						<div class="cart-img-product b-rad-4 o-f-hidden">
 							<img src="<?php echo base_url('assets/upload/image/thumbs/' .$produk->gambar) ?>" 
@@ -126,43 +113,24 @@ $kode_transaksi = random_string('alnum', 11);
 					</td>
 					<td class="column-2"><?php echo $keranjang['name'] ?></td>
 					<td class="column-3">Rp. <?php echo number_format($keranjang['price'],'0',',','.') ?></td>
-					<td class="column-4">
-						<div class="flex-w bo5 of-hidden w-size17">
-							<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
-								<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
-							</button>
+					<td class="column-4"><?php echo $keranjang['qty'] ?></td>
+					<td class="column-5">Rp.
 
-							<input class="size8 m-text18 t-center num-product" type="number" min="12" max="<?php echo $produk->stok?>" name="qty" value="<?php echo $keranjang['qty'] ?>">
-
-							<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
-								<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
-							</button>
-						</div>
-					</td>
-					<td class="column-5">Rp. 
 						<?php  
 						$sub_total = $keranjang['price'] * $keranjang['qty'];
 						echo number_format($sub_total,'0',',','.');
 						?>
-					</td>
-					<td>
-						<button type="submit" name="update" class="btn btn-success btn-sm">
-							<i class="fa fa-edit"></i>Update
-						</button>
 
-						<a href="<?php echo base_url('belanja/hapus/' .$keranjang['rowid']) ?>"  
-						  class="btn btn-warning btn-sm">
-							<i class="fa fa-trash-o"></i>Hapus
-						</a>
 					</td>
+					
 				</tr>
 
 				<?php 
-				//form close
-				echo form_close();
+				
 				//end looping
 				}
 				?>
+
 				<tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
 					<td colspan="4" class="column-1">Total Belanja</td>
 					<td colspan="2" class="column-2">Rp. <?php echo number_format($this->cart->total(),'0',',','.') ?></td>
@@ -250,8 +218,27 @@ $kode_transaksi = random_string('alnum', 11);
 <tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
 			<td colspan="4" class="column-1">TOTAL PEMBAYARAN</td>
 			<td colspan="2" class="column-2" id="total_pembayaran"></td>
-</tr>
+
 </table>
+
+<table class="table">
+</tr>
+
+						<tr style="text-align: right">
+							<td >
+								<button class="btn btn-success" type="submit">
+									<i class="fa fa-save"></i> Check Out Sekarang
+								</button>
+							</td>
+						</tr>
+</table>
+
+
+
+<?php 
+//form close
+echo form_close();
+ ?>
 
 
 
