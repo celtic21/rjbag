@@ -20,9 +20,10 @@
 echo form_open(base_url('belanja/checkout'));
 $kode_transaksi = random_string('alnum', 11);
 ?>
-<input type="hidden" name="id_pelanggan" value="<?php echo $pelanggan->id_pelanggan; ?>" >
-<input type="hidden" name="jumlah_transaksi" value="<?php echo $this->cart->total() ?>" >
-<input type="hidden" name="tgl_transaksi" value="<?php echo date('Y-m-d'); ?>" >
+
+<input type="hidden" name="id_pelanggan" 		value="<?php echo $pelanggan->id_pelanggan; ?>" >
+<input type="hidden" name="tgl_transaksi" 		value="<?php echo date('Y-m-d'); ?>" >
+<input type="hidden" name="jumlah_transaksi" 	value="<?php echo $this->cart->total() ?>" >
 
 <table class="table">
 					<thead>
@@ -79,11 +80,11 @@ $kode_transaksi = random_string('alnum', 11);
 
 			<table class="table-shopping-cart" >
 				<tr class="table-head">
-					<th class="column-1"  style="text-align: center"		>GAMBAR</th>
+					<th class="column-1"  		  							>GAMBAR</th>
 					<th class="column-2"  style="text-align: center"		>PRODUK</th>
 					<th class="column-3"  style="text-align: center"	 	>HARGA</th>
 					<th class="column-4"  style="text-align: center"		>JUMLAH</th>
-					<th class="column-5"  style="text-align: center" width="15%">SUB TOTAL</th>
+					<th class="column-5"   width="15%">SUB TOTAL</th>
 					
 				</tr>
 
@@ -94,6 +95,7 @@ $kode_transaksi = random_string('alnum', 11);
 				// echo "</pre>";
 
 				$berat_total = 0;
+				//start looping
 				foreach($keranjang as $keranjang) {
 					//ambil data produk
 					$id_produk = $keranjang['id'];
@@ -101,32 +103,29 @@ $kode_transaksi = random_string('alnum', 11);
 					$berat_subtotal = $keranjang['weight']*$keranjang['qty'];
 					$berat_total += $berat_subtotal;
 
-
 				?>
 
-				<tr class="table-row" style="text-align: center">
-					<td class="column-1">
+				<tr class="table-row" >
+					<td class="column-1" >
 						<div class="cart-img-product b-rad-4 o-f-hidden">
 							<img src="<?php echo base_url('assets/upload/image/thumbs/' .$produk->gambar) ?>" 
 							alt="<?php echo $keranjang['name'] ?>">
 						</div>
 					</td>
-					<td class="column-2"><?php echo $keranjang['name'] ?></td>
-					<td class="column-3">Rp. <?php echo number_format($keranjang['price'],'0',',','.') ?></td>
-					<td class="column-4"><?php echo $keranjang['qty'] ?></td>
-					<td class="column-5">Rp.
+					<td class="column-2" style="text-align: center"><?php echo $keranjang['name'] ?></td>
+					<td class="column-3" style="text-align: center">Rp. <?php echo number_format($keranjang['price'],'0',',','.') ?></td>
+					<td class="column-4" style="text-align: center"><?php echo $keranjang['qty'] ?></td>
+					<td class="column-5" >Rp.
 
 						<?php  
 						$sub_total = $keranjang['price'] * $keranjang['qty'];
 						echo number_format($sub_total,'0',',','.');
 						?>
 
-					</td>
-					
+					</td>		
 				</tr>
 
 				<?php 
-				
 				//end looping
 				}
 				?>
@@ -187,7 +186,8 @@ $kode_transaksi = random_string('alnum', 11);
 
 						<tr>
 							<td>Service</td>
-							<td><select class="selection-1" name="service" id="service" ><select></td>
+							<td><select class="selection-1" name="service" id="service" >
+								<select></td>
 						</tr>
 						
 						<tr>
@@ -207,7 +207,7 @@ $kode_transaksi = random_string('alnum', 11);
 <table class="table">
 <tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
 			<td colspan="4" class="column-1">BIAYA PENGIRIMAN</td>
-			<td colspan="2" class="column-2" id="ongkir1"></td>
+			<td colspan="2" class="column-2" id="ongkir2"></td>
 </tr>
 
 <tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
@@ -286,6 +286,9 @@ echo form_close();
 			}); 
 
 			$("#ekpedisi").on('change',function(){
+				$("#service").empty();
+				$("#estimasi").empty();
+				$("#ongkir").empty();
 				var id_city = document.getElementById("kabupaten").value;
 				var ekpedisi = document.getElementById("ekpedisi").value;
 				$.ajax({
@@ -322,7 +325,7 @@ echo form_close();
 					//console.log(estimasi);
 					ongkir = parseInt($(this).val());
 					$("#ongkir").val(ongkir);
-					document.getElementById('ongkir1').innerHTML=new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(ongkir);
+					document.getElementById('ongkir2').innerHTML=new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(ongkir);
 					$("#estimasi").val(estimasi+"hari");
 					var total_pembayaran = total_belanja+ongkir;
 					document.getElementById('total_pembayaran').innerHTML=new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(total_pembayaran);

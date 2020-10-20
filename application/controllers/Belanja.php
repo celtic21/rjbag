@@ -120,12 +120,12 @@ class Belanja extends CI_Controller {
 				foreach($keranjang as $keranjang) {
 					$sub_total = $keranjang['price'] * $keranjang['qty'];
 					$data = array( 'id_pelanggan'	=> $pelanggan->id_pelanggan,
-						'kode_transaksi' => $i->post('kode_transaksi'),
-						'id_produk'		=> $keranjang['id'],
-						'harga'			=> $keranjang['price'],
-						'jumlah'			=> $keranjang['qty'],
-						'total_harga'	=> $sub_total,
-						'tgl_transaksi'	=> $i->post('tgl_transaksi')
+						'kode_transaksi'  => $i->post('kode_transaksi'),
+						'id_produk'		  => $keranjang['id'],
+						'harga'			  => $keranjang['price'],
+						'jumlah'		  => $keranjang['qty'],
+						'total_harga'	  => $sub_total,
+						'tgl_transaksi'	  => $i->post('tgl_transaksi')
 					);
 					$this->transaksi_model->tambah($data);
 
