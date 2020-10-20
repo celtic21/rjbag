@@ -89,9 +89,9 @@ $kode_transaksi = random_string('alnum', 11);
 
 				<!-- looping data keranjang -->
 				<?php 
-				//echo "<pre>";
-				//print_r ($keranjang);
-				//echo "</pre>";
+				// echo "<pre>";
+				// print_r ($keranjang);
+				// echo "</pre>";
 
 				$berat_total = 0;
 				foreach($keranjang as $keranjang) {
@@ -236,6 +236,9 @@ $kode_transaksi = random_string('alnum', 11);
 
 
 <?php 
+// echo "<pre>";
+// print_r ($berat_total);
+// echo "</pre>";
 //form close
 echo form_close();
  ?>
@@ -283,7 +286,6 @@ echo form_close();
 			}); 
 
 			$("#ekpedisi").on('change',function(){
-				
 				var id_city = document.getElementById("kabupaten").value;
 				var ekpedisi = document.getElementById("ekpedisi").value;
 				$.ajax({
@@ -299,7 +301,7 @@ echo form_close();
 					dataType : 'json',
 					success : function(data){
 					var parse = JSON.parse(data);
-					console.log(parse.rajaongkir.results[0].costs);
+					console.log(parse.rajaongkir);
 					var costs = parse.rajaongkir.results[0].costs;
 					for(var i=0; i<costs.length; i++)
 						{
