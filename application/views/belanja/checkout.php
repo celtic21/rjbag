@@ -177,7 +177,7 @@ $kode_transaksi = random_string('alnum', 11);
 						<tr>
 							<td>Ekpedisi</td>
 							<td>
-								 <select class="selection-1" id="ekpedisi" name="ekpedisi" required="">
+								 <select class="selection-1" id="ekpedisi" name="ekpedisi">
                   						<option value="jne">JNE</option>
                  						<option value="tiki">TIKI</option>
                   						<option value="pos">POS INDONESIA</option>
@@ -253,7 +253,6 @@ echo form_close();
 			var ongkir = 0;
 			$("#provinsi").on('change', function(){
 				$("#kabupaten").empty();
-				$("#estimasi").empty();
 				$("#service").empty();
 				$("#estimasi").empty();
 				$("#ongkir").empty();
@@ -284,9 +283,7 @@ echo form_close();
 			}); 
 
 			$("#ekpedisi").on('change',function(){
-				$("#service").empty();
-				$("#estimasi").empty();
-				$("#ongkir").empty();
+				
 				var id_city = document.getElementById("kabupaten").value;
 				var ekpedisi = document.getElementById("ekpedisi").value;
 				$.ajax({
@@ -302,7 +299,7 @@ echo form_close();
 					dataType : 'json',
 					success : function(data){
 					var parse = JSON.parse(data);
-					// console.log(parse.rajaongkir.results[0].costs);
+					console.log(parse.rajaongkir.results[0].costs);
 					var costs = parse.rajaongkir.results[0].costs;
 					for(var i=0; i<costs.length; i++)
 						{
@@ -320,7 +317,7 @@ echo form_close();
 
 			$("#service").on('change',function(){
 					var estimasi = $('option:selected',this).attr('etd');
-					console.log(estimasi);
+					//console.log(estimasi);
 					ongkir = parseInt($(this).val());
 					$("#ongkir").val(ongkir);
 					document.getElementById('ongkir1').innerHTML=new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(ongkir);

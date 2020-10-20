@@ -71,7 +71,7 @@
 	<?php echo form_open(base_url('belanja/add')); 
 	//elemen yg dibawa
 	echo form_hidden('id', $produk->id_produk);
-	echo form_hidden('qty', 1);
+	echo form_hidden('qty', 12);
 	echo form_hidden('price', $produk->harga);
 	echo form_hidden('name', $produk->nama_produk);
 	//elemen redirect

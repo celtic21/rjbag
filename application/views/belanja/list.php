@@ -16,7 +16,7 @@
 			} ?>
 
 			<table class="table-shopping-cart">
-				<tr class="table-head">
+				<tr class="table-head" align="center">
 					<th class="column-1"			>GAMBAR</th>
 					<th class="column-2"			>PRODUK</th>
 					<th class="column-3"			>HARGA</th>
@@ -46,8 +46,8 @@
 					</td>
 					<td class="column-2"><?php echo $keranjang['name'] ?></td>
 					<td class="column-3">Rp. <?php echo number_format($keranjang['price'],'0',',','.') ?></td>
-					<td class="column-4">
-						<div class="flex-w bo5 of-hidden w-size17">
+					<td class="column-4" align="center">
+						<div class="flex-w bo5 of-hidden w-size17" >
 							<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
 								<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
 							</button>
@@ -59,7 +59,7 @@
 							</button>
 						</div>
 					</td>
-					<td class="column-5">Rp. 
+					<td class="column-5" align="left">Rp. 
 						<?php  $sub_total = $keranjang['price'] * $keranjang['qty'];
 						echo number_format($sub_total,'0',',','.');
 						?>
