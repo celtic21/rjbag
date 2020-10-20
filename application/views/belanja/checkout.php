@@ -70,16 +70,12 @@ $kode_transaksi = random_string('alnum', 11);
 								<button class="btn btn-success" type="submit">
 									<i class="fa fa-save"></i> Check Out Sekarang
 								</button>
-
-								<button class="btn btn-default" type="reset">
-									<i class="fa fa-times"></i> Reset
-								</button>
 							</td>
 						</tr>
 					</tbody>
 
 
-				</table>
+</table>
 
 
 <?php echo form_close(); ?>
@@ -136,7 +132,7 @@ $kode_transaksi = random_string('alnum', 11);
 								<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
 							</button>
 
-							<input class="size8 m-text18 t-center num-product" type="number" name="qty" value="<?php echo $keranjang['qty'] ?>">
+							<input class="size8 m-text18 t-center num-product" type="number" min="12" max="<?php echo $produk->stok?>" name="qty" value="<?php echo $keranjang['qty'] ?>">
 
 							<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
 								<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
@@ -212,6 +208,17 @@ $kode_transaksi = random_string('alnum', 11);
 					<tbody>
 						<tr>
 							<td>Ekpedisi</td>
+							<td>
+								 <select class="selection-1" id="ekpedisi" name="ekpedisi" required="">
+                  						<option value="jne">JNE</option>
+                 						<option value="tiki">TIKI</option>
+                  						<option value="pos">POS INDONESIA</option>
+                </select>
+								</td>
+						</tr>
+
+						<tr>
+							<td>Service</td>
 							<td><select class="selection-1" name="service" id="service" ><select></td>
 						</tr>
 						
@@ -259,6 +266,10 @@ $kode_transaksi = random_string('alnum', 11);
 			var ongkir = 0;
 			$("#provinsi").on('change', function(){
 				$("#kabupaten").empty();
+				$("#estimasi").empty();
+				$("#service").empty();
+				$("#estimasi").empty();
+				$("#ongkir").empty();
 				var id_province = $(this).val();
 				$.ajax({
 					url : "<?= site_url('belanja/getcity')?>",
@@ -285,11 +296,12 @@ $kode_transaksi = random_string('alnum', 11);
 				});
 			}); 
 
-			$("#kabupaten").on('change',function(){
-				$("#ekpedisi").empty();
+			$("#ekpedisi").on('change',function(){
+				$("#service").empty();
 				$("#estimasi").empty();
 				$("#ongkir").empty();
-				var id_city = $(this).val();
+				var id_city = document.getElementById("kabupaten").value;
+				var ekpedisi = document.getElementById("ekpedisi").value;
 				$.ajax({
 					url : "<?= site_url('belanja/getcost')?>",
 					type : 'GET',
@@ -297,7 +309,7 @@ $kode_transaksi = random_string('alnum', 11);
 						'origin': 209,
 						'destination' : id_city,
 						'weight' : berat,
-						'courier' : 'jne'
+						'courier' : ekpedisi
 
 					},
 					dataType : 'json',

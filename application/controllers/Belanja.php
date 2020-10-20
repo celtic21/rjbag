@@ -96,7 +96,7 @@ class Belanja extends CI_Controller {
 				$data = array(  'title'		=> 'Check Out',
 					'keranjang' => $keranjang,
 					'pelanggan'	=> $pelanggan,
-					'provinsi'				=> json_decode($provinsi)->rajaongkir->results,
+					'provinsi'	=> json_decode($provinsi)->rajaongkir->results,
 					'isi'		=> 'belanja/checkout'
 				);
 				$this->load->view('layout/wrapper', $data, FALSE);
@@ -112,7 +112,6 @@ class Belanja extends CI_Controller {
 					'tgl_transaksi'    => $i->post('tgl_transaksi'),
 					'jumlah_transaksi' => $i->post('jumlah_transaksi'),
 					'status_bayar'     => 'Belum',
-					'provinsi'				=> json_decode($provinsi)->rajaongkir->results,
 					'tgl_post'         => date('Y-m-d H:i:s')
 				);
 				//proses masuk ke header transaksi
@@ -126,7 +125,6 @@ class Belanja extends CI_Controller {
 						'harga'			=> $keranjang['price'],
 						'jumlah'			=> $keranjang['qty'],
 						'total_harga'	=> $sub_total,
-						'provinsi'				=> json_decode($provinsi)->rajaongkir->results,
 						'tgl_transaksi'	=> $i->post('tgl_transaksi')
 					);
 					$this->transaksi_model->tambah($data);

@@ -88,7 +88,7 @@
 							<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
 						</button>
 
-						<input class="size8 m-text18 t-center num-product" type="number" name="qty" value="24" min="24" 
+						<input class="size8 m-text18 t-center num-product" type="number" name="qty" value="12" min="12" 
 						 max="<?php echo $produk->stok?>"    >
 
 						<button type="submit" value="submit" class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">

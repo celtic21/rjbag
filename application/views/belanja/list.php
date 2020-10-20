@@ -52,7 +52,7 @@
 								<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
 							</button>
 
-							<input class="size8 m-text18 t-center num-product" min="24" max="<?php echo $produk->stok?>" type="number" name="qty" value="<?php echo $keranjang['qty'] ?>">
+							<input class="size8 m-text18 t-center num-product" min="12" max="<?php echo $produk->stok?>" type="number" name="qty" value="<?php echo $keranjang['qty'] ?>">
 
 							<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
 								<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
@@ -102,27 +102,8 @@
 		</div>
 	</div>
 
-	<div class="flex-w flex-sb-m p-t-25 p-b-25 bo8 p-l-35 p-r-60 p-lr-15-sm">
-		<div class="flex-w flex-m w-full-sm">
-		<!-- 	<div class="size11 bo4 m-r-10">
-				<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="coupon-code" placeholder="Coupon Code">
-			</div>
-
-			<div class="size12 trans-0-4 m-t-10 m-b-10 m-r-10">
-			
-				<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-					Apply coupon
-				</button>
-			</div> -->
-		</div>
-
-		<div class="size10 trans-0-4 m-t-10 m-b-10">
-			<!-- Button -->
+	
 		
-		
-		</div>
-	</div>
-
 	
 </div>
 </section>
