@@ -91,7 +91,7 @@ class Belanja extends CI_Controller {
 					'valid_email'=> '%s tidak valid'));
 
 			if($valid->run()===FALSE){
-			//end validasi
+			//end validasi 
 
 				$data = array(  'title'		=> 'Check Out',
 					'keranjang' => $keranjang,
@@ -103,6 +103,10 @@ class Belanja extends CI_Controller {
 				//masuk database
 			}else{
 				$i = $this->input;
+
+				 // echo "<pre>";
+				 // print_r ($i->post());
+				 // exit();
 				$data = array ( 'id_pelanggan'	   => $pelanggan->id_pelanggan,
 					'nama_pelanggan'   => $i->post('nama_pelanggan'),
 					'email'     	   => $i->post('email'),
@@ -110,9 +114,12 @@ class Belanja extends CI_Controller {
 					'alamat'   		   => $i->post('alamat'),
 					'kode_transaksi'   => $i->post('kode_transaksi'),
 					'tgl_transaksi'    => $i->post('tgl_transaksi'),
-					'jumlah_transaksi' => $i->post('jumlah_transaksi'),
+					'jumlah_transaksi' => $i->post('total_pembayaran'),
 					'status_bayar'     => 'Belum',
-					'tgl_post'         => date('Y-m-d H:i:s')
+					'tgl_post'         => date('Y-m-d H:i:s'),
+					'ekpedisi'         => $i->post('ekpedisi'),
+					'estimasi'         => $i->post('estimasi'),
+					'ongkir'           => $i->post('ongkir')
 				);
 				//proses masuk ke header transaksi
 				$this->header_transaksi_model->tambah($data);

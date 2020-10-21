@@ -23,7 +23,6 @@ $kode_transaksi = random_string('alnum', 11);
 
 <input type="hidden" name="id_pelanggan" 		value="<?php echo $pelanggan->id_pelanggan; ?>" >
 <input type="hidden" name="tgl_transaksi" 		value="<?php echo date('Y-m-d'); ?>" >
-<input type="hidden" name="jumlah_transaksi" 	value="<?php echo $this->cart->total() ?>" >
 
 <table class="table">
 					<thead>
@@ -217,7 +216,7 @@ $kode_transaksi = random_string('alnum', 11);
 
 <tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
 			<td colspan="4" class="column-1">TOTAL PEMBAYARAN</td>
-			<td colspan="2" class="column-2" id="total_pembayaran"></td>
+			<td colspan="2" class="column-2" >Rp. <input style="background-color: unset; font-weight: bold;" id="total_pembayaran" type="text" name="total_pembayaran" readonly></td>
 
 </table>
 
@@ -322,13 +321,18 @@ echo form_close();
 
 			$("#service").on('change',function(){
 					var estimasi = $('option:selected',this).attr('etd');
+					
 					//console.log(estimasi);
-					ongkir = parseInt($(this).val());
+					
+
+					
 					$("#ongkir").val(ongkir);
-					document.getElementById('ongkir2').innerHTML=new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(ongkir);
-					$("#estimasi").val(estimasi+"hari");
+		ongkir = parseInt($(this).val());
+					$("#estimasi").val(estimasi+" hari");
 					var total_pembayaran = total_belanja+ongkir;
-					document.getElementById('total_pembayaran').innerHTML=new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(total_pembayaran);
+					$("#total_pembayaran").val(total_pembayaran);
+					document.getElementById('ongkir2').innerHTML=new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(ongkir);
+				
 
 
 			});
@@ -336,6 +340,8 @@ echo form_close();
 		});
 		</script>
 <!--ONGKIR-->
+
+
 
 		
 
