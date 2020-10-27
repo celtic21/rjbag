@@ -321,15 +321,11 @@ echo form_close();
 
 			$("#service").on('change',function(){
 					var estimasi = $('option:selected',this).attr('etd');
-					
-					//console.log(estimasi);
-					
-
-					
-					$("#ongkir").val(ongkir);
-		ongkir = parseInt($(this).val());
-					$("#estimasi").val(estimasi+" hari");
 					var total_pembayaran = total_belanja+ongkir;
+					//console.log(estimasi);
+					ongkir = parseInt($(this).val());
+					$("#ongkir").val(ongkir);
+					$("#estimasi").val(estimasi+" hari");
 					$("#total_pembayaran").val(total_pembayaran);
 					document.getElementById('ongkir2').innerHTML=new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(ongkir);
 				

@@ -145,6 +145,44 @@ $mpdf->Output($nama_file_pdf,'I');
 	}
 
 
+public function resi($kode_transaksi)
+{
+
+	$header_transaksi = $this->header_transaksi_model->detaill($kode_transaksi);
+
+		//validasi input
+		$valid = $this->form_validation;
+
+		$valid->set_rules('resi','No. Resi','required',
+			array('required'   => '%s harus diisi'));
+
+
+		if($valid->run()==FALSE){
+		//end validasi
+
+		$data = array(  'title' => 'Tambah No.Resi',
+						'header_transaksi'	=> $header_transaksi,
+						'isi'	=> 'admin/transaksi/resi'
+	);
+		$this->load->view('admin/layout/wrapper', $data, FALSE);
+	}else{
+
+		$i = $this->input;
+		// echo "<pre>";
+		// print_r ($i->post());
+		// exit();
+
+		$data = array ( 'kode_transaksi' => $i->post('kode_transaksi'),
+						'resi' => $i->post('resi')
+		);
+
+		$this->header_transaksi_model->editresi($data);
+		$this->session->set_flashdata('sukses', 'Resi telah dimasukkan');
+		redirect(base_url('admin/transaksi/resi/'.$header_transaksi->kode_transaksi),'refresh');
+	}
+	//end masuk database
+
+}
 
 
 

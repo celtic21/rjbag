@@ -22,6 +22,10 @@
 			<th width="20%">KODE TRANSAKSI</th>
 			<th>: <?php echo $header_transaksi->kode_transaksi ?></th>
 		</tr>
+			<tr>
+			<th width="20%">NO.RESi</th>
+			<th>: <?php echo $header_transaksi->resi ?></th>
+		</tr>
 	</thead>
 	<tbody>
 		<tr>

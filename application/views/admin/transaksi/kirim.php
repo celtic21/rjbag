@@ -39,7 +39,7 @@
 					<p>
 						<?php echo $site->namaweb ?>
 						<br><?php echo $site->alamat ?>
-						<br>Telepon: <?php echo $site->telepon ?>
+						<br>Telepon : <?php echo $site->telepon ?>
 					</p>
 				</td>
 				<td>
@@ -47,7 +47,16 @@
 					<p>
 						<?php echo $header_transaksi->nama_pelanggan ?>
 						<br><?php echo $header_transaksi->alamat ?>
-						<br>Telepon: <?php echo $header_transaksi->telepon ?>
+						<br>Telepon : <?php echo $header_transaksi->telepon ?>
+					</p>
+				</td>
+				<td>
+					<strong>Ekpedisi :</strong>
+					<p>
+						Kurir : <?php echo $header_transaksi->ekpedisi ?>
+						<br>Ongkir : <?php echo number_format($header_transaksi->ongkir) ?>
+						<br>estimasi : <?php echo $header_transaksi->estimasi ?>
+						<br>No.Resi : <?php echo $header_transaksi->resi ?>
 					</p>
 				</td>
 			</tr>
@@ -57,7 +66,6 @@
 	<thead>
 		<tr class="bg-success">
 			<th>NO</th>
-			<th>KODE</th>
 			<th>NAMA PRODUK</th>
 			<th>JUMLAH</th>
 			<th>HARGA</th>
@@ -68,15 +76,17 @@
 		<?php $i=1; foreach($transaksi as $transaksi) { ?>
 		<tr>
 			<td><?php echo $i ?></td>
-			<td><?php echo $transaksi->kode_produk ?></td>
 			<td><?php echo $transaksi->nama_produk ?></td>	
 			<td><?php echo number_format($transaksi->jumlah) ?></td>
 			<td><?php echo number_format($transaksi->harga) ?></td>
 			<td><?php echo number_format($transaksi->total_harga) ?></td>
+
 		</tr>
 		<?php $i++; } ?>
+		
 	</tbody>
 </table>
+	<u ><span>TOTAL PEMBELIAN</span></u><span> : Rp. <?php echo number_format($header_transaksi->jumlah_bayar) ?></span>
 	</div>
 </body>
 </html>

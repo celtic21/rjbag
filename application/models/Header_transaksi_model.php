@@ -91,6 +91,17 @@ class Header_transaksi_model extends CI_Model {
 	}
 
 
+		public function detaill($kode_transaksi)
+	{
+		$this->db->select('*');
+		$this->db->from('tb_header_transaksi');
+		$this->db->where('kode_transaksi', $kode_transaksi);
+		$this->db->order_by('kode_transaksi', 'desc');
+		$query = $this->db->get();
+		return $query->row();
+	}
+
+
 
 	//tambah
 	public function tambah($data)
@@ -104,6 +115,12 @@ class Header_transaksi_model extends CI_Model {
 	public function edit($data)
 	{
 	$this->db->where('id_header_transaksi', $data['id_header_transaksi']);
+	$this->db->update('tb_header_transaksi',$data);
+	}
+
+	public function editresi($data)
+	{
+	$this->db->where('kode_transaksi', $data['kode_transaksi']);
 	$this->db->update('tb_header_transaksi',$data);
 	}
 

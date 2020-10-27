@@ -42,6 +42,7 @@ class Transaksi_model extends CI_Model {
 
 
 
+
 	//detail transaksi
 	public function detail($id_transaksi)
 	{
