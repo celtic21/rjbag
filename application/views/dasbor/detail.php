@@ -36,7 +36,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td>TANGGAL</td>
+					<td>TANGGAL BAYAR</td>
 					<td>: <?php echo date('d-m-y',strtotime($header_transaksi->tgl_transaksi)) ?></td>
 				</tr>
 				

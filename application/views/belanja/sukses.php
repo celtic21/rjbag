@@ -16,7 +16,9 @@
 	} ?>
 
 <p class="alert alert-success">
-	Terimakasih, barang yang sudah anda beli akan segera kami proses
+	Terimakasih, Barang yang sudah anda beli akan segera kami proses :)
+	<br>
+	Silahkan lakukan konfirmasi pembayaran
 </p>
 
 </div>

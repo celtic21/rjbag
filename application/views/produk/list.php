@@ -16,9 +16,21 @@
 <div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
 	<div class="leftbar p-r-20 p-r-0-sm">
 		<!--  -->
-		<h4 class="m-text14 p-b-7">
-			Kategori Produk
-		</h4>
+
+
+			<div class="search-product pos-relative bo4 of-hidden">
+				<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products...">
+				<button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
+					<i class="fs-12 fa fa-search" aria-hidden="true"></i>
+				</button>
+			</div>
+			<br>
+
+
+
+<div class="m-text15 p-b-17">
+Kategori Produk
+</div>
 
 		<ul class="p-b-54">
 			<?php foreach($listing_kategori as $listing_kategori) { ?>
@@ -30,9 +42,8 @@
 			<?php } ?>
 		</ul>
 
-		<h4 class="m-text14 p-b-32">
-							Filters
-						</h4>
+
+<!-- Filter -->
 
 						<div class="filter-price p-t-22 p-b-50 bo3">
 							<div class="m-text15 p-b-17">

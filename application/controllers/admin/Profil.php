@@ -62,8 +62,8 @@ public function profil()
 			//masuk database
 		}else{
 			$i = $this->input;
-		//kalau password lebih dari 6 karakter, maka passwor di ganti
-			if(strlen($i->post('password')) >= 6) {
+		//kalau password lebih dari 4 karakter, maka passwor di ganti
+			if(strlen($i->post('password')) >= 4) {
 				$data = array ( 'id_user'	   => $id_user,
 					'nama'   => $i->post('nama'),
 					'telepon'   	   => $i->post('telepon'),

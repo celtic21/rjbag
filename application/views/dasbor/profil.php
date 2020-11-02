@@ -47,8 +47,7 @@
 						</tr>
 						<tr>
 							<td>Password</td>
-							<td><input type="password" name="password" class="form-control" placeholder="Password"
-							value="<?php echo $pelanggan->password ?>">
+							<td><input type="password" name="password" class="form-control" placeholder="Password">
 							<span class="text-danger">Ketik minimal 6 karakter baru untuk mengganti password baru</span>
 						</td>
 						</tr>

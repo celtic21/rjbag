@@ -15,7 +15,7 @@
 
 		<h2><?php echo $title ?></h2>
 		<hr>
-		<p>Berikut adalah riwayat belanja anda</p>
+
 
 		<?php 
 		//kalau ada transaksi tampilkan tabel

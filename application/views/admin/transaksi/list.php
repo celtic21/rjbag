@@ -16,21 +16,21 @@
 		<?php $i=1; foreach($header_transaksi as $header_transaksi) { ?>
 		<tr>
 
-			<td><?php echo $i ?></td>
-			<td><?php echo $header_transaksi->nama_pelanggan ?>
+			<td style="text-align: center"><?php echo $i ?></td>
+			<td style="text-align: center"><?php echo $header_transaksi->nama_pelanggan ?>
 				<br><small>
 					Telepon : <?php echo $header_transaksi->telepon ?>
 					<br>Email: <?php echo $header_transaksi->email ?>
 					<!-- nl2br : new line to brake -->
-					<br>Alamat Kirim: <br><?php echo nl2br($header_transaksi->alamat) ?>
+					<br>Alamat : <?php echo nl2br($header_transaksi->alamat) ?>
 				</small>
 			</td>
-			<td><?php echo $header_transaksi->kode_transaksi ?></td>
-			<td><?php echo $header_transaksi->resi ?></td>
-			<td><?php echo date('d-m-y',strtotime($header_transaksi->tgl_transaksi)) ?></td>	
-			<td><?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
-			<td><?php echo $header_transaksi->total_item ?></td>
-			<td><?php echo $header_transaksi->status_bayar ?></td>		
+			<td style="text-align: center"><?php echo $header_transaksi->kode_transaksi ?></td>
+			<td style="text-align: center"><?php echo $header_transaksi->resi ?></td>
+			<td style="text-align: center"><?php echo date('d-m-y',strtotime($header_transaksi->tgl_transaksi)) ?></td>	
+			<td style="text-align: center"><?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
+			<td style="text-align: center"><?php echo $header_transaksi->total_item ?></td>
+			<td style="text-align: center"><?php echo $header_transaksi->status_bayar ?></td>		
 			<td style="text-align: center">
 				<div class="btn-group">
 			

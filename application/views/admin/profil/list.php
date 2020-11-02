@@ -45,7 +45,7 @@ echo validation_errors('<div class="alert alert-warning">','</div>');
  <div class="form-group">
   <label  class="col-md-2 control-label">Password</label>
   <div class="col-md-5">
-    <input type="password" name="password" class="form-control" placeholder="Password" value="<?php echo $profil->password ?>" required >
+    <input type="password" name="password" class="form-control" placeholder="ketik min 4 karakter untuk mengganti password" required >
   </div>
 </div>
 
