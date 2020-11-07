@@ -19,10 +19,10 @@
 			<td style="text-align: center"><?php echo $i ?></td>
 			<td style="text-align: center"><?php echo $header_transaksi->nama_pelanggan ?>
 				<br><small>
-					Telepon : <?php echo $header_transaksi->telepon ?>
-					<br>Email: <?php echo $header_transaksi->email ?>
-					<!-- nl2br : new line to brake -->
-					<br>Alamat : <?php echo nl2br($header_transaksi->alamat) ?>
+				<!-- 	Telepon : <?php echo $header_transaksi->telepon ?> -->
+					<!-- <br>Email: <?php echo $header_transaksi->email ?>
+					nl2br : new line to brake
+					<br>Alamat : <?php echo nl2br($header_transaksi->alamat) ?> -->
 				</small>
 			</td>
 			<td style="text-align: center"><?php echo $header_transaksi->kode_transaksi ?></td>
@@ -37,21 +37,21 @@
 					<a href="<?php echo base_url('admin/transaksi/detail/' .$header_transaksi->kode_transaksi) ?> " 
 					class="btn btn-success btn-sm"><i class="fa fa-eye"></i> Detail</a>
 
-					<a href="<?php echo base_url('admin/transaksi/cetak/' .$header_transaksi->kode_transaksi) ?> " 
-					target="_blank" class="btn btn-info btn-sm"><i class="fa fa-print"></i> Cetak</a>	
+					<a href="<?php echo base_url('admin/transaksi/kirim/' .$header_transaksi->kode_transaksi) ?> " 
+					 class="btn btn-info btn-sm"><i class="fa  fa-truck"></i> Pengiriman</a>	
 
 					<a href="<?php echo base_url('admin/transaksi/resi/' .$header_transaksi->kode_transaksi) ?> " 
-					class="btn btn-warning btn-sm"><i class="fa fa-check"></i> Update No.Resi</a>		
+					class="btn btn-warning btn-sm"><i class="fa fa-check"></i> No.Resi</a>		
 				</div>
 				<div class="crearfix"></div>
 				<br>
 				<div class="btn-group" >
 			
-					<a href="<?php echo base_url('admin/transaksi/pdf/' .$header_transaksi->kode_transaksi) ?> " 
+					<!-- <a href="<?php echo base_url('admin/transaksi/pdf/' .$header_transaksi->kode_transaksi) ?> " 
 					class="btn btn-danger btn-sm"><i class="fa fa-file-pdf-o"></i> Unduh PDF</a>
 
-					<a href="<?php echo base_url('admin/transaksi/kirim/' .$header_transaksi->kode_transaksi) ?> " 
-					target="_blank" class="btn btn-primary btn-sm"><i class="fa fa-print"></i> Pengiriman</a>	
+					<a href="<?php echo base_url('admin/transaksi/cetakkirim/' .$header_transaksi->kode_transaksi) ?> " 
+					target="_blank" class="btn btn-primary btn-sm"><i class="fa fa-truck"></i> Pengiriman</a>	 -->
 
 					<!-- <a href="<?php echo base_url('admin/transaksi/word/' .$header_transaksi->kode_transaksi) ?> " 
 					class="btn btn-warning btn-sm"><i class="fa fa-file-word-o"></i> Word</a>  -->

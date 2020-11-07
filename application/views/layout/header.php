@@ -14,7 +14,7 @@
 
 				<div class="topbar-child2">
 					<span class="topbar-email">
-						<?php echo $site->email ?>
+						
 					</span>
 
 					<div class="topbar-language rs1-select2">

@@ -54,7 +54,7 @@ echo form_open(base_url('admin/user/edit/'.$user->id_user),' class="form-horizon
  <div class="form-group">
   <label  class="col-md-2 control-label">Password</label>
   <div class="col-md-5">
-    <input type="password" name="password" class="form-control" placeholder="Password" value="<?php echo $user->password ?>" required >
+    <input type="password" name="password" class="form-control" placeholder="ketikan min 4 karakter untuk mengganti password" required >
   </div>
 </div>
 
@@ -71,11 +71,11 @@ echo form_open(base_url('admin/user/edit/'.$user->id_user),' class="form-horizon
  <div class="form-group">
   <label  class="col-md-2 control-label"></label>
   <div class="col-md-5">
-   <button class="btn btn-success btn-lg" nama="submit" type="submit">
+   <button class="btn btn-success btn-md" nama="submit" type="submit">
    	<i class="fa fa-save"> Simpan</i>
    </button>
    
-     <button class="btn btn-info btn-lg" nama="reset" type="reset">
+     <button class="btn btn-info btn-md" nama="reset" type="reset">
      	<i class="fa fa-times"> Reset</i>
      </button>
    

@@ -22,7 +22,7 @@ echo validation_errors('<div class="alert alert-warning">','</div>');
 echo form_open_multipart(base_url('admin/konfigurasi'),' class="form-horizontal"');
  ?>
 
- <div class="form-group form-group-lg">
+ <div class="form-group ">
   <label  class="col-md-2 control-label">Nama Website</label>
   <div class="col-md-8">
     <input type="text" name="namaweb" class="form-control" placeholder="Nama Website" value="<?php echo $konfigurasi->namaweb ?>" required >
@@ -96,12 +96,12 @@ echo form_open_multipart(base_url('admin/konfigurasi'),' class="form-horizontal"
 <div class="form-group">
   <label  class="col-md-2 control-label"></label>
   <div class="col-md-5">
-   <button class="btn btn-success btn-lg" nama="submit" type="submit">
-   	<i class="fa fa-save">Simpan</i>
+   <button class="btn btn-success btn-md" nama="submit" type="submit">
+   	<i class="fa fa-save"> Simpan</i>
    </button>
    
-     <button class="btn btn-info btn-lg" nama="reset" type="reset">
-     	<i class="fa fa-times">Reset</i>
+     <button class="btn btn-info btn-md" nama="reset" type="reset">
+     	<i class="fa fa-times"> Reset</i>
      </button>
    
   </div>

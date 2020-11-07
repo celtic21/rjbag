@@ -146,10 +146,10 @@
 					<td></td>
 					<td>
 						<div class="btn-group">
-							<button type="submit" class="btn btn-success btn-lg" name="submit">
+							<button type="submit" class="btn btn-dark btn-md" name="submit">
 								<i class="fa fa-upload"></i> Submit
 							</button>
-							<button type="reset" class="btn btn-info btn-lg" name="reset">
+							<button type="reset" class="btn btn-warning btn-md" name="reset">
 								<i class="fa fa-times"></i> Reset
 							</button>
 						</div>

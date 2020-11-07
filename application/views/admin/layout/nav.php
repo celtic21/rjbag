@@ -57,7 +57,7 @@
         </li>
 
                 <!-- menu profil -->
-        <li><a href="<?php echo base_url('admin/profil') ?>"><i class="fa fa-table text-aqua"></i> <span>Profil</span></a></li>
+        <li><a href="<?php echo base_url('admin/profil') ?>"><i class="fa  fa-user text-aqua"></i> <span> Profil</span></a></li>
 
       
         
@@ -79,7 +79,7 @@
       <!-- menu user -->
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-lock"></i> <span>PENGGUNA</span>
+            <i class="fa  fa-users text-aqua"></i> <span>PENGGUNA</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -93,7 +93,7 @@
            <!-- menu konfigurasi -->
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-wrench"></i> <span>KONFIGURASI</span>
+            <i class="fa fa-wrench text-aqua" ></i> <span>PROFIL TOKO</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -101,7 +101,7 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('admin/konfigurasi') ?>"><i class="fa fa-home"></i> Konfigurasi Umum</a></li>
             <li><a href="<?php echo base_url('admin/konfigurasi/logo') ?>"><i class="fa fa-image"></i> Konfigurasi Logo</a></li>
-            <li><a href="<?php echo base_url('admin/konfigurasi/icon') ?>"><i class="fa fa-home"></i> Konfigurasi icon</a></li>
+            <li><a href="<?php echo base_url('admin/konfigurasi/icon') ?>"><i class="fa  fa-file-image-o"></i> Konfigurasi icon</a></li>
           </ul>
         </li>
 <?php } ?>

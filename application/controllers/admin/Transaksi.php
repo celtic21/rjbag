@@ -55,8 +55,6 @@ class Transaksi extends CI_Controller {
 
 
 
-
-
 	//cetak
 	public function cetak($kode_transaksi)
 	{
@@ -71,8 +69,6 @@ class Transaksi extends CI_Controller {
 					 );
 		$this->load->view('admin/transaksi/cetak', $data, FALSE);
 	}
-
-
 
 
 
@@ -105,10 +101,24 @@ $mpdf->Output();
 
 
 
-
-
 	//pengiriman
 	public function kirim($kode_transaksi)
+	{
+		$header_transaksi 	=  $this->header_transaksi_model->kode_transaksi($kode_transaksi);
+		$transaksi  		=  $this->transaksi_model->kode_transaksi($kode_transaksi);
+		$site 				=  $this->konfigurasi_model->listing();
+
+		$data = array(	'title'				=>	'Pengiriman',
+						'header_transaksi'	=>   $header_transaksi,
+						'transaksi'			=>	 $transaksi,
+						'site'				=>	 $site,
+						'isi'				=>	'admin/transaksi/kirim'
+					 );
+		$this->load->view('admin/layout/wrapper', $data, FALSE);
+	}
+
+	//pengiriman
+	public function cetakkirim($kode_transaksi)
 	{
 		$header_transaksi 	=  $this->header_transaksi_model->kode_transaksi($kode_transaksi);
 		$transaksi  		=  $this->transaksi_model->kode_transaksi($kode_transaksi);
@@ -119,9 +129,9 @@ $mpdf->Output();
 						'transaksi'			=>	 $transaksi,
 						'site'				=>	 $site,
 					 );
-		//$this->load->view('admin/transaksi/kirim', $data, FALSE);
+		// $this->load->view('admin/transaksi/kirim', $data, FALSE);
 
-$html = $this->load->view('admin/transaksi/kirim', $data, true);
+$html = $this->load->view('admin/transaksi/cetakkirim', $data, true);
 $mpdf = new \Mpdf\Mpdf();
 //setting header dan footer
 $mpdf->SetHTMLHeader('

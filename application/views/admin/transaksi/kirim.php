@@ -1,92 +1,94 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title><?php echo $title ?></title>
+  <!-- title row -->
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="page-header">
+            <i class="fa fa-truck"></i> Pengiriman
+            <small class="pull-right">Date: <?php echo date ('d/m/y') ?></small>
+          </h2>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- info row -->
+      <div class="row invoice-info">
+        <div class="col-sm-4 invoice-col">
+          From
+          <address>
+            <strong><?php echo $site->namaweb ?></strong><br>
+           <?php echo $site->alamat ?><br>
+            Telepon : <?php echo $site->telepon ?><br>
+            e-mail : <?php echo $site->email ?><br>
+          </address>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-4 invoice-col">
+          To
+          <address>
+            <strong><?php echo $header_transaksi->nama_pelanggan ?></strong><br>
+            <?php echo $header_transaksi->alamat ?><br>
+            Telepon : <?php echo $header_transaksi->telepon ?><br>
+          </address>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-4 invoice-col">
+          <b>kode transaksi: <?php echo $header_transaksi->kode_transaksi ?></b><br>
+          Kurir : <?php echo $header_transaksi->ekpedisi ?>
+            <br>Ongkir : <?php echo number_format($header_transaksi->ongkir) ?>
+            <br>estimasi : <?php echo $header_transaksi->estimasi ?>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
 
-	<style type="text/css" media="print">
-		body{
-			font-size: 12px;
-			font-family: Arial;
-		}
-		table{
-			border: solid thin #000;
-			border-collapse: collapse;
-			width: 100%;
-			margin-bottom: 1cm;
-		}
-		td{
-			padding: 6px 12px;
-			border: solid thin #000;
-			text-align: left;
-		}.bg-success{
-			background-color: #F5F5F5;
-			font-weight: bold;
-			border: solid thin #000;
-		}
-	</style>
+      <!-- Table row -->
+      <div class="row">
+        <div class="col-xs-12 table-responsive">
+          </table>
+    <table class="table table-bordered" width="100%">
+  <thead>
+    <tr class="bg-success">
+      <th>NO</th>
+      <th>NAMA PRODUK</th>
+      <th>JUMLAH</th>
+      <th>HARGA</th>
+      <th>SUB TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php $i=1; foreach($transaksi as $transaksi) { ?>
+    <tr>
+      <td><?php echo $i ?></td>
+      <td><?php echo $transaksi->nama_produk ?></td>  
+      <td><?php echo number_format($transaksi->jumlah) ?></td>
+      <td><?php echo number_format($transaksi->harga) ?></td>
+      <td><?php echo number_format($transaksi->total_harga) ?></td>
 
-</head>
-<body>
-	<div style="width: 19cm; height: 27cm; padding-top: 1cm; ">
-	<H1 style="text-align: center; font-size: 18px; font-weight: bold; border-top: solid thin #EEE;
-	padding-top: 20px;">PENGIRIMAN</H1>
-		<table>
-			<tr>
-				<td>
-					<strong>PENGIRIM:</strong>
-					<p>
-						<?php echo $site->namaweb ?>
-						<br><?php echo $site->alamat ?>
-						<br>Telepon : <?php echo $site->telepon ?>
-					</p>
-				</td>
-				<td>
-					<strong>PENERIMA:</strong>
-					<p>
-						<?php echo $header_transaksi->nama_pelanggan ?>
-						<br><?php echo $header_transaksi->alamat ?>
-						<br>Telepon : <?php echo $header_transaksi->telepon ?>
-					</p>
-				</td>
-				<td>
-					<strong>Ekpedisi :</strong>
-					<p>
-						Kurir : <?php echo $header_transaksi->ekpedisi ?>
-						<br>Ongkir : <?php echo number_format($header_transaksi->ongkir) ?>
-						<br>estimasi : <?php echo $header_transaksi->estimasi ?>
-						<br>No.Resi : <?php echo $header_transaksi->resi ?>
-					</p>
-				</td>
-			</tr>
-		</table>
-		<h2 style="font-weight: bold; text-align: center;">DATA PEMBELIAN</h2>
-		<table class="table table-bordered" width="100%">
-	<thead>
-		<tr class="bg-success">
-			<th>NO</th>
-			<th>NAMA PRODUK</th>
-			<th>JUMLAH</th>
-			<th>HARGA</th>
-			<th>SUB TOTAL</th>
-		</tr>
-	</thead>
-	<tbody>
-		<?php $i=1; foreach($transaksi as $transaksi) { ?>
-		<tr>
-			<td><?php echo $i ?></td>
-			<td><?php echo $transaksi->nama_produk ?></td>	
-			<td><?php echo number_format($transaksi->jumlah) ?></td>
-			<td><?php echo number_format($transaksi->harga) ?></td>
-			<td><?php echo number_format($transaksi->total_harga) ?></td>
-
-		</tr>
-		<?php $i++; } ?>
-		
-	</tbody>
+    </tr>
+    <?php $i++; } ?>
+    
+  </tbody>
 </table>
-	<u ><span>TOTAL PEMBELIAN</span></u><span> : Rp. <?php echo number_format($header_transaksi->jumlah_bayar) ?></span>
-	</div>
-</body>
-</html>
+<u ><span>TOTAL PEMBELIAN</span></u><span> : Rp. <?php echo number_format($header_transaksi->jumlah_bayar) ?></span>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+       <br>
+        <div class="btn pull-right">
+          <a href="<?php echo base_url('admin/transaksi/cetakkirim/' .$header_transaksi->kode_transaksi) ?>" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Cetak</a>
+        </div>
+
+      <div class="row">
+        <!-- accepted payments column -->
+        <div class="col-xs-6">
+          <p class="lead">Payment Methods:</p>
+          <span class="fa fa-credit-card"> Trasnfer Bank</span>
+        </div>
+       
+ 
+      <!-- /.row -->
+
+      <!-- this row will not appear when printing -->
+     
+    
+  </div>

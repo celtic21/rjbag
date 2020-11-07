@@ -21,7 +21,7 @@ $nav_produk_footer = $this->konfigurasi_model->nav_produk();
 
 					<div class="flex-m p-t-30">
 						<!-- <a href="<?php echo $site->facebook ?>" class="fs-18 color1 p-r-20 fa fa-facebook"></a> -->
-						<a href="https://www.instagram.com/rj.bag" target="blank" class="fs-18 color1 p-r-20 fa fa-instagram"></a>
+						<a href="https://www.instagram.com/rj.bag" target="blank" class="fs-18 color1 p-r-20 fa fa-instagram"> instagram</a>
 					</div>
 				</div>
 			</div>
@@ -43,7 +43,7 @@ $nav_produk_footer = $this->konfigurasi_model->nav_produk();
 					
 				</ul>
 			</div>
-<!--
+
 			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
 				<h4 class="s-text12 p-b-30">
 					Links
@@ -75,7 +75,7 @@ $nav_produk_footer = $this->konfigurasi_model->nav_produk();
 					</li>
 				</ul>
 			</div>
--->
+
 			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
 				<h4 class="s-text12 p-b-30">
 					Help

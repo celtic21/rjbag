@@ -13,15 +13,15 @@ if ($this->session->flashdata('sukses')) {
 }
 ?>
 
-<table class="table table-bordered" id="example1"> 
-	<thead>
+<table class="table table-bordered" id="example1"  style="text-align: center"> 
+	<thead >
 		<tr>
-			<th>NO</th>
-			<th>GAMBAR</th>
-			<th>NAMA</th>
-			<th>SLUG</th>
-			<th>URUTAN</th>
-			<th>Action</th>
+			<th style="text-align: center">NO</th>
+			<th style="text-align: center">GAMBAR</th>
+			<th style="text-align: center">NAMA</th>
+			<th style="text-align: center">SLUG</th>
+			<th style="text-align: center">URUTAN</th>
+			<th style="text-align: center">Action</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -35,9 +35,9 @@ if ($this->session->flashdata('sukses')) {
 			<td><?php echo $kategori->slug_kategori ?></td>
 			<td><?php echo $kategori->urutan ?></td>
 			<td>
-				<a href="<?php echo base_url('admin/kategori/edit/'.$kategori->id_kategori) ?>" class= "btn btn-warning btn-xs"><i class="fa fa-edit"></i> Edit </a> 
+				<a href="<?php echo base_url('admin/kategori/edit/'.$kategori->id_kategori) ?>" class= "btn btn-warning btn-sm"><i class="fa fa-edit"></i> Edit </a> 
 
-					<a href="<?php echo base_url('admin/kategori/delete/'.$kategori->id_kategori) ?>" class= "btn btn-danger btn-xs" onclick="return confirm ('yakin ingin menghapus data ini ?')"><i class="fa fa-trash-o"></i> Hapus </a> 
+					<a href="<?php echo base_url('admin/kategori/delete/'.$kategori->id_kategori) ?>" class= "btn btn-danger btn-sm" onclick="return confirm ('yakin ingin menghapus data ini ?')"><i class="fa fa-trash-o"></i> Hapus </a> 
 			</td>
 		</tr>
 	<?php $no++;} ?>

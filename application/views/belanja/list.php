@@ -5,9 +5,9 @@
 	<div class="container-table-cart pos-relative">
 		<div class="wrap-table-shopping-cart bgwhite">
 
-			<h1><?php echo $title ?></h1><hr>
-			<div class="clearfix"></div>
-			<br><br>
+			<!-- <h1><?php echo $title ?></h1>
+			<div class="clearfix"></div> -->
+			
 
 			<?php if($this->session->flashdata('sukses')) {
 				echo '<div class="alert alert-warning">';
@@ -15,6 +15,7 @@
 				echo '</div>';
 			} ?>
 
+		
 			<table class="table-shopping-cart">
 				<tr class="table-head" align="center">
 					<th class="column-1"			>GAMBAR</th>
@@ -65,13 +66,13 @@
 						?>
 					</td>
 					<td>
-						<button type="submit" name="update" class="btn btn-success btn-sm">
-							<i class="fa fa-edit"></i>Update
+						<button type="submit" name="update" class="btn btn-success btn-sm btn-dark">
+							<i class="fa fa-edit"></i> Update
 						</button>
 
 						<a href="<?php echo base_url('belanja/hapus/' .$keranjang['rowid']) ?>"  
-						  class="btn btn-warning btn-sm">
-							<i class="fa fa-trash-o"></i>Hapus
+						  class="btn  btn-sm btn-warning">
+							<i class="fa fa-trash-o"></i> Hapus
 						</a>
 					</td>
 				</tr>
@@ -81,20 +82,24 @@
 				//end looping
 				}
 				?>
-				<tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
+				<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
 					<td colspan="4" class="column-1">Total Belanja</td>
 					<td colspan="2" class="column-2">Rp. <?php echo number_format($this->cart->total(),'0',',','.') ?></td>
 				</tr>
 
 			</table>
-			<br>
+		
+				
+			</div>
+		</div>
+		<br>
 			<p class="pull-right">
-				<a href="<?php echo base_url('belanja/hapus') ?>" class="btn btn-danger btn-lg">
-				<i class="fa fa-trash-o"></i>Bersihkan keranjang belanja
+				<a href="<?php echo base_url('belanja/hapus') ?>" class="btn btn-warning btn-md">
+				<i class="fa fa-trash-o"></i> Bersihkan keranjang belanja
 		    	<a/>
 
-		    	<a href="<?php echo base_url('belanja/checkout') ?>" class="btn btn-info btn-lg">
-				<i class="fa fa-shopping-cart"></i>CheckOut
+		    	<a href="<?php echo base_url('belanja/checkout') ?>" class="btn btn-dark btn-md">
+				<i class="fa fa-shopping-cart "></i> CheckOut
 		    	<a/>
 
 			</p>

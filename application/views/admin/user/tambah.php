@@ -21,6 +21,13 @@ echo form_open(base_url('admin/user/tambah'),' class="form-horizontal"');
   </div>
 </div>
 
+ <div class="form-group">
+  <label  class="col-md-2 control-label">Username</label>
+  <div class="col-md-5">
+    <input type="text" name="username" class="form-control" placeholder="username" value="<?php echo set_value('username') ?>" required >
+  </div>
+</div>
+
 <div class="form-group">
   <label  class="col-md-2 control-label">Jenis Kelamin</label>
   <div class="col-md-5">
@@ -45,12 +52,7 @@ echo form_open(base_url('admin/user/tambah'),' class="form-horizontal"');
   </div>
 </div>
 
- <div class="form-group">
-  <label  class="col-md-2 control-label">Username</label>
-  <div class="col-md-5">
-    <input type="text" name="username" class="form-control" placeholder="username" value="<?php echo set_value('username') ?>" required >
-  </div>
-</div>
+
 
  <div class="form-group">
   <label  class="col-md-2 control-label">Password</label>
@@ -72,11 +74,11 @@ echo form_open(base_url('admin/user/tambah'),' class="form-horizontal"');
 <div class="form-group">
   <label  class="col-md-2 control-label"></label>
   <div class="col-md-5">
-   <button class="btn btn-success btn-lg" nama="submit" type="submit">
+   <button class="btn btn-success btn-md" nama="submit" type="submit">
    	<i class="fa fa-save"> Simpan</i>
    </button>
    
-     <button class="btn btn-info btn-lg" nama="reset" type="reset">
+     <button class="btn btn-info btn-md" nama="reset" type="reset">
      	<i class="fa fa-times"> Reset</i>
      </button>
    

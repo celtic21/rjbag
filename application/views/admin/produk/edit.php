@@ -13,7 +13,7 @@ echo validation_errors('<div class="alert alert-warning">','</div>');
 echo form_open_multipart(base_url('admin/produk/edit/' .$produk->id_produk),' class="form-horizontal"');
  ?>
 
- <div class="form-group form-group-lg">
+ <div class="form-group ">
   <label  class="col-md-2 control-label">Nama Produk</label>
   <div class="col-md-5">
     <input type="text" name="nama_produk" class="form-control" placeholder="Nama Produk" value="<?php echo $produk->nama_produk ?>" required >
@@ -43,7 +43,7 @@ echo form_open_multipart(base_url('admin/produk/edit/' .$produk->id_produk),' cl
  <div class="form-group">
   <label  class="col-md-2 control-label">Harga Produk</label>
   <div class="col-md-5">
-    <input type="number" name="harga" class="form-control" placeholder="Harga Produk" value="<?php echo $produk->harga ?>" required >
+    <input type="number" name="harga" class="form-control" placeholder="Harga Produk" min="1" value="<?php echo $produk->harga ?>" required >
   </div>
 </div>
 
@@ -57,7 +57,7 @@ echo form_open_multipart(base_url('admin/produk/edit/' .$produk->id_produk),' cl
 <div class="form-group">
   <label  class="col-md-2 control-label">Berat Produk</label>
   <div class="col-md-5">
-    <input type="number" name="berat" class="form-control" placeholder="Berat Produk" value="<?php echo $produk->berat ?>" required >
+    <input type="number" name="berat" class="form-control" placeholder="Berat Produk" min="1"value="<?php echo $produk->berat ?>" required >
   </div>
 </div>
 
@@ -95,11 +95,11 @@ echo form_open_multipart(base_url('admin/produk/edit/' .$produk->id_produk),' cl
 <div class="form-group">
   <label  class="col-md-2 control-label"></label>
   <div class="col-md-5">
-   <button class="btn btn-success btn-lg" nama="submit" type="submit">
+   <button class="btn btn-success btn-md" nama="submit" type="submit">
    	<i class="fa fa-save"> Simpan</i>
    </button>
    
-     <button class="btn btn-info btn-lg" nama="reset" type="reset">
+     <button class="btn btn-info btn-md" nama="reset" type="reset">
      	<i class="fa fa-times"> Reset</i>
      </button>
    

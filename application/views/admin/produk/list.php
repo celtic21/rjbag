@@ -41,9 +41,9 @@ if ($this->session->flashdata('sukses')) {
 			<td><?php echo $produk->stok ?></td>
 			<td><?php echo $produk->status_produk ?></td>
 			<td>
-				<a href="<?php echo base_url('admin/produk/gambar/'.$produk->id_produk) ?>" class= "btn btn-success btn-xs"><i class="fa fa-image"></i> Gambar ( <?php echo $produk->total_gambar ?> )</a> 
+				<a href="<?php echo base_url('admin/produk/gambar/'.$produk->id_produk) ?>" class= "btn btn-success btn-sm"><i class="fa fa-image"></i> Gambar ( <?php echo $produk->total_gambar ?> )</a> 
 
-				<a href="<?php echo base_url('admin/produk/edit/'.$produk->id_produk) ?>" class= "btn btn-warning btn-xs"><i class="fa fa-edit"></i> Edit </a> 
+				<a href="<?php echo base_url('admin/produk/edit/'.$produk->id_produk) ?>" class= "btn btn-warning btn-sm"><i class="fa fa-edit"></i> Edit </a> 
 
 				<?php include('delete.php') ?>
 			</td>

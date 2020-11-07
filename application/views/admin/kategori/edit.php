@@ -22,7 +22,7 @@ echo form_open_multipart(base_url('admin/kategori/edit/'.$kategori->id_kategori)
 
 <div class="form-group">
   <label  class="col-md-2 control-label">Upload Gambar</label>
-  <div class="col-md-10">
+  <div class="col-md-5">
    <input type="file" name="gambar" class="form-control" >
   </div>
 </div>
@@ -31,11 +31,11 @@ echo form_open_multipart(base_url('admin/kategori/edit/'.$kategori->id_kategori)
  <div class="form-group">
   <label  class="col-md-2 control-label"></label>
   <div class="col-md-5">
-   <button class="btn btn-success btn-lg" nama="submit" type="submit">
+   <button class="btn btn-success btn-md" nama="submit" type="submit">
    	<i class="fa fa-save"> Simpan</i>
    </button>
    
-     <button class="btn btn-info btn-lg" nama="reset" type="reset">
+     <button class="btn btn-info btn-md" nama="reset" type="reset">
      	<i class="fa fa-times"> Reset</i>
      </button>
    

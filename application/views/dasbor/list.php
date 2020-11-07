@@ -10,13 +10,13 @@
 </div>
 </div>
 
-<div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
+<div class="col-sm-6 col-sm-12-8 col-lg-9 p-b-50">
 
 
 		<div class="alert alert-success">
-			<h1>Selamat Datang 
+			<h5>Selamat Datang 
 				<i><strong><?php echo $this->session->userdata('nama_pelanggan'); ?></strong></i>
-			</h1>
+			</h5>
 			
 		</div>
 		
@@ -25,36 +25,39 @@
 		//kalau ada transaksi tampilkan tabel
 		if($header_transaksi) { 
 		?>
-		<table class="table table-bordered" width="100%">
+		<table class="table table-hover table-sm" width="30%">
 			<thead>
-				<tr class="bg-success">
-					<th>NO</th>
-					<th>KODE</th>
-					<th>TANGGAL</th>
-					<th>JUMLAH TOTAL</th>
-					<th>JUMLAH ITEM</th>
-					<th>STATUS Bayar</th>
-					<th>ACTION</th>
+				<tr class="bg-light" >
+					<th  style="text-align: center" >NO</th>
+					<th  style="text-align: center">KODE</th>
+					<th  style="text-align: center">TANGGAL</th>
+					<th  style="text-align: center">JUMLAH ITEM</th>
+					<th  style="text-align: center">ONGKIR</th>
+					<th  style="text-align: center">JUMLAH TOTAL</th>
+					<th  style="text-align: center">STATUS Bayar</th>
+					<th  style="text-align: center">ACTION</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php $i=1; foreach($header_transaksi as $header_transaksi) { ?>
-				<tr>
+				<tr style="text-align: center">
 
 					<td><?php echo $i ?></td>
 					<td><?php echo $header_transaksi->kode_transaksi ?></td>
 					<td><?php echo date('d-m-y',strtotime($header_transaksi->tgl_transaksi)) ?></td>	
-					<td><?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
 					<td><?php echo $header_transaksi->total_item ?></td>
-					<td><?php echo $header_transaksi->status_bayar ?></td>		
+					<td><?php echo number_format($header_transaksi->ongkir) ?></td>
+					<td><?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
+					<td><?php echo $header_transaksi->status_bayar ?></td>
+									
 
 						<div class="btn-group">
 					<td>
 							<a href="<?php echo base_url('dasbor/detail/' .$header_transaksi->kode_transaksi) ?> " 
-							class="btn btn-success btn-sm"><i class="fa fa-eye"></i> Detail</a>
+							class="btn btn-default btn-sm"><i class="fa fa-eye"></i> Detail</a>
 
 							<a href="<?php echo base_url('dasbor/konfirmasi/' .$header_transaksi->kode_transaksi) ?> " 
-							class="btn btn-info btn-sm"><i class="fa fa-upload"></i> Konfirmasi Bayar</a>		
+							class="btn btn-default btn-sm"><i class="fa fa-credit-card"></i> Konfirmasi Bayar</a>		
 						</div>
 					</td>
 

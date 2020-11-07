@@ -13,7 +13,7 @@
 <div class="col-sm-6 col-md-9 col-lg-9 p-b-50">
 
 
-		<h2><?php echo $title ?></h2>
+		<h4><?php echo $title ?></h4>
 		<hr>
 		<p>Berikut adalah riwayat belanja anda</p>
 
@@ -26,65 +26,65 @@
 			<thead>
 				<tr>
 					<th width="20%">KODE TRANSAKSI</th>
-					<th>: <?php echo $header_transaksi->kode_transaksi ?></th>
+					<th> <?php echo $header_transaksi->kode_transaksi ?></th>
 				</tr>
 
 				<tr>
 					<th  width="20%">NO.RESI</th>
-					<th>: <?php echo $header_transaksi->resi ?></th>
+					<th> <?php echo $header_transaksi->resi ?></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>TANGGAL BAYAR</td>
-					<td>: <?php echo date('d-m-y',strtotime($header_transaksi->tgl_transaksi)) ?></td>
+					<td>TANGGAL CHECKOUT</td>
+					<td> <?php echo date('d-m-y',strtotime($header_transaksi->tgl_transaksi)) ?></td>
 				</tr>
 				
 				<tr>
 					<td>STATUS BAYAR</td>
-					<td>: <?php echo $header_transaksi->status_bayar ?></td>
+					<td> <?php echo $header_transaksi->status_bayar ?></td>
 				</tr>
 				<tr>
 					<td>EKPEDISI</td>
-					<td>: <?php echo $header_transaksi->ekpedisi ?></td>
+					<td> <?php echo $header_transaksi->ekpedisi ?></td>
 				</tr>
 				<tr>
 					<td>ESTIMASI</td>
-					<td>: <?php echo $header_transaksi->estimasi ?></td>
+					<td> <?php echo $header_transaksi->estimasi ?></td>
 				</tr>
 				<tr>
 					<td>ONGKIR</td>
-					<td>: Rp. <?php echo number_format($header_transaksi->ongkir) ?></td>
+					<td> Rp. <?php echo number_format($header_transaksi->ongkir) ?></td>
 				</tr>
 				<tr>
 					<td>JUMLAH TOTAL</td>
-					<td>: Rp. <?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
+					<td> Rp. <?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
 				</tr>
 				
 			</tbody>
 		</table>
 
 
-		<table class="table table-bordered" width="100%">
+		<table class="table table-bordered table-sm">
 			<thead>
-				<tr class="bg-success">
-					<th>NO</th>
-					<th>KODE</th>
-					<th>NAMA PRODUK</th>
-					<th>JUMLAH</th>
-					<th>HARGA</th>
-					<th>SUB TOTAL</th>
+				<tr class="bg-light">
+					<th  style="text-align: center">NO</th>
+					<th  style="text-align: center">KODE</th>
+					<th  style="text-align: center">NAMA PRODUK</th>
+					<th  style="text-align: center">JUMLAH</th>
+					<th  style="text-align: center">HARGA</th>
+					<th  style="text-align: center">SUB TOTAL</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php $i=1; foreach($transaksi as $transaksi) { ?>
 				<tr>
-					<td><?php echo $i ?></td>
-					<td><?php echo $transaksi->kode_produk ?></td>
-					<td><?php echo $transaksi->nama_produk ?></td>	
-					<td><?php echo number_format($transaksi->jumlah) ?></td>
-					<td><?php echo number_format($transaksi->harga) ?></td>
-					<td><?php echo number_format($transaksi->total_harga) ?></td>
+					<td  style="text-align: center"><?php echo $i ?></td>
+					<td  style="text-align: center"><?php echo $transaksi->kode_produk ?></td>
+					<td ><?php echo $transaksi->nama_produk ?></td>	
+					<td  style="text-align: center"><?php echo number_format($transaksi->jumlah) ?></td>
+					<td  style="text-align: center"><?php echo number_format($transaksi->harga) ?></td>
+					<td  style="text-align: center"><?php echo number_format($transaksi->total_harga) ?></td>
 				</tr>
 				<?php $i++; } ?>
 			</tbody>

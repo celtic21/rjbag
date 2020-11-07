@@ -1,5 +1,5 @@
-  <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-<?php echo $produk->id_produk ?>">
-    <i class="fa fa-trash-o"></i>Hapus
+  <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-<?php echo $produk->id_produk ?>">
+    <i class="fa fa-trash-o"></i> Hapus
   </button>
 
   <div class="modal fade" id="delete-<?php echo $produk->id_produk ?>">
@@ -17,8 +17,8 @@
 	        </div>
 	  </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success " data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
-        <a href="<?php echo base_url('admin/produk/delete/'. $produk->id_produk) ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i>Ya, Hapus Data Ini</a>
+        <button type="button" class="btn btn-success " data-dismiss="modal"><i class="fa fa-times"></i> Tidak</button>
+        <a href="<?php echo base_url('admin/produk/delete/'. $produk->id_produk) ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i> Ya, Hapus Data Ini</a>
       </div>
     </div>
     <!-- /.modal-content -->

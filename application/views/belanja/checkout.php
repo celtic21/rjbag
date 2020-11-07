@@ -27,7 +27,7 @@ $kode_transaksi = random_string('alnum', 11);
 <table class="table">
 					<thead>
 
-				<tr class="table-row bg-success" style="font-weight: bold; color;white !important;">
+				<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
 					<td colspan="4" class="column-1" style="text-align: center">PENERIMA</td>
 					
 				</tr>
@@ -71,7 +71,7 @@ $kode_transaksi = random_string('alnum', 11);
 
 
 <table class="table">
-<tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
+<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
 	<td colspan="4" class="column-1" style="text-align: center">PRODUK</td>					
 </tr>
 </table>
@@ -129,21 +129,20 @@ $kode_transaksi = random_string('alnum', 11);
 				}
 				?>
 
-				<tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
-					<td colspan="4" class="column-1">Total Belanja</td>
-					<td colspan="2" class="column-2">Rp. <?php echo number_format($this->cart->total(),'0',',','.') ?></td>
+				<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
+					<td colspan="4" class="column-1" style="background-color: unset; font-weight: bold;">Total Belanja</td>
+					<td colspan="2" style="background-color: unset; font-weight: bold;" class="column-2">Rp. <?php echo number_format($this->cart->total(),'0',',','.') ?></td>
+				
 				</tr>
 
 			</table>
 			<br>
 
 
-
 <!--pengiriman-->
 
-
 <table class="table">
-<tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
+<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
 	<td colspan="4" class="column-1" style="text-align: center">PENGIRIMAN</td>					
 </tr>
 </table>
@@ -204,17 +203,17 @@ $kode_transaksi = random_string('alnum', 11);
 <!--pengiriman-->
 
 <table class="table">
-<tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
+<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
 			<td colspan="4" class="column-1">BIAYA PENGIRIMAN</td>
 			<td colspan="2" class="column-2" id="ongkir2"></td>
 </tr>
 
-<tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
+<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
 			<td colspan="4" class="column-1">TOTAL BELANJA</td>
 			<td colspan="2" class="column-2">Rp. <?php echo number_format($this->cart->total(),'0',',','.') ?></td>
 </tr>
 
-<tr class="table-row bg-info" style="font-weight: bold; color;white !important;">
+<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
 			<td colspan="4" class="column-1">TOTAL PEMBAYARAN</td>
 			<td colspan="2" class="column-2" >Rp. <input style="background-color: unset; font-weight: bold;" id="total_pembayaran" type="text" name="total_pembayaran" readonly></td>
 
@@ -225,22 +224,13 @@ $kode_transaksi = random_string('alnum', 11);
 
 						<tr style="text-align: right">
 							<td >
-								<button class="btn btn-success" type="submit">
-									<i class="fa fa-save"></i> Check Out Sekarang
+								<button class="btn btn-dark" type="submit">
+									<i class="fa fa-paper-plane"></i> Check Out Sekarang
 								</button>
 							</td>
 						</tr>
 </table>
 
-
-
-<?php 
-// echo "<pre>";
-// print_r ($berat_total);
-// echo "</pre>";
-//form close
-echo form_close();
- ?>
 
 
 
@@ -320,10 +310,11 @@ echo form_close();
 			});
 
 			$("#service").on('change',function(){
+				ongkir = parseInt($(this).val());
 					var estimasi = $('option:selected',this).attr('etd');
 					var total_pembayaran = total_belanja+ongkir;
 					//console.log(estimasi);
-					ongkir = parseInt($(this).val());
+					
 					$("#ongkir").val(ongkir);
 					$("#estimasi").val(estimasi+" hari");
 					$("#total_pembayaran").val(total_pembayaran);
