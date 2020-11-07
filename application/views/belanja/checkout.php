@@ -11,9 +11,9 @@
 				echo '</div>';
 			} ?>
 
-			<h1><?php echo $title ?></h1><hr>
+			<!-- <h1><?php echo $title ?></h1><hr> -->
 			<div class="clearfix"></div>
-			<br><br>
+		
 
 
 <?php 
@@ -130,16 +130,17 @@ $kode_transaksi = random_string('alnum', 11);
 				?>
 
 				<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
-					<td colspan="4" class="column-1" style="background-color: unset; font-weight: bold;">Total Belanja</td>
-					<td colspan="2" style="background-color: unset; font-weight: bold;" class="column-2">Rp. <?php echo number_format($this->cart->total(),'0',',','.') ?></td>
-				
+					<td colspan="4" class="column-1">Total Belanja</td>
+					<td colspan="2" class="column-2">Rp. <?php echo number_format($this->cart->total(),'0',',','.') ?></td>
 				</tr>
 
 			</table>
 			<br>
 
 
+
 <!--pengiriman-->
+
 
 <table class="table">
 <tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
@@ -166,7 +167,7 @@ $kode_transaksi = random_string('alnum', 11);
 							<td>Kabupaten
 							<td>
 
-							<select class="selection-1" name="kabupaten" id="kabupaten"><select></td>			
+							<select class="selection-1" name="kabupaten" id="kabupaten" required><select></td>			
 						</tr>
 					</thead>
 
@@ -184,7 +185,7 @@ $kode_transaksi = random_string('alnum', 11);
 
 						<tr>
 							<td>Service</td>
-							<td><select class="selection-1" name="service" id="service" >
+							<td><select class="selection-1" name="service" id="service" required>
 								<select></td>
 						</tr>
 						
@@ -225,12 +226,21 @@ $kode_transaksi = random_string('alnum', 11);
 						<tr style="text-align: right">
 							<td >
 								<button class="btn btn-dark" type="submit">
-									<i class="fa fa-paper-plane"></i> Check Out Sekarang
+									<i class="fa  fa-paper-plane"></i> Check Out Sekarang
 								</button>
 							</td>
 						</tr>
 </table>
 
+
+
+<?php 
+// echo "<pre>";
+// print_r ($berat_total);
+// echo "</pre>";
+//form close
+echo form_close();
+ ?>
 
 
 

@@ -5,8 +5,8 @@
 	<div class="container-table-cart pos-relative">
 		<div class="wrap-table-shopping-cart bgwhite">
 
-			<!-- <h1><?php echo $title ?></h1>
-			<div class="clearfix"></div> -->
+			<!-- <h1><?php echo $title ?></h1> -->
+			<div class="clearfix"></div>
 			
 
 			<?php if($this->session->flashdata('sukses')) {

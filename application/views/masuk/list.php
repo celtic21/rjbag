@@ -5,7 +5,7 @@
 	<div class="pos-relative">
 		<div class=" bgwhite">
 
-			<h1><?php echo $title ?></h1><hr>
+			<h3><?php echo $title ?></h3><hr>
 			<div class="clearfix"></div>
 			<br><br>
 

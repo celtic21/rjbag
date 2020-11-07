@@ -18,12 +18,11 @@
 
 			<td style="text-align: center"><?php echo $i ?></td>
 			<td style="text-align: center"><?php echo $header_transaksi->nama_pelanggan ?>
-				<br><small>
-				<!-- 	Telepon : <?php echo $header_transaksi->telepon ?> -->
-					<!-- <br>Email: <?php echo $header_transaksi->email ?>
-					nl2br : new line to brake
-					<br>Alamat : <?php echo nl2br($header_transaksi->alamat) ?> -->
-				</small>
+				<!-- <br><small>
+				    Telepon : <?php echo $header_transaksi->telepon ?>
+					<br>Email: <?php echo $header_transaksi->email ?>
+					<br>Alamat : <?php echo nl2br($header_transaksi->alamat) ?>
+				</small> -->
 			</td>
 			<td style="text-align: center"><?php echo $header_transaksi->kode_transaksi ?></td>
 			<td style="text-align: center"><?php echo $header_transaksi->resi ?></td>

@@ -75,9 +75,9 @@
   <tbody>
     <?php $i=1; foreach($transaksi as $transaksi) { ?>
     <tr>
-      <td><?php echo $i ?></td>
+      <td style="text-align: center"><?php echo $i ?></td>
       <td><?php echo $transaksi->nama_produk ?></td>  
-      <td><?php echo number_format($transaksi->jumlah) ?></td>
+      <td style="text-align: center"><?php echo number_format($transaksi->jumlah) ?></td>
 <!--       <td><?php echo number_format($transaksi->harga) ?></td>
       <td><?php echo number_format($transaksi->total_harga) ?></td> -->
 

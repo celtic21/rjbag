@@ -37,7 +37,7 @@ if ($this->session->flashdata('sukses')) {
 	</thead>
 	<tbody>
 		<?php $no=1; foreach ($user as $user) {?>
-		<tr>
+		<tr style="text-align: center">
 			<td><?php echo $no ?></td>
 			<td><?php echo $user->nama ?></td>
 			<td><?php echo $user->jenis_kelamin ?></td>

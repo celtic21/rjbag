@@ -52,7 +52,7 @@
                 <p>
 
                   <?php echo $this->session->userdata('nama'); ?> - <?php echo $this->session->userdata('level'); ?>
-                  <small><?php echo date ('d m y') ?></small>
+                  <small><?php echo date ('d-m-y') ?></small>
 
                 </p>
 
@@ -62,7 +62,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div  align="center">
-                  <a href="<?php echo base_url('login/logout') ?>" class="btn btn-default btn-flat">Log out</a>
+                  <a href="<?php echo base_url('login/logout') ?>" class="btn btn-default btn-flat"><i class="fa  fa-power-off"></i> Log out</a>
                 </div>
               </li>
             </ul>
