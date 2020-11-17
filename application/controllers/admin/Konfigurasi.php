@@ -58,6 +58,7 @@ class Konfigurasi extends CI_Controller {
 	//end masuk database
 
 	}
+	
 
 
 
