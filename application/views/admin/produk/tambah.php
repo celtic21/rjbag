@@ -94,7 +94,7 @@ echo form_open_multipart(base_url('admin/produk/tambah'),' class="form-horizonta
 <div class="form-group">
   <label  class="col-md-2 control-label"></label>
   <div class="col-md-5">
-   <button class="btn btn-success btn-sm" nama="submit" type="submit">
+   <button class="btn btn-sm" nama="submit" type="submit"  style="background-color:#2AD694; color: white;">
    	<i class="fa fa-save"> Simpan</i>
    </button>
    

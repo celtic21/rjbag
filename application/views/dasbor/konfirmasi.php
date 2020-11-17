@@ -22,29 +22,29 @@
 		if($header_transaksi) { 
 		?>
 
-		<table class="table table-bordered">
+		<table class="table table-bordered table-md">
 			<thead>
 				<tr>
 					<th width="20%">KODE TRANSAKSI</th>
-					<th>: <?php echo $header_transaksi->kode_transaksi ?></th>
+					<th> <?php echo $header_transaksi->kode_transaksi ?></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>TANGGAL</td>
-					<td>: <?php echo date('d-m-y',strtotime($header_transaksi->tgl_transaksi)) ?></td>
+					<td>CHECKOUT</td>
+					<td> <?php echo date('d-m-y',strtotime($header_transaksi->tgl_cekout)) ?></td>
 				</tr>
 				<tr>
 					<td>Jumlah Total</td>
-					<td>: <?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
+					<td>Rp. <?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
 				</tr>
 				<tr>
 					<td>STATUS BAYAR</td>
-					<td>: <?php echo $header_transaksi->status_bayar ?></td>
+					<td> <?php echo $header_transaksi->status_bayar ?></td>
 				</tr>
 				<tr>
-					<td>Bukti BAYAR</td>
-					<td>: <?php if( $header_transaksi->bukti_bayar !="") { ?> 
+					<td>BUKTI BAYAR</td>
+					<td> <?php if( $header_transaksi->bukti_bayar !="") { ?> 
 						<img src="<?php echo base_url('assets/upload/image/'.$header_transaksi->bukti_bayar) ?>" class="img img-thumbnail" width="200">
 					<?php }else{ echo 'Belum ada bukti bayar';} ?>
 					</td>
@@ -65,7 +65,7 @@
 		echo form_open_multipart(base_url('dasbor/konfirmasi/' .$header_transaksi->kode_transaksi));
 		?>
 
-		<table class="table">
+		<table class="table table-sm">
 			<tbody>
 				<tr>
 					<td>Pembayaran Ke Rekening</td>
@@ -76,7 +76,7 @@
 							<option value="<?php echo $rekening->id_rekening ?>" 
 								<?php if($header_transaksi->id_rekening==$rekening->id_rekening) 
 								{ echo "selected"; } ?>>
-								<?php echo $rekening->nama_bank ?> (NO. Rekening:
+								<?php echo $rekening->nama_bank ?> (NO. Rekening :
 								<?php echo $rekening->nomor_rekening ?> a.n <?php 
 									  echo $rekening->nama_pemilik ?>)
 							</option>
@@ -85,11 +85,11 @@
 
 					</td>
 				</tr>
-			
+
 				<tr>
-					<td>Tanggal Bayar</td>
+					<td>Tanggal Transfer</td>
 					<td>
-						<input readonly type="text" name="tgl_bayar" class="form-control-lg" placeholder="dd-mm-yyyy"
+						<input  type="date" name="tgl_bayar" class="form-control-lg" placeholder="d-m-y"
 						value="<?php 
 						if(isset($_POST['tgl_bayar']))
 						{ echo set_value('tgl_bayar');
@@ -99,9 +99,21 @@
 							echo date('d-m-y'); } ?>">
 				    </td>
 				</tr>
+			
+				<tr>
+					<td>Tanggal Konfirmasi</td>
+					<td>
+						<input readonly type="text" name="tgl_konfirmasi" class="form-control-lg" placeholder="dd-mm-yyyy"
+						value="<?php 
+						if(isset($_POST['tgl_konfirmasi']))
+						{ echo set_value('tgl_konfirmasi');
+						}else{
+							echo date('d-m-y'); } ?>">
+				    </td>
+				</tr>
 				<tr>
 					<td>Jumlah Pembayaran</td>
-					<td>
+					<td>Rp.
 						<input type="number" name="jumlah_bayar" class="form-control-lg" readonly placeholder="Jumlah Pembayaran"
 						value="<?php
 						if(isset($_POST['jumlah_bayar'])) { echo set_value('jumlah_bayar');
@@ -117,7 +129,7 @@
 					<td>
 						<input type="text" name="nama_bank" class="form-control" placeholder="Nama Bank"
 						value="<?php echo $header_transaksi->nama_bank ?>">
-						<small>Misal Bank : MANDIRI</small>
+						<small>Misal : MANDIRI</small>
 					</td>
 				</tr>
 				<tr>

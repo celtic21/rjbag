@@ -21,25 +21,26 @@ echo form_open(base_url('belanja/checkout'));
 $kode_transaksi = random_string('alnum', 11);
 ?>
 
-<input type="hidden" name="id_pelanggan" 		value="<?php echo $pelanggan->id_pelanggan; ?>" >
-<input type="hidden" name="tgl_transaksi" 		value="<?php echo date('Y-m-d'); ?>" >
-
-<table class="table">
+<div class="container">
+  <div class="row">
+  	<!-- kolom1 -->
+    <div class="col">
+      <table class="table">
 					<thead>
 
-				<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
-					<td colspan="4" class="column-1" style="text-align: center">PENERIMA</td>
+				<tr class="table-row" style="font-weight: bold; background-color: #E8436C;">
+					<td colspan="4" class="column-1" style="text-align: center; ">PENERIMA</td>
 					
 				</tr>
 						<tr>
-							<th width="25%">Kode Transaksi</th>
+							<th >Kode Transaksi</th>
 							<th>
 								<input type="text" name="kode_transaksi" class="form-control"  value="<?php echo $kode_transaksi ?>" readonly required>
 							</th>			
 						</tr>
 
 						<tr>
-							<th width="25%">Nama Penerima</th>
+							<th >Penerima</th>
 							<th>
 								<input type="text" name="nama_pelanggan" class="form-control" placeholder="NAMA Lengkap"
 							value="<?php echo $pelanggan->nama_pelanggan ?>" required>
@@ -49,29 +50,102 @@ $kode_transaksi = random_string('alnum', 11);
 
 					<tbody>
 						<tr>
-							<td>Email Penerima</td>
+							<td>Email</td>
 							<td><input type="email" name="email" class="form-control" placeholder="Email"
 							value="<?php echo $pelanggan->email ?>" required></td>
 						</tr>
 						
 						<tr>
-							<td>Telepon Penerima</td>
+							<td>Telepon</td>
 							<td><input type="text" name="telepon" class="form-control" placeholder="Telepon"
 							value="<?php echo $pelanggan->telepon ?>" required></td>
 						</tr>
 						<tr>
-							<td>Alamat Pengiriman</td>
+							<td>Alamat</td>
 							<td><input name="alamat" class="form-control" placeholder="Alamat" value="<?php echo $pelanggan->alamat ?>">
 							</td>
 						</tr>
 						
 					</tbody>
 </table>
+    </div>
 
+<!-- kolom 2 -->
+    <div class="col">
+      <!--pengiriman-->
 
 
 <table class="table">
-<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
+<tr class="table-row" style="font-weight: bold; background-color: #E8436C;">
+	<td colspan="4" class="column-1" style="text-align: center">PENGIRIMAN</td>					
+</tr>
+</table>
+
+<table class="table">
+					<thead>
+						<tr>
+							<td >Provinsi
+							<td>
+
+								<select class="selection-1" name="provinsi" id="provinsi">
+								<option>Silahkan Pilih Provinsi</option>
+								<?php foreach($provinsi as $p): ?>
+								<option value="<?= $p->province_id ?>"><?= $p->province ?></option>
+								<?php endforeach ?>
+							
+							</select>
+							</td>			
+						</tr>
+						<tr>
+							<td>Kabupaten
+							<td>
+
+							<select class="selection-1" name="kabupaten" id="kabupaten" required><select></td>			
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>Ekpedisi</td>
+							<td>
+								 <select class="selection-1" id="ekpedisi" name="ekpedisi">
+                  						<option value="jne">JNE</option>
+                 						<option value="tiki">TIKI</option>
+                  						<option value="pos">POS INDONESIA</option>
+                </select>
+								</td>
+						</tr>
+
+						<tr>
+							<td>Service</td>
+							<td><select class="selection-1" name="service" id="service" required>
+								<select></td>
+						</tr>
+						
+						<tr>
+							<td>Estimasi</td>
+							<td><input class="sizefull s-text7 p-l-22 p-r-22" type="text" readonly name="estimasi" id="estimasi"></td>
+						</tr>
+						<tr>
+							<td>Ongkir</td>
+							<td><input class="sizefull s-text7 p-l-22 p-r-22" type="text" readonly name="ongkir" id="ongkir"></td>
+						</tr>
+					</tbody>
+
+				</table>
+
+<!--pengiriman-->
+    </div>
+  </div>
+</div>
+
+
+
+<input type="hidden" name="id_pelanggan" 		value="<?php echo $pelanggan->id_pelanggan; ?>" >
+<input type="hidden" name="tgl_cekout" 		value="<?php echo date('Y-m-d'); ?>" >
+
+<table class="table">
+<tr class="table-row" style="font-weight: bold; background-color: #E8436C;">
 	<td colspan="4" class="column-1" style="text-align: center">PRODUK</td>					
 </tr>
 </table>
@@ -139,86 +213,27 @@ $kode_transaksi = random_string('alnum', 11);
 
 
 
-<!--pengiriman-->
 
 
 <table class="table">
-<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
-	<td colspan="4" class="column-1" style="text-align: center">PENGIRIMAN</td>					
-</tr>
-</table>
-
-<table class="table">
-					<thead>
-						<tr>
-							<td >Provinsi
-							<td>
-
-								<select class="selection-1" name="provinsi" id="provinsi">
-								<option>Silahkan Pilih Provinsi</option>
-								<?php foreach($provinsi as $p): ?>
-								<option value="<?= $p->province_id ?>"><?= $p->province ?></option>
-								<?php endforeach ?>
-							
-							</select>
-							</td>			
-						</tr>
-						<tr>
-							<td>Kabupaten
-							<td>
-
-							<select class="selection-1" name="kabupaten" id="kabupaten" required><select></td>			
-						</tr>
-					</thead>
-
-					<tbody>
-						<tr>
-							<td>Ekpedisi</td>
-							<td>
-								 <select class="selection-1" id="ekpedisi" name="ekpedisi">
-                  						<option value="jne">JNE</option>
-                 						<option value="tiki">TIKI</option>
-                  						<option value="pos">POS INDONESIA</option>
-                </select>
-								</td>
-						</tr>
-
-						<tr>
-							<td>Service</td>
-							<td><select class="selection-1" name="service" id="service" required>
-								<select></td>
-						</tr>
-						
-						<tr>
-							<td>Estimasi</td>
-							<td><input class="sizefull s-text7 p-l-22 p-r-22" type="text" readonly name="estimasi" id="estimasi"></td>
-						</tr>
-						<tr>
-							<td>Ongkir</td>
-							<td><input class="sizefull s-text7 p-l-22 p-r-22" type="text" readonly name="ongkir" id="ongkir"></td>
-						</tr>
-					</tbody>
-
-				</table>
-
-<!--pengiriman-->
-
-<table class="table">
-<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
+<tr class="table-row" style="font-weight: bold; background-color: #E8436C;">
 			<td colspan="4" class="column-1">BIAYA PENGIRIMAN</td>
-			<td colspan="2" class="column-2" id="ongkir2"></td>
+			<td colspan="4" class="column-3" id="ongkir2"></td>
 </tr>
 
-<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
+<tr class="table-rowt" style="font-weight: bold; background-color: #E8436C;">
 			<td colspan="4" class="column-1">TOTAL BELANJA</td>
-			<td colspan="2" class="column-2">Rp. <?php echo number_format($this->cart->total(),'0',',','.') ?></td>
+			<td colspan="4" class="column-3">Rp. <?php echo number_format($this->cart->total(),'0',',','.') ?></td>
 </tr>
 
-<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
+<tr class="table-row" style="font-weight: bold; background-color: #E8436C;">
 			<td colspan="4" class="column-1">TOTAL PEMBAYARAN</td>
-			<td colspan="2" class="column-2" >Rp. <input style="background-color: unset; font-weight: bold;" id="total_pembayaran" type="text" name="total_pembayaran" readonly></td>
+			<td colspan="4" class="column-3" >Rp. <input style="background-color: unset; font-weight: bold;" id="total_pembayaran" type="text" name="total_pembayaran" readonly></td>
+</tr>
 
 </table>
+
+
 
 <table class="table">
 </tr>

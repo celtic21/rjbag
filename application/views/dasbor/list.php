@@ -14,9 +14,9 @@
 
 
 		<div class="alert alert-success">
-			<h5>Selamat Datang 
+			<h6>Selamat Datang 
 				<i><strong><?php echo $this->session->userdata('nama_pelanggan'); ?></strong></i>
-			</h5>
+			</h6>
 			
 		</div>
 		
@@ -25,16 +25,16 @@
 		//kalau ada transaksi tampilkan tabel
 		if($header_transaksi) { 
 		?>
-		<table class="table table-hover table-sm" width="30%">
+		<table class="table table-hover table-sm">
 			<thead>
 				<tr class="bg-light" >
 					<th  style="text-align: center" >NO</th>
 					<th  style="text-align: center">KODE</th>
 					<th  style="text-align: center">TANGGAL</th>
-					<th  style="text-align: center">JUMLAH ITEM</th>
+					<th  style="text-align: center">ITEM</th>
 					<th  style="text-align: center">ONGKIR</th>
-					<th  style="text-align: center">JUMLAH TOTAL</th>
-					<th  style="text-align: center">STATUS Bayar</th>
+					<th  style="text-align: center">TOTAL</th>
+					<th  style="text-align: center">STATUS</th>
 					<th  style="text-align: center">ACTION</th>
 				</tr>
 			</thead>
@@ -44,10 +44,10 @@
 
 					<td><?php echo $i ?></td>
 					<td><?php echo $header_transaksi->kode_transaksi ?></td>
-					<td><?php echo date('d-m-y',strtotime($header_transaksi->tgl_transaksi)) ?></td>	
+					<td><?php echo date('d-m-y',strtotime($header_transaksi->tgl_cekout)) ?></td>	
 					<td><?php echo $header_transaksi->total_item ?></td>
-					<td><?php echo number_format($header_transaksi->ongkir) ?></td>
-					<td><?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
+					<td>Rp. <?php echo number_format($header_transaksi->ongkir) ?></td>
+					<td>Rp. <?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
 					<td><?php echo $header_transaksi->status_bayar ?></td>
 									
 
@@ -57,7 +57,7 @@
 							class="btn btn-default btn-sm"><i class="fa fa-eye"></i> Detail</a>
 
 							<a href="<?php echo base_url('dasbor/konfirmasi/' .$header_transaksi->kode_transaksi) ?> " 
-							class="btn btn-default btn-sm"><i class="fa fa-credit-card"></i> Konfirmasi Bayar</a>		
+							class="btn btn-default btn-sm"><i class="fa fa-credit-card"></i> Pembayaran</a>		
 						</div>
 					</td>
 

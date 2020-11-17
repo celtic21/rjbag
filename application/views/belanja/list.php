@@ -71,7 +71,7 @@
 						</button>
 
 						<a href="<?php echo base_url('belanja/hapus/' .$keranjang['rowid']) ?>"  
-						  class="btn  btn-sm btn-warning">
+						  class="btn  btn-sm" style="background-color:#ad1d35; color: white;">
 							<i class="fa fa-trash-o"></i> Hapus
 						</a>
 					</td>
@@ -94,7 +94,7 @@
 		</div>
 		<br>
 			<p class="pull-right">
-				<a href="<?php echo base_url('belanja/hapus') ?>" class="btn btn-warning btn-md">
+				<a href="<?php echo base_url('belanja/hapus') ?>" class="btn btn-md" style="background-color:#ad1d35; color: white;">
 				<i class="fa fa-trash-o"></i> Bersihkan keranjang belanja
 		    	<a/>
 

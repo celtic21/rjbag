@@ -59,15 +59,15 @@
       <td><?php echo $i ?></td>
       <td><?php echo $transaksi->nama_produk ?></td>  
       <td><?php echo number_format($transaksi->jumlah) ?></td>
-      <td><?php echo number_format($transaksi->harga) ?></td>
-      <td><?php echo number_format($transaksi->total_harga) ?></td>
+      <td>Rp. <?php echo number_format($transaksi->harga) ?></td>
+      <td>Rp. <?php echo number_format($transaksi->total_harga) ?></td>
 
     </tr>
     <?php $i++; } ?>
     
   </tbody>
-</table>
-<u ><span>TOTAL PEMBELIAN</span></u><span> : Rp. <?php echo number_format($header_transaksi->jumlah_bayar) ?></span>
+</table><span class="pull-right"><u ><span>TOTAL PEMBELIAN</span></u><span> : Rp. <?php echo number_format($header_transaksi->jumlah_bayar) ?></span>
+</span>
         </div>
         <!-- /.col -->
       </div>
@@ -75,7 +75,7 @@
 
        <br>
         <div class="btn pull-right">
-          <a href="<?php echo base_url('admin/transaksi/cetakkirim/' .$header_transaksi->kode_transaksi) ?>" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Cetak</a>
+          <a href="<?php echo base_url('admin/transaksi/cetakkirim/' .$header_transaksi->kode_transaksi) ?>" target="_blank" class="btn btn-info"><i class="fa fa-print"></i> Cetak</a>
         </div>
 
       <div class="row">

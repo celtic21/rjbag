@@ -120,11 +120,11 @@
       <h1>
        <?php echo $title ?>
       </h1>
-      <ol class="breadcrumb">
+     <!--  <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Tables</a></li>
         <li class="active">Data tables</li>
-      </ol>
+      </ol> -->
     </section>
 
     <!-- Main content -->
@@ -135,3 +135,17 @@
       
             <!-- /.box-header -->
             <div class="box-body">
+
+ <style type="text/css">
+   .j {
+   color: blue;
+   }
+   .r {
+   color: #c72838;
+   }
+   .ketiga {
+   color: rgb(200,200,0);
+   }
+   .navbar{background-color:#ad1d35;
+   }
+</style>

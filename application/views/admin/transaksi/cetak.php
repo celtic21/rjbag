@@ -80,8 +80,16 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>TANGGAL</td>
-			<td>: <?php echo date('d-m-y',strtotime($header_transaksi->tgl_transaksi)) ?></td>
+			<td>TANGGAL CHECKOUT</td>
+			<td>: <?php echo date('d-m-y',strtotime($header_transaksi->tgl_cekout)) ?></td>
+		</tr>
+		<tr>
+			<td>TANGGAL BAYAR</td>
+			<td>: <?php echo date('d-m-y',strtotime($header_transaksi->tgl_bayar)) ?></td>
+		</tr>
+		<tr>
+			<td>TANGGAL KONFIRMASI</td>
+			<td>: <?php echo date('d-m-y',strtotime($header_transaksi->tgl_konfirmasi)) ?></td>
 		</tr>
 		<tr>
 			<td>JUMLAH TOTAL</td>

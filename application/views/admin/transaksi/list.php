@@ -1,4 +1,4 @@
-<table class="table table-bordered" width="100%">
+<table class="table table-bordered" width="100%" id="example1">
 	<thead>
 		<tr class="bg-success" >
 			<th style="text-align: center">NO</th>
@@ -6,9 +6,9 @@
 			<th style="text-align: center">KODE</th>
 			<th style="text-align: center">NO.RESI</th>
 			<th style="text-align: center">TANGGAL</th>
-			<th style="text-align: center">JUMLAH TOTAL</th>
-			<th style="text-align: center">JUMLAH ITEM</th>
-			<th style="text-align: center">STATUS BAYAR</th>
+			<th style="text-align: center">TOTAL</th>
+			<th style="text-align: center">ITEM</th>
+			<th style="text-align: center">STATUS</th>
 			<th width="25%" style="text-align: center">ACTION</th>
 		</tr>
 	</thead>
@@ -26,7 +26,7 @@
 			</td>
 			<td style="text-align: center"><?php echo $header_transaksi->kode_transaksi ?></td>
 			<td style="text-align: center"><?php echo $header_transaksi->resi ?></td>
-			<td style="text-align: center"><?php echo date('d-m-y',strtotime($header_transaksi->tgl_transaksi)) ?></td>	
+			<td style="text-align: center"><?php echo date('d-m-y',strtotime($header_transaksi->tgl_cekout)) ?></td>	
 			<td style="text-align: center"><?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
 			<td style="text-align: center"><?php echo $header_transaksi->total_item ?></td>
 			<td style="text-align: center"><?php echo $header_transaksi->status_bayar ?></td>		
@@ -34,16 +34,16 @@
 				<div class="btn-group">
 			
 					<a href="<?php echo base_url('admin/transaksi/detail/' .$header_transaksi->kode_transaksi) ?> " 
-					class="btn btn-success btn-sm"><i class="fa fa-eye"></i> Detail</a>
+					class="btn btn-sm" style="background-color:#4E85DD; color: white;"><i class="fa fa-eye"></i> Detail</a>
 
 					<a href="<?php echo base_url('admin/transaksi/kirim/' .$header_transaksi->kode_transaksi) ?> " 
-					 class="btn btn-info btn-sm"><i class="fa  fa-truck"></i> Pengiriman</a>	
+					 class="btn btn-sm" style="background-color:#E25760; color: white;"><i class="fa  fa-truck"></i> Pengiriman</a>	
 
 					<a href="<?php echo base_url('admin/transaksi/resi/' .$header_transaksi->kode_transaksi) ?> " 
-					class="btn btn-warning btn-sm"><i class="fa fa-check"></i> No.Resi</a>		
+					class="btn btn-sm" style="background-color:#3CDA9D; color: white;"><i class="fa fa-check"></i> No.Resi</a>		
 				</div>
 				<div class="crearfix"></div>
-				<br>
+				
 				<div class="btn-group" >
 			
 					<!-- <a href="<?php echo base_url('admin/transaksi/pdf/' .$header_transaksi->kode_transaksi) ?> " 

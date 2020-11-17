@@ -57,7 +57,7 @@
 							<td></td>
 							<td>
 								<button class="btn btn-success" type="submit">
-									<i class="fa fa-save"></i> Login
+									<i class="fa fa-sign-in"></i> Login
 								</button>
 
 								<button class="btn btn-default" type="reset">

@@ -52,7 +52,7 @@ echo validation_errors('<div class="alert alert-warning">','</div>');
  <div class="form-group">
   <label  class="col-md-2 control-label"></label>
   <div class="col-md-5">
-   <button class="btn btn-success btn-md" nama="submit" type="submit">
+   <button class="btn btn-md" nama="submit" type="submit" style="background-color:#2AD694; color: white;">
    	<i class="fa fa-save"> Simpan</i>
    </button>
    

@@ -4,6 +4,7 @@
 	$nav_produk_mobile  = $this->konfigurasi_model->nav_produk();
 	 ?>
 
+
 	<div class="wrap_header">
 	<!-- Logo -->
 	<a href="<?php echo base_url() ?>" class="logo">
@@ -12,15 +13,15 @@
 
 	<!-- Menu -->
 	<div class="wrap_menu">
-		<nav class="menu">
-			<ul class="main_menu">
+		<nav class="menu" >
+			<ul class="main_menu" >
 
-				<li>
+				<li > 
 					<a href="<?php echo base_url() ?>">Beranda</a>
 				</li> 
 
 				<!-- Menu Produk -->
-				<li>
+				<li >
 					<a href="<?php echo base_url('produk') ?>">Produk &amp; Belanja</a>
 					<ul class="sub_menu">
 						<?php foreach($nav_produk as $nav_produk) { ?>
@@ -140,6 +141,29 @@
 	</div>
 	</div>
 	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<!-- Header Mobile -->
 	<div class="wrap_header_mobile">

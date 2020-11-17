@@ -226,6 +226,7 @@ class Dasbor extends CI_Controller {
 			'bukti_bayar'   		=> $upload_gambar['upload_data']['file_name'],
 			'id_rekening'   		=> $i->post('id_rekening'),
 			'tgl_bayar'   	 	    => $i->post('tgl_bayar'),
+			'tgl_konfirmasi'		=> $i->post('tgl_konfirmasi'),
 			'nama_bank'    		    => $i->post('nama_bank')
 		); 
 
@@ -256,6 +257,7 @@ class Dasbor extends CI_Controller {
 						//'bukti_bayar'   		=> $upload_gambar['upload_data']['file_name'],
 			'id_rekening'   		=> $i->post('id_rekening'),
 			'tgl_bayar'   	 	    => $i->post('tgl_bayar'),
+			'tgl_konfirmasi'		=> $i->post('tgl_konfirmasi'),
 			'nama_bank'    		    => $i->post('nama_bank')
 		); 
 

@@ -13,8 +13,8 @@
 <div class="col-sm-6 col-md-9 col-lg-9 p-b-50">
 
 
-		<h2><?php echo $title ?></h2>
-		<hr>
+		<h4><?php echo $title ?></h4>
+		<br>
 		
 				<?php 
 				//notifikasi
@@ -31,15 +31,13 @@
 				//form open
 				echo form_open(base_url('dasbor/profil'), 'class="leave-comment"'); ?>
 
-				<table class="table">
-					<thead>
+				<table class="table table-sm">
+					<tbody>
 						<tr>
-							<th width="25%">Nama</th>
+							<td>Nama</td>
 							<th><input type="text" name="nama_pelanggan" class="form-control" placeholder="NAMA Lengkap"
 							value="<?php echo $pelanggan->nama_pelanggan ?>" required></th>			
 						</tr>
-					</thead>
-					<tbody>
 						<tr>
 							<td>Email</td>
 							<td><input type="email" name="email" class="form-control" placeholder="Email"
@@ -48,7 +46,7 @@
 						<tr>
 							<td>Password</td>
 							<td><input type="password" name="password" class="form-control" placeholder="Password">
-							<span class="text-danger">Ketik minimal 6 karakter baru untuk mengganti password baru</span>
+							<span class="text-warning">Ketik minimal 6 karakter baru untuk mengganti password baru</span>
 						</td>
 						</tr>
 						<tr>
@@ -58,17 +56,17 @@
 						</tr>
 						<tr>
 							<td>Alamat</td>
-							<td><textarea name="alamat" class="form-control" placeholder="Alamat" >
+							<td><textarea name="alamat" class="form-control" placeholder="Alamat"  >
 							<?php echo $pelanggan->alamat ?></textarea></td>
 						</tr>
 						<tr>
 							<td></td>
 							<td>
-								<button class="btn btn-success" type="submit">
+								<button class="btn btn-dark btn-md" type="submit">
 									<i class="fa fa-save"></i> Update Profil
 								</button>
 
-								<button class="btn btn-default" type="reset">
+								<button class="btn btn-default btn-md"  type="reset">
 									<i class="fa fa-times"></i> Reset
 								</button>
 							</td>

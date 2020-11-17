@@ -1,18 +1,28 @@
+ <style type="text/css">
+   .j {
+   color: blue;
+   }
+   .r {
+   color: #c72838;
+   }
+   .ketiga {
+   color: rgb(200,200,0);
+   }
+</style>
+
  <header class="main-header">
     <!-- Logo -->
-    <a href="<?php echo base_url('admin/dasbor') ?>" class="logo">
+    <a href="<?php echo base_url('admin/dasbor') ?>" class="logo" style="background-color:#ad1d35;">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>RJ</b> BAG</span>
+      <span class="logo-mini"><b class="r">R</b> <b class="j">J</b> BAG</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>RJ</b>BAG</span>
+      <span class="logo-lg"><b >RJ</b>BAG</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
+    <nav class="navbar navbar-static-top" style="background-color:#ad1d35;">
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" >
         <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
 

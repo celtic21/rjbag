@@ -113,7 +113,7 @@ class Belanja extends CI_Controller {
 					'telepon'   	   => $i->post('telepon'),
 					'alamat'   		   => $i->post('alamat'),
 					'kode_transaksi'   => $i->post('kode_transaksi'),
-					'tgl_transaksi'    => $i->post('tgl_transaksi'),
+					'tgl_cekout'       => $i->post('tgl_cekout'),
 					'jumlah_transaksi' => $i->post('total_pembayaran'),
 					'status_bayar'     => 'Belum',
 					'tgl_post'         => date('Y-m-d H:i:s'),
@@ -132,7 +132,7 @@ class Belanja extends CI_Controller {
 						'harga'			  => $keranjang['price'],
 						'jumlah'		  => $keranjang['qty'],
 						'total_harga'	  => $sub_total,
-						'tgl_transaksi'	  => $i->post('tgl_transaksi')
+						'tgl_cekout'	  => $i->post('tgl_cekout')
 					);
 					$this->transaksi_model->tambah($data);
 

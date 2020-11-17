@@ -49,11 +49,7 @@ $site  =  $this->konfigurasi_model->listing();
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/template/css/main.css">
 <!--===============================================================================================-->
 <style type="text/css" media="screen">
-	/* ul.pagination{
-		padding: 0 10px;
-		background-color: red;
-		border-radius: 10px ;
-	} */
+
 
 	.pagination a, .pagination b{
 		padding: 10px 20px;
@@ -62,7 +58,7 @@ $site  =  $this->konfigurasi_model->listing();
 	}
 	
 	.pagination a {
-		background-color: red;
+		background-color: #D42430;
 		color: white;
 	}
 
@@ -74,6 +70,37 @@ $site  =  $this->konfigurasi_model->listing();
 	.pagination a:hover{
 		background-color: black;
 	}
+	.wrap_header {
+
+    /* background-color: #D42430;
+	 */}
+
+	p {
+    font-family: Montserrat-Regular;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #000000;
+    margin: 0px;
+}
+.topbar {
+    height: 45px;
+    background-color: #f5f5f5;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-wrapicon1 img, .header-wrapicon2 img {
+    height: 100%;
+    color: white;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: transparent;
+    opacity: 1;
+}
+
 </style>
 
 </head>

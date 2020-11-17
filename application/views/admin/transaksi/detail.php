@@ -1,48 +1,44 @@
-<p class="pull-right">
-	<div class="btn-group pull-right">
-		<a href="<?php echo base_url('admin/transaksi/cetak/' .$header_transaksi->kode_transaksi) ?>" 
-			target="_blank" title="Cetak" class="btn btn-info btn-sm">
-			<i class="fa fa-print"></i> Cetak
-		</a>
-		<a href="<?php echo base_url('admin/transaksi') ?>" title="Kembali" class="btn btn-success btn-sm">
-			<i class="fa fa-backward"></i> Kembali
-		</a>
-	</div>
-</p>
-<div class="clearfix"></div><hr>
-
+<div class="clearfix"></div>
 <table class="table table-bordered">
 	<thead>
 
 		<tr>
 			<th width="20%">NAMA PELANGGAN</th>
-			<th>: <?php echo $header_transaksi->nama_pelanggan ?></th>
+			<th> <?php echo $header_transaksi->nama_pelanggan ?></th>
 		</tr>
 		<tr>
 			<th width="20%">KODE TRANSAKSI</th>
-			<th>: <?php echo $header_transaksi->kode_transaksi ?></th>
+			<th> <?php echo $header_transaksi->kode_transaksi ?></th>
 		</tr>
 			<tr>
 			<th width="20%">NO.RESi</th>
-			<th>: <?php echo $header_transaksi->resi ?></th>
+			<th> <?php echo $header_transaksi->resi ?></th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td>TANGGAL</td>
-			<td>: <?php echo date('d-m-y',strtotime($header_transaksi->tgl_transaksi)) ?></td>
+			<td>TANGGAL CHECKOUT</td>
+			<td> <?php echo date('d-m-y',strtotime($header_transaksi->tgl_cekout)) ?></td>
+		</tr>
+		<tr>
+			<td>TANGGAL BAYAR</td>
+			<td> <?php echo date('d-m-y',strtotime($header_transaksi->tgl_bayar)) ?></td>
+		</tr>
+		<tr>
+			<td>TANGGAL KONFIRMASI</td>
+			<td> <?php echo date('y-m-d',strtotime($header_transaksi->tgl_konfirmasi)) ?></td>
 		</tr>
 		<tr>
 			<td>JUMLAH TOTAL</td>
-			<td>: <?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
+			<td>Rp. <?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
 		</tr>
 		<tr>
 			<td>STATUS BAYAR</td>
-			<td>: <?php echo $header_transaksi->status_bayar ?></td>
+			<td> <?php echo $header_transaksi->status_bayar ?></td>
 		</tr>
 		<tr>
 			<td>BUKTI BAYAR</td>
-			<td>: <?php 
+			<td> <?php 
 				  if($header_transaksi->bukti_bayar =="") { echo 'Belum Ada';
 				}else { ?>
 				  <img src="<?php echo base_url('assets/upload/image/' .$header_transaksi->bukti_bayar) ?>" class="img img-thumbnail" width="200">
@@ -51,15 +47,15 @@
 		</tr>
 		<tr>
 			<td>TANGGAL BAYAR</td>
-			<td>: <?php echo date('d-m-y', strtotime($header_transaksi->status_bayar)) ?></td>
+			<td> <?php echo date('d-m-y', strtotime($header_transaksi->status_bayar)) ?></td>
 		</tr>
 		<tr>
 			<td>JUMLAH BAYAR</td>
-			<td>: Rp. <?php echo number_format($header_transaksi->jumlah_bayar,'0',',','.') ?></td>
+			<td> Rp. <?php echo number_format($header_transaksi->jumlah_bayar,'0',',','.') ?></td>
 		</tr>
 		<tr>
 			<td>PEMBAYRAN DARI</td>
-			<td>: <?php echo $header_transaksi->nama_bank ?> No. rekening 
+			<td> <?php echo $header_transaksi->nama_bank ?> No. rekening 
 				  <?php echo $header_transaksi->rekening_pembayaran ?> a.n 
 				   <?php echo $header_transaksi->rekening_pelanggan ?>
 				  
@@ -67,7 +63,7 @@
 		</tr>
 			<tr>
 			<td>PEMBAYARAN KE REKENING</td>
-			<td>: <?php echo $header_transaksi->bank ?> No. rekening 
+			<td> <?php echo $header_transaksi->bank ?> No. rekening 
 				  <?php echo $header_transaksi->nomor_rekening ?> a.n
 				  <?php echo $header_transaksi->nama_pemilik ?>
 					
@@ -104,3 +100,15 @@
 		<?php $i++; } ?>
 	</tbody>
 </table>
+<hr>
+<p class="pull-right">
+	<div class="btn-group pull-right">
+		<a href="<?php echo base_url('admin/transaksi/cetak/' .$header_transaksi->kode_transaksi) ?>" 
+			target="_blank" title="Cetak" class="btn btn-info btn-sm">
+			<i class="fa fa-print"></i> Cetak
+		</a>
+		<!-- <a href="<?php echo base_url('admin/transaksi') ?>" title="Kembali" class="btn btn-success btn-sm">
+			<i class="fa fa-backward"></i> Kembali
+		</a> -->
+	</div>
+</p>

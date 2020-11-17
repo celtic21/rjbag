@@ -15,14 +15,14 @@
 
 		<h4><?php echo $title ?></h4>
 		<hr>
-		<p>Berikut adalah riwayat belanja anda</p>
+		<!-- <p>Berikut adalah riwayat belanja anda</p> -->
 
 		<?php 
 		//kalau ada transaksi tampilkan tabel
 		if($header_transaksi) { 
 		?>
 
-		<table class="table table-bordered">
+		<!-- <table class="table table-hover table-sm">
 			<thead>
 				<tr>
 					<th width="20%">KODE TRANSAKSI</th>
@@ -36,8 +36,8 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td>TANGGAL CHECKOUT</td>
-					<td> <?php echo date('d-m-y',strtotime($header_transaksi->tgl_transaksi)) ?></td>
+					<td>CHECKOUT</td>
+					<td> <?php echo date('d-m-y',strtotime($header_transaksi->tgl_cekout)) ?></td>
 				</tr>
 				
 				<tr>
@@ -62,9 +62,33 @@
 				</tr>
 				
 			</tbody>
-		</table>
+		</table> -->
 
+		 <div class="row">
+        <div class="col-sm-12">
+      </div>
+  
+    
+        <div class="col-md-6 invoice-col">
+          	<p>Kode Transaksi &nbsp;: <?php echo $header_transaksi->kode_transaksi ?></p>
+            <p>NO.RESI &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: <?php echo $header_transaksi->resi ?></p>
+            <p>CHECKOUT &nbsp; &nbsp; &nbsp; &nbsp;: <?php echo date('d-m-y',strtotime($header_transaksi->tgl_cekout)) ?></p>
+            <p>STATUS BAYAR &nbsp;: <?php echo $header_transaksi->status_bayar ?></p>
+            
+        
+        </div>
+        <!-- /.col -->
+        
+        <!-- /.col -->
+        <div class="col-md-6 invoice-col">
+         	<p>Kurir &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;: <?php echo $header_transaksi->ekpedisi ?></p>
+            <p>Ongkir &nbsp; &nbsp; &nbsp;: <?php echo number_format($header_transaksi->ongkir) ?></p>
+            <p>Estimasi &nbsp;: <?php echo $header_transaksi->estimasi ?></p>
+        </div>
+        <!-- /.col -->
+      </div>
 
+<br>
 		<table class="table table-bordered table-sm">
 			<thead>
 				<tr class="bg-light">
@@ -73,7 +97,7 @@
 					<th  style="text-align: center">NAMA PRODUK</th>
 					<th  style="text-align: center">JUMLAH</th>
 					<th  style="text-align: center">HARGA</th>
-					<th  style="text-align: center">SUB TOTAL</th>
+					<th  style="text-align: center">TOTAL</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -83,8 +107,8 @@
 					<td  style="text-align: center"><?php echo $transaksi->kode_produk ?></td>
 					<td ><?php echo $transaksi->nama_produk ?></td>	
 					<td  style="text-align: center"><?php echo number_format($transaksi->jumlah) ?></td>
-					<td  style="text-align: center"><?php echo number_format($transaksi->harga) ?></td>
-					<td  style="text-align: center"><?php echo number_format($transaksi->total_harga) ?></td>
+					<td  >Rp.<?php echo number_format($transaksi->harga) ?></td>
+					<td  >Rp.<?php echo number_format($transaksi->total_harga) ?></td>
 				</tr>
 				<?php $i++; } ?>
 			</tbody>
@@ -100,6 +124,8 @@
 			</p>
 
 		<?php } ?>
+
+		<style>p.indent{ padding-left: 1.8em }</style>
 		
 
 </div>
