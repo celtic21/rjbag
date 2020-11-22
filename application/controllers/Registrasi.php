@@ -18,7 +18,7 @@ class Registrasi extends CI_Controller {
 	//halaman registrasi
 	public function index()
 	{
-
+ 
 		//validasi input
 		$valid = $this->form_validation;
 
