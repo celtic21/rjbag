@@ -29,10 +29,7 @@ echo form_open_multipart(base_url('admin/produk/gambar/' .$produk->id_produk),' 
   	  <button class="btn btn-success btn-lg" nama="submit" type="submit">
    	<i class="fa fa-save"> Simpan dan Unggah Gambar</i>
    </button>
-   
-     <button class="btn btn-info btn-lg" nama="reset" type="reset">
-     	<i class="fa fa-times">Reset</i>
-     </button>
+
   </div>
 </div>
 

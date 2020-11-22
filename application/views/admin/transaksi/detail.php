@@ -26,7 +26,7 @@
 		</tr>
 		<tr>
 			<td>TANGGAL KONFIRMASI</td>
-			<td> <?php echo date('y-m-d',strtotime($header_transaksi->tgl_konfirmasi)) ?></td>
+			<td> <?php echo date('d-m-y',strtotime($header_transaksi->tgl_konfirmasi)) ?></td>
 		</tr>
 		<tr>
 			<td>JUMLAH TOTAL</td>
@@ -104,7 +104,7 @@
 <p class="pull-right">
 	<div class="btn-group pull-right">
 		<a href="<?php echo base_url('admin/transaksi/cetak/' .$header_transaksi->kode_transaksi) ?>" 
-			target="_blank" title="Cetak" class="btn btn-info btn-sm">
+			target="_blank" title="cetak" class="btn btn-info btn-sm">
 			<i class="fa fa-print"></i> Cetak
 		</a>
 		<!-- <a href="<?php echo base_url('admin/transaksi') ?>" title="Kembali" class="btn btn-success btn-sm">

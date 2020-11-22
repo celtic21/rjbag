@@ -135,7 +135,7 @@
 				<tr>
 					<td>Dari No Rekening</td>
 					<td>
-						<input type="text" name="rekening_pembayaran" class="form-control" placeholder="Nomor Rekening"
+						<input type="number" name="rekening_pembayaran" class="form-control" placeholder="Nomor Rekening"
 						value="<?php echo  $header_transaksi->rekening_pembayaran ?>">
 						<small>Misal : 85386538232</small>
 					</td>

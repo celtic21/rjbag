@@ -104,6 +104,8 @@
             <li><a href="<?php echo base_url('admin/konfigurasi/icon') ?>"><i class="fa  fa-file-image-o"></i> Konfigurasi icon</a></li>
           </ul>
         </li>
+       <!-- menu transaksi -->
+        <li><a href="<?php echo base_url('admin/transaksi') ?>"><i class="fa fa-bar-chart text-aqua"></i> <span>LAPORAN</span></a></li>
 <?php } ?>
 
     

@@ -7,11 +7,14 @@ class Dasbor extends CI_Controller {
 	{
 		parent::__construct();
 		$this->simple_login->cek_login();
+		$this->load->model('Produk_model');
 	}
 
 	public function index()
 	{
-		$data = array(	
+		$total_produk = $this->Produk_model->total_data();
+		$data = array(
+			'total_produk' => $total_produk,	
 			'title' => 'Halaman Administrator',
 			'isi' => 'admin/dasbor/list'	
 		);

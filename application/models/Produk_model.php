@@ -9,6 +9,14 @@ class Produk_model extends CI_Model {
 		$this->load->database();
 	}
 
+public function total_data()
+{
+	    $this->db->select('*');
+		$this->db->from('tb_produk');
+		$query = $this->db->get();
+		$rowcount = $query->num_rows();
+		return $rowcount;
+}
 
 //detail produk
 	public function listing()

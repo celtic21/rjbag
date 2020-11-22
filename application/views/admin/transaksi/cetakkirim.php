@@ -26,10 +26,36 @@
       border: solid thin #000;
     }
   </style>
+  <style type="text/css" media="screen">
+    body{
+      font-size: 12px;
+      font-family: Arial;
+    }
+    table{
+      border: solid thin #000;
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 1cm;
+    }
+    td{
+      padding: 6px 12px;
+      border: solid thin #000;
+      text-align: left;
+    }.bg-success{
+      background-color: #F5F5F5;
+      font-weight: bold;
+      border: solid thin #000;
+    }
+  </style>
 
 </head>
-<body>
+<body onload="print()">
+ 
+
   <div style="width: 19cm; height: 27cm; padding-top: 1cm; ">
+       <div style="text-align: left; font-weight: bold;">
+     <img src="<?php echo base_url() ?>assets/tampilan/logo.jpg" style="height :50px; width: 50px;" >
+ </div>
   <H1 style="text-align: center; font-size: 18px; font-weight: bold; border-top: solid thin #EEE;
   padding-top: 20px;">PENGIRIMAN</H1>
   <small class="pull-right">Date: <?php echo date ('d/m/y') ?></small>
@@ -88,5 +114,6 @@
 </table>
  <!--  <u ><span>TOTAL PEMBELIAN</span></u><span> : Rp. <?php echo number_format($header_transaksi->jumlah_bayar) ?></span> -->
   </div>
+</div>
 </body>
 </html>

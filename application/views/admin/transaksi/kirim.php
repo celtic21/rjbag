@@ -75,7 +75,7 @@
 
        <br>
         <div class="btn pull-right">
-          <a href="<?php echo base_url('admin/transaksi/cetakkirim/' .$header_transaksi->kode_transaksi) ?>" target="_blank" class="btn btn-info"><i class="fa fa-print"></i> Cetak</a>
+          <a href="<?php echo base_url('admin/transaksi/cetakkirim/' .$header_transaksi->kode_transaksi) ?>" target="_blank" title="cetak" class="btn btn-info"><i class="fa fa-print"></i> Cetak</a>
         </div>
 
       <div class="row">
