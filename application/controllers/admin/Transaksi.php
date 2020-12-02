@@ -171,7 +171,8 @@ public function resi($kode_transaksi)
 
 		$this->header_transaksi_model->editresi($data);
 		$this->session->set_flashdata('sukses', 'Resi telah dimasukkan');
-		redirect(base_url('admin/transaksi/resi/'.$header_transaksi->kode_transaksi),'refresh');
+		// redirect(base_url('admin/transaksi/resi/'.$header_transaksi->kode_transaksi),'refresh');
+		redirect(base_url('admin/transaksi'),'refresh');
 	}
 	//end masuk database
 

@@ -1,3 +1,10 @@
+<?php if ($this->session->userdata('level') == 'Admin') { 
+
+redirect(base_url('admin/user/blok'),'refresh');
+}
+
+?>
+
 <div class="row">
    <div class="col-xs-12">
       <div >

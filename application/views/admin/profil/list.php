@@ -38,14 +38,16 @@ echo validation_errors('<div class="alert alert-warning">','</div>');
  <div class="form-group">
   <label  class="col-md-2 control-label">Telepon</label>
   <div class="col-md-5">
-    <input type="text" name="telepon" class="form-control" placeholder="Telepon" value="<?php echo $profil->telepon ?>" required >
+    <input type="number" name="telepon" class="form-control" placeholder="Telepon" value="<?php echo $profil->telepon ?>" required >
   </div>
 </div>
 
  <div class="form-group">
   <label  class="col-md-2 control-label">Password</label>
+
   <div class="col-md-5">
-    <input type="password" name="password" class="form-control" placeholder="ketik min 4 karakter untuk mengganti password" required >
+    <input type="password" name="password" class="form-control" placeholder="ketik min 3 karakter untuk mengganti password" >
+    <!-- <span class="text text-warning">*ketik untuk mengubah password</span> -->
   </div>
 </div>
 

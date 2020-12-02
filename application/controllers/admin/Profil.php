@@ -45,8 +45,9 @@ public function profil()
 				  'min_length' => '%s minimal 11 karakter',
 				  'max_length' => '%s maksimal 13 karakter'));
 
-		$valid->set_rules('password','password','required',
-			array('required' => '%s harus diisi'));
+		$valid->set_rules('password','password','min_length[3]',
+			array(
+					'min_length' => '%s minimal 3 karakter',));
 
 
 
@@ -63,7 +64,7 @@ public function profil()
 		}else{
 			$i = $this->input;
 		//kalau password lebih dari 4 karakter, maka passwor di ganti
-			if(strlen($i->post('password')) >= 4) {
+			if(strlen($i->post('password')) >= 3) {
 				$data = array ( 'id_user'	   => $id_user,
 					'nama'   => $i->post('nama'),
 					'telepon'   	   => $i->post('telepon'),
@@ -90,4 +91,3 @@ public function profil()
 
 
 }
-

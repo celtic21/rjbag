@@ -110,8 +110,8 @@ public function tambah()
 				  'min_length' => '%s minimal 11 karakter',
 				  'max_length' => '%s maksimal 13 karakter'));
 
-		$valid->set_rules('password','password','required',
-			array('required' => '%s harus diisi'));
+		$valid->set_rules('password','password','min_length[3]',
+			array('min_length' => '%s minimal 3 karakter'));
 
 
 		if($valid->run()==FALSE){
@@ -124,16 +124,29 @@ public function tambah()
 		$this->load->view('admin/layout/wrapper', $data, FALSE);
 	}else{
 		$i = $this->input;
-		$data = array ( 'id_user'		=> $id_user,
-						'nama'  	    => $i->post('nama'),
+
+		if(strlen($i->post('password')) >= 3) {
+				$data = array ( 'id_user'	   => $id_user,
+					'nama'  	    => $i->post('nama'),
 						'jenis_kelamin' => $i->post('jenis_kelamin'),
 						'alamat'        => $i->post('alamat'),
 						'telepon'       => $i->post('telepon'),
 						'username'      => $i->post('username'),
 						'password'      => SHA1($i->post('password')),
 						'level'    		=> $i->post('level')
-		);
-
+				);
+			}else{
+			//kalau passwornya kurang dari 6 ,maka password tidak di ganti
+				$data = array ( 'id_user'	   => $id_user,
+					'nama'  	    => $i->post('nama'),
+						'jenis_kelamin' => $i->post('jenis_kelamin'),
+						'alamat'        => $i->post('alamat'),
+						'telepon'       => $i->post('telepon'),
+						'username'      => $i->post('username'),
+						'level'    		=> $i->post('level')
+					
+				);
+			}
 		$this->user_model->edit($data);
 		$this->session->set_flashdata('sukses', 'Data telah diedit');
 		redirect(base_url('admin/user'),'refresh');

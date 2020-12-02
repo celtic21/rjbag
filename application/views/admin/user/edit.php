@@ -14,6 +14,23 @@ echo form_open(base_url('admin/user/edit/'.$user->id_user),' class="form-horizon
  ?>
 
  <div class="form-group">
+  <label  class="col-md-2 control-label">Username</label>
+  <div class="col-md-5">
+    <input type="text" name="username" class="form-control" placeholder="username" value="<?php echo $user->username ?>" >
+  </div>
+</div>
+
+<div class="form-group">
+  <label  class="col-md-2 control-label">Hak Akses</label>
+  <div class="col-md-5">
+    <select name="level" class="form-control">
+      <option value="Owner">Owner</option>
+      <option value="Admin">Admin <?php if($user->level=="Admin") { echo "selected"; } ?>>Admin</option>
+    </select>
+  </div>
+</div>
+
+ <div class="form-group">
   <label  class="col-md-2 control-label">Nama Pengguna</label>
   <div class="col-md-5">
     <input type="text" name="nama" class="form-control" placeholder="Nama Pengguna" value="<?php echo $user->nama ?>" required >
@@ -40,33 +57,20 @@ echo form_open(base_url('admin/user/edit/'.$user->id_user),' class="form-horizon
  <div class="form-group">
   <label  class="col-md-2 control-label">Telepon</label>
   <div class="col-md-5">
-    <input type="text" name="telepon" class="form-control" placeholder="Telepon" value="<?php echo $user->telepon ?>" required >
+    <input type="number" name="telepon" class="form-control" placeholder="Telepon" value="<?php echo $user->telepon ?>" required >
   </div>
 </div>
 
- <div class="form-group">
-  <label  class="col-md-2 control-label">Username</label>
-  <div class="col-md-5">
-    <input type="text" name="username" class="form-control" placeholder="username" value="<?php echo $user->username ?>" >
-  </div>
-</div>
+
 
  <div class="form-group">
   <label  class="col-md-2 control-label">Password</label>
   <div class="col-md-5">
-    <input type="password" name="password" class="form-control" placeholder="ketikan min 4 karakter untuk mengganti password" required >
+    <input type="password" name="password" class="form-control" placeholder="ketikan min 3 karakter untuk mengganti password" >
   </div>
 </div>
 
-<div class="form-group">
-  <label  class="col-md-2 control-label">Hak Akses</label>
-  <div class="col-md-5">
-  	<select name="level" class="form-control">
-  		<option value="Owner">Owner</option>
-  		<option value="Admin">Admin <?php if($user->level=="Admin") { echo "selected"; } ?>>Admin</option>
-  	</select>
-  </div>
-</div>
+
 
  <div class="form-group">
   <label  class="col-md-2 control-label"></label>

@@ -1,3 +1,10 @@
+<?php if ($this->session->userdata('level') == 'Admin') { 
+
+redirect(base_url('admin/user/blok'),'refresh');
+}
+
+?>
+
 <p>
 	<a href="<?php echo base_url('admin/rekening/tambah') ?>" class="btn btn-success btn lg">
 		<i class="fa fa-plus"></i> Tambah Baru
