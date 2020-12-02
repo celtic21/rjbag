@@ -38,7 +38,7 @@ class Konfigurasi extends CI_Controller {
 		$this->load->view('admin/layout/wrapper', $data, FALSE);
 	}else{
 		$i    = $this->input;
-		$data = array ( 'id_konfigurasi'    	=> $konfigurasi->id_konfigurasi,
+		$data = array ( 'id_profil'    			=> $konfigurasi->id_profil,
 						'namaweb'    			=> $i->post('namaweb'),
 						'tagline'    			=> $i->post('tagline'),
 						'email'    				=> $i->post('email'),
@@ -120,7 +120,7 @@ class Konfigurasi extends CI_Controller {
 
 		$i = $this->input;
 	
-		$data = array ( 'id_konfigurasi'   => $konfigurasi->id_konfigurasi,
+		$data = array ( 'id_profil'   => $konfigurasi->id_profil,
 						'namaweb'   	   => $i->post('namaweb'),
 						'logo'   		   => $upload_gambar['upload_data']['file_name'],
 					  ); 
@@ -132,7 +132,7 @@ class Konfigurasi extends CI_Controller {
 		//edit produk tanpa ganti gambar
 		$i = $this->input;
 	
-		$data = array ( 'id_konfigurasi'   => $konfigurasi->id_konfigurasi,
+		$data = array ( 'id_profil'   => $konfigurasi->id_profil,
 						'namaweb'   	   => $i->post('namaweb'),
 						//'logo'   		   => $upload_gambar['upload_data']['file_name'],
 					  ); 
@@ -212,7 +212,7 @@ class Konfigurasi extends CI_Controller {
 
 		$i = $this->input;
 	
-		$data = array ( 'id_konfigurasi'   => $konfigurasi->id_konfigurasi,
+		$data = array ( 'id_profil'   => $konfigurasi->id_profil,
 						'namaweb'   	   => $i->post('namaweb'),
 						'icon'   		   => $upload_gambar['upload_data']['file_name'],
 					  ); 
@@ -224,7 +224,7 @@ class Konfigurasi extends CI_Controller {
 		//edit produk tanpa ganti gambar
 		$i = $this->input;
 	
-		$data = array ( 'id_konfigurasi'   => $konfigurasi->id_konfigurasi,
+		$data = array ( 'id_profil'   => $konfigurasi->id_profil,
 						'namaweb'   	   => $i->post('namaweb'),
 						//'icon'   		   => $upload_gambar['upload_data']['file_name'],
 					  ); 

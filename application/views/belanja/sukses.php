@@ -18,7 +18,8 @@
 <p class="alert alert-success">
 	Terimakasih, Barang yang sudah anda beli akan segera kami proses :)
 	<br>
-	Silahkan lakukan konfirmasi pembayaran
+	Silahkan lakukan
+	<a href="<?php echo base_url('dasbor/belanja') ?>" class="alert-success"> konfirmasi pembayaran</a>
 </p>
 
 </div>

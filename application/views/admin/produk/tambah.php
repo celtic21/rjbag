@@ -14,7 +14,7 @@ echo form_open_multipart(base_url('admin/produk/tambah'),' class="form-horizonta
  ?>
 
  <div class="form-group ">
-  <label  class="col-md-2 control-label">Nama Produk</label>
+  <label  class="col-md-2 control-label">Nama</label>
   <div class="col-md-5">
     <input type="text" name="nama_produk" class="form-control" placeholder="Nama Produk" value="<?php echo set_value('nama_produk') ?>" required >
   </div>
@@ -22,14 +22,14 @@ echo form_open_multipart(base_url('admin/produk/tambah'),' class="form-horizonta
 
 
  <div class="form-group">
-  <label  class="col-md-2 control-label">Kode Produk</label>
+  <label  class="col-md-2 control-label">Kode</label>
   <div class="col-md-5">
     <input type="text" name="kode_produk" class="form-control" placeholder="Kode Produk" value="<?php echo set_value('kode_produk') ?>" required >
   </div>
 </div>
 
 <div class="form-group">
-  <label  class="col-md-2 control-label">Kategori Produk</label>
+  <label  class="col-md-2 control-label">Kategori</label>
   <div class="col-md-5">
     <select name="id_kategori" class="form-control">
       <?php foreach($kategori as $kategori) { ?>
@@ -40,28 +40,28 @@ echo form_open_multipart(base_url('admin/produk/tambah'),' class="form-horizonta
   </div>
 
  <div class="form-group">
-  <label  class="col-md-2 control-label">Harga Produk</label>
+  <label  class="col-md-2 control-label">Harga</label>
   <div class="col-md-5">
     <input type="number" name="harga" class="form-control" placeholder="Harga Produk" min="1" value="<?php echo set_value('harga') ?>" required >
   </div>
 </div>
 
 <div class="form-group">
-  <label  class="col-md-2 control-label">Stok Produk</label>
+  <label  class="col-md-2 control-label">Stok</label>
   <div class="col-md-5">
     <input type="number" name="stok" class="form-control" placeholder="Stok Produk" min="1" value="<?php echo set_value('stok') ?>" required >
   </div>
 </div>
 
 <div class="form-group">
-  <label  class="col-md-2 control-label">Berat Produk</label>
+  <label  class="col-md-2 control-label">Berat</label>
   <div class="col-md-5">
     <input type="number" name="berat" class="form-control" placeholder="Berat Produk" min="1" value="<?php echo set_value('berat') ?>" required >
   </div>
 </div>
 
 <div class="form-group">
-  <label  class="col-md-2 control-label">Ukuran Produk</label>
+  <label  class="col-md-2 control-label">Ukuran</label>
   <div class="col-md-5">
     <input type="text" name="ukuran" class="form-control" placeholder="Ukuran Produk" value="<?php echo set_value('ukuran') ?>" required >
   </div>
@@ -75,14 +75,14 @@ echo form_open_multipart(base_url('admin/produk/tambah'),' class="form-horizonta
 </div>
 
 <div class="form-group">
-  <label  class="col-md-2 control-label">Upload Gambar</label>
+  <label  class="col-md-2 control-label">Gambar</label>
   <div class="col-md-10">
    <input type="file" name="gambar" class="form-control" required="required" >
   </div>
 </div> 
 
 <div class="form-group">
-  <label  class="col-md-2 control-label">Status Produk</label>
+  <label  class="col-md-2 control-label">Status</label>
   <div class="col-md-10">
     <select name="status_produk" class="form-control">
       <option value="Publish">Publikasikan</option>

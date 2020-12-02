@@ -46,7 +46,6 @@ class Registrasi extends CI_Controller {
 		}else{
 			$i = $this->input;
 			$data = array ( 
-				'status_pelanggan' => 'Pending',
 				'nama_pelanggan'   => $i->post('nama_pelanggan'),
 				'email'     	   => $i->post('email'),
 				'password'     	   => SHA1($i->post('password')),

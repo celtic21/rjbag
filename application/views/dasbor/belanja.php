@@ -34,13 +34,13 @@
 			<tbody>
 				<?php $i=1; foreach($header_transaksi as $header_transaksi) { ?>
 				<tr style="text-align: center">
-
+ 
 					<td><?php echo $i ?></td>
 					<td><?php echo $header_transaksi->kode_transaksi ?></td>
 					<td><?php echo date('d-m-y',strtotime($header_transaksi->tgl_cekout)) ?></td>	
 					<td><?php echo $header_transaksi->total_item ?></td>
-					<td><?php echo number_format($header_transaksi->ongkir) ?></td>
-					<td><?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
+					<td>Rp. <?php echo number_format($header_transaksi->ongkir) ?></td>
+					<td>Rp. <?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
 					<td><?php echo $header_transaksi->status_bayar ?></td>
 									
 

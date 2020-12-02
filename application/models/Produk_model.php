@@ -16,7 +16,7 @@ public function total_data()
 		$query = $this->db->get();
 		$rowcount = $query->num_rows();
 		return $rowcount;
-}
+} 
 
 //detail produk
 	public function listing()

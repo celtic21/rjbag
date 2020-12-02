@@ -74,7 +74,7 @@
 
 
          <!-- menu dasbor -->
-        <li><a href="<?php echo base_url('admin/rekening') ?>"><i class="fa fa-dollar text-aqua"></i> <span>Data Rekening</span></a></li>
+        <li><a href="<?php echo base_url('admin/rekening') ?>"><i class="fa fa-dollar text-aqua"></i> <span>REKENING</span></a></li>
 
       <!-- menu user -->
         <li class="treeview">
@@ -105,7 +105,7 @@
           </ul>
         </li>
        <!-- menu transaksi -->
-        <li><a href="<?php echo base_url('admin/transaksi') ?>"><i class="fa fa-bar-chart text-aqua"></i> <span>LAPORAN</span></a></li>
+        <li><a href="<?php echo base_url('admin/laporan') ?>"><i class="fa fa-bar-chart text-aqua"></i> <span>LAPORAN</span></a></li>
 <?php } ?>
 
     

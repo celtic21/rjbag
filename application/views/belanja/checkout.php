@@ -204,36 +204,21 @@ $kode_transaksi = random_string('alnum', 11);
 				?>
 
 				<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
-					<td colspan="4" class="column-1">Total Belanja</td>
+					<td colspan="4" class="column-1">TOTAL BELANJA</td>
 					<td colspan="2" class="column-2">Rp. <?php echo number_format($this->cart->total(),'0',',','.') ?></td>
 				</tr>
 
+				<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
+							<td colspan="4" class="column-1">BIAYA PENGIRIMAN</td>
+							<td colspan="2" class="column-2 " id="ongkir2"></td>
+				</tr>
+
+				<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
+							<td colspan="4" class="column-1">TOTAL PEMBAYARAN</td>
+							<td colspan="2" class="column-2"><input style="background-color: unset; font-weight: bold;" id="total_pembayaran" type="text" name="total_pembayaran" readonly></td>
+				</tr>
+
 			</table>
-			<br>
-
-
-
-
-
-<table class="table">
-<tr class="table-row" style="font-weight: bold; background-color: #E8436C;">
-			<td colspan="4" class="column-1">BIAYA PENGIRIMAN</td>
-			<td colspan="4" class="column-3" id="ongkir2"></td>
-</tr>
-
-<tr class="table-rowt" style="font-weight: bold; background-color: #E8436C;">
-			<td colspan="4" class="column-1">TOTAL BELANJA</td>
-			<td colspan="4" class="column-3">Rp. <?php echo number_format($this->cart->total(),'0',',','.') ?></td>
-</tr>
-
-<tr class="table-row" style="font-weight: bold; background-color: #E8436C;">
-			<td colspan="4" class="column-1">TOTAL PEMBAYARAN</td>
-			<td colspan="4" class="column-3" >Rp. <input style="background-color: unset; font-weight: bold;" id="total_pembayaran" type="text" name="total_pembayaran" readonly></td>
-</tr>
-
-</table>
-
-
 
 <table class="table">
 </tr>
@@ -318,7 +303,7 @@ echo form_close();
 					dataType : 'json',
 					success : function(data){
 					var parse = JSON.parse(data);
-					console.log(parse.rajaongkir);
+					//console.log(parse.rajaongkir);
 					var costs = parse.rajaongkir.results[0].costs;
 					for(var i=0; i<costs.length; i++)
 						{
@@ -342,7 +327,8 @@ echo form_close();
 					
 					$("#ongkir").val(ongkir);
 					$("#estimasi").val(estimasi+" hari");
-					$("#total_pembayaran").val(total_pembayaran);
+					$("#total_pembayaran").val("Rp. "+total_pembayaran);
+
 					document.getElementById('ongkir2').innerHTML=new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(ongkir);
 				
 
@@ -355,7 +341,16 @@ echo form_close();
 
 
 
-		
+<style type="text/css" media="screen">
+.table-shopping-cart td {
+    font-family: Montserrat-Regular;
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.5;
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+</style>		
 
 	
 

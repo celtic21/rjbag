@@ -10,6 +10,15 @@ class Transaksi_model extends CI_Model {
 	}
 
 
+	public function total_data()
+{
+	    $this->db->select('*');
+		$this->db->from('tb_transaksi');
+		$query = $this->db->get();
+		$rowcount = $query->num_rows();
+		return $rowcount;
+} 
+
 
 	//listing all user
 	public function listing()

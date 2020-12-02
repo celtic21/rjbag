@@ -47,7 +47,7 @@
 						</tr>
 						<tr>
 							<td>Telepon</td>
-							<td><input type="text" name="telepon" class="form-control" placeholder="Telepon"
+							<td><input type="number" name="telepon" class="form-control" placeholder="Telepon"
 							value="<?php echo set_value('telepon') ?>" required></td>
 						</tr>
 						<tr>

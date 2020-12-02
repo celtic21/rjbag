@@ -85,12 +85,6 @@ echo form_open_multipart(base_url('admin/konfigurasi'),' class="form-horizontal"
   </div>
 </div>
 
-<div class="form-group">
-  <label  class="col-md-2 control-label">Rekening Pembayaran</label>
-  <div class="col-md-8">
-    <input type="text" name="rekening_pembayaran" class="form-control" placeholder="Rekening Pembayaran" value="<?php echo $konfigurasi->rekening_pembayaran ?>" required >
-  </div>
-</div>
 
 
 <div class="form-group">

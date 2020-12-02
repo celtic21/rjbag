@@ -82,7 +82,7 @@
         <!-- /.col -->
         <div class="col-md-6 invoice-col">
          	<p>Kurir &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;: <?php echo $header_transaksi->ekpedisi ?></p>
-            <p>Ongkir &nbsp; &nbsp; &nbsp;: <?php echo number_format($header_transaksi->ongkir) ?></p>
+            <p>Ongkir &nbsp; &nbsp; : Rp. <?php echo number_format($header_transaksi->ongkir) ?></p>
             <p>Estimasi &nbsp;: <?php echo $header_transaksi->estimasi ?></p>
         </div>
         <!-- /.col -->
@@ -93,7 +93,7 @@
 			<thead>
 				<tr class="bg-light">
 					<th  style="text-align: center">NO</th>
-					<th  style="text-align: center">KODE</th>
+					<!-- <th  style="text-align: center">KODE</th> -->
 					<th  style="text-align: center">NAMA PRODUK</th>
 					<th  style="text-align: center">JUMLAH</th>
 					<th  style="text-align: center">HARGA</th>
@@ -104,7 +104,7 @@
 				<?php $i=1; foreach($transaksi as $transaksi) { ?>
 				<tr>
 					<td  style="text-align: center"><?php echo $i ?></td>
-					<td  style="text-align: center"><?php echo $transaksi->kode_produk ?></td>
+					<!-- <td  style="text-align: center"><?php echo $transaksi->kode_produk ?></td> -->
 					<td ><?php echo $transaksi->nama_produk ?></td>	
 					<td  style="text-align: center"><?php echo number_format($transaksi->jumlah) ?></td>
 					<td  >Rp.<?php echo number_format($transaksi->harga) ?></td>

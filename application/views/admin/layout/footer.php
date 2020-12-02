@@ -22,11 +22,14 @@
     <strong>Copyright &copy; 2014-2019 <a href="#">AdminLTE</a>.</strong> All rights
     reserved.
   </footer>
-
-<!-- ./wrapper -->
-
 <!-- jQuery 3 -->
 <script src="<?php echo base_url() ?>assets/admin/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- ./wrapper -->
+<!-- date-range-picker -->
+<script src="<?php echo base_url() ?>assets/admin/bower_components/moment/min/moment.min.js"></script>
+<script src="<?php echo base_url() ?>assets/admin/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap datepicker -->
+
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url() ?>assets/admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- DataTables -->
@@ -43,7 +46,10 @@
 <!-- page script -->
 <script>
   $(function () {
+      //Date range picker
+   
     $('#example1').DataTable()
+
     $('#example2').DataTable({
       'paging'      : true,
       'lengthChange': false,
@@ -52,7 +58,10 @@
       'info'        : true,
       'autoWidth'   : false
     })
+ $('#reservation').daterangepicker()
+
   })
+
 </script>
 </body>
 </html>

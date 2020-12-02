@@ -19,7 +19,10 @@ public function listing()
 		return $query->result();
 }	
 
-
+public function laporan()
+{
+	
+}
 
 
 }

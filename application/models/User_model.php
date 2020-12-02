@@ -8,6 +8,17 @@ class User_model extends CI_Model {
 		parent::__construct();
 		$this->load->database();
 	}
+
+
+	public function total_data()
+{
+	    $this->db->select('*');
+		$this->db->from('tb_user');
+		$query = $this->db->get();
+		$rowcount = $query->num_rows();
+		return $rowcount;
+} 
+
 //listing all user
 	public function listing()
 	{

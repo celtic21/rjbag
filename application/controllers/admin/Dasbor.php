@@ -7,16 +7,23 @@ class Dasbor extends CI_Controller {
 	{
 		parent::__construct();
 		$this->simple_login->cek_login();
-		$this->load->model('Produk_model');
+		$this->load->model('produk_model');
+		$this->load->model('user_model');
+		$this->load->model('transaksi_model');
 	}
 
 	public function index()
 	{
-		$total_produk = $this->Produk_model->total_data();
+		$total_produk 	    = $this->produk_model->total_data();
+		$total_user 	    = $this->user_model->total_data();
+		$total_transaksi	= $this->transaksi_model->total_data();
+
 		$data = array(
-			'total_produk' => $total_produk,	
-			'title' => 'Halaman Administrator',
-			'isi' => 'admin/dasbor/list'	
+			'total_produk' 		=> $total_produk,
+			'total_user' 		=> $total_user,
+			'total_transaksi' 	=> $total_transaksi,	
+			'title' 			=> 'Halaman Administrator',
+			'isi' 				=> 'admin/dasbor/list'	
 		);
 		$this->load->view('admin/layout/wrapper', $data, FALSE);
 	}

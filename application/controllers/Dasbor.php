@@ -19,18 +19,18 @@ class Dasbor extends CI_Controller {
 
 
 
-
+ 
 
 	//halaman dasbor
 	public function index()
 	{
 		//ambil data login id_pelanggan dari session
 		$id_pelanggan 		= $this->session->userdata('id_pelanggan');
-		$header_transaksi 	=  $this->header_transaksi_model->pelanggan($id_pelanggan);
+		$header_transaksi 	= $this->header_transaksi_model->pelanggan($id_pelanggan);
 
 		$data = array(	'title'				=>	'Halaman Dasboard Pelanggan',
-			'header_transaksi'	=> $header_transaksi,
-			'isi'				=>	'dasbor/list'
+			'header_transaksi'				=>  $header_transaksi,
+			'isi'							=>	'dasbor/list'
 		);
 		$this->load->view('layout/wrapper', $data, FALSE);
 	}
@@ -218,7 +218,7 @@ class Dasbor extends CI_Controller {
 		//end thumbnail
 
 		$i = $this->input;
-		$data = array ( 'id_header_transaksi'	=> $header_transaksi->id_header_transaksi,
+		$data = array ( 'id_detail_transaksi'	=> $header_transaksi->id_detail_transaksi,
 			'status_bayar'     	 	=> 'Konfirmasi',
 			'jumlah_bayar'      	=> $i->post('jumlah_bayar'),
 			'rekening_pembayaran'   => $i->post('rekening_pembayaran'),
@@ -249,7 +249,7 @@ class Dasbor extends CI_Controller {
 		//edit produk tanpa ganti bukti bayar
 		$i = $this->input;
 		$data = array ( 
-			'id_header_transaksi'	=> $header_transaksi->id_header_transaksi,
+			'id_detail_transaksi'	=> $header_transaksi->id_detail_transaksi,
 			'status_bayar'     	 	=> 'Konfirmasi',
 			'jumlah_bayar'      	=> $i->post('jumlah_bayar'),
 			'rekening_pembayaran'   => $i->post('jumlah_bayar'),

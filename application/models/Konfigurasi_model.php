@@ -12,16 +12,18 @@ class Konfigurasi_model extends CI_Model {
 	//listing
 	public function listing()
 	{
-		$query = $this->db->get('tb_konfigurasi');
+		$query = $this->db->get('tb_profil');
 		return $query->row();
 	}
 
 	//edit
 	public function edit($data)
 	{
-		$this->db->where('id_konfigurasi', $data['id_konfigurasi']);
-		$this->db->update('tb_konfigurasi', $data);
+		$this->db->where('id_profil', $data['id_profil']);
+		$this->db->update('tb_profil', $data);
 	}
+
+
 	//load menu kategori produk
 	public function nav_produk()
 	{
