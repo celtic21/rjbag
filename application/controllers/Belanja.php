@@ -63,8 +63,8 @@ class Belanja extends CI_Controller {
 			//cek pelanggan sudah login atau belum ?
 			//jika belum harus registrasi
 			//cek dengan session email
-
 			//kondisi sudah login
+		
 		if($this->session->userdata('email')){
 			$email 			= $this->session->userdata('email');
 			$nama_pelanggan = $this->session->userdata('nama_pelanggan');

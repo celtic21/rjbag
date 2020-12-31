@@ -57,7 +57,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-            <h3><?php echo $total_transaksi ?></h3>
+            <h3><?php echo $total_user ?></h3>
 
               <p>TOTAL PENGGUNA</p>
             </div>

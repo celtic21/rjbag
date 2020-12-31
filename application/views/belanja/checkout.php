@@ -327,7 +327,7 @@ echo form_close();
 					
 					$("#ongkir").val(ongkir);
 					$("#estimasi").val(estimasi+" hari");
-					$("#total_pembayaran").val("Rp. "+total_pembayaran);
+					$("#total_pembayaran").val(total_pembayaran);
 
 					document.getElementById('ongkir2').innerHTML=new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(ongkir);
 				

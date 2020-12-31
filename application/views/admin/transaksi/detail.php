@@ -41,7 +41,7 @@
 			<td> <?php 
 				  if($header_transaksi->bukti_bayar =="") { echo 'Belum Ada';
 				}else { ?>
-				  <img src="<?php echo base_url('assets/upload/image/' .$header_transaksi->bukti_bayar) ?>" class="img img-thumbnail" width="200">
+				  <img src="<?php echo base_url('assets/upload/image/' .$header_transaksi->bukti_bayar) ?>" class="img img-thumbnail" width="100">
 				<?php } ?>
 		    </td>
 		</tr>

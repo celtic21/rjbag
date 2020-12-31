@@ -18,7 +18,7 @@
 			<p class="alert alert-success">Sudah Memiliki akun ? Silahkan <a href="<?php echo base_url('masuk') ?>" class="btn btn-info btn-sm"> Login di sini</a></p>
 
 
-			<div class="col-md-12">
+			<div class="col-md-8">
 				<?php 
 				//display error
 				echo validation_errors('<div class="alert alert-warning">','</div>');
@@ -27,14 +27,14 @@
 				echo form_open(base_url('registrasi'), 'class="leave-comment"'); ?>
 
 				<table class="table">
-					<thead>
-						<tr>
-							<th width="25%">Nama</th>
-							<th><input type="text" name="nama_pelanggan" class="form-control" placeholder="NAMA Lengkap"
-							value="<?php echo set_value('nama_pelanggan') ?>" required></th>			
-						</tr>
-					</thead>
 					<tbody>
+						<tr>
+							<td>Nama</td>
+							<td><input type="text" name="nama_pelanggan" class="form-control" placeholder="Nama Lengkap"
+							value="<?php echo set_value('nama_pelanggan') ?>" required></td>			
+						</tr>
+				
+			
 						<tr>
 							<td>Email</td>
 							<td><input type="email" name="email" class="form-control" placeholder="Email"
@@ -51,9 +51,9 @@
 							value="<?php echo set_value('telepon') ?>" required></td>
 						</tr>
 						<tr>
-							<td>Alamat</td>
-							<td><textarea name="alamat" class="form-control" placeholder="Alamat">
-							<?php echo set_value('alamat') ?></textarea></td>
+							<td>Alamat Lengkap</td>
+							<td><input type="text" name="alamat" class="form-control" placeholder="Alamat"
+							value="<?php echo set_value('alamat') ?>" required></td>
 						</tr>
 						<tr>
 							<td></td>

@@ -7,15 +7,9 @@
 
 			<h3><?php echo $title ?></h3><hr>
 			<div class="clearfix"></div>
-			<br><br>
+			<br>
 
-			<?php if($this->session->flashdata('sukses')) {
-				echo '<div class="alert alert-warning">';
-				echo $this->session->flashdata('sukses');
-				echo '</div>';
-			} ?>
-
-			<p class="alert alert-success">Belum Memiliki akun ? Silahkan <a href="<?php echo base_url('registrasi') ?>" class="btn btn-info btn-sm"> Registrasi di sini</a></p>
+			
 
 
 			<div class="col-md-12">
@@ -35,8 +29,13 @@
 					echo '<div class="alert alert-success">';
 					echo $this->session->flashdata('sukses');
 					echo '</div>';
-				}
+				}?>
 
+
+				<p class="alert alert-success">Belum Memiliki akun ? Silahkan <a href="<?php echo base_url('registrasi') ?>" class="btn btn-info btn-sm"> Registrasi di sini</a></p>
+
+
+				<?php
 				//form open
 				echo form_open(base_url('masuk'), 'class="leave-comment"'); ?>
 

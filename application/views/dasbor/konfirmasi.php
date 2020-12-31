@@ -13,7 +13,7 @@
 <div class="col-sm-6 col-md-9 col-lg-9 p-b-50">
 
 
-		<h2><?php echo $title ?></h2>
+		<h4><?php echo $title ?></h4>
 		<hr>
 
 
@@ -108,12 +108,12 @@
 						if(isset($_POST['tgl_konfirmasi']))
 						{ echo set_value('tgl_konfirmasi');
 						}else{
-							echo date('d-m-y'); } ?>">
+							echo date('Y-m-d'); } ?>">
 				    </td>
 				</tr>
 				<tr>
 					<td>Jumlah Pembayaran</td>
-					<td>Rp.
+					<td>
 						<input type="number" name="jumlah_bayar" class="form-control-lg" readonly placeholder="Jumlah Pembayaran"
 						value="<?php
 						if(isset($_POST['jumlah_bayar'])) { echo set_value('jumlah_bayar');
@@ -129,7 +129,7 @@
 					<td>
 						<input type="text" name="nama_bank" class="form-control" placeholder="Nama Bank"
 						value="<?php echo $header_transaksi->nama_bank ?>">
-						<small>Misal : MANDIRI</small>
+						<small class="text text-info">Misal : MANDIRI</small>
 					</td>
 				</tr>
 				<tr>
@@ -137,7 +137,7 @@
 					<td>
 						<input type="number" name="rekening_pembayaran" class="form-control" placeholder="Nomor Rekening"
 						value="<?php echo  $header_transaksi->rekening_pembayaran ?>">
-						<small>Misal : 85386538232</small>
+						<small class="text text-info">Misal : 85386538232</small>
 					</td>
 				</tr>
 				<tr>
@@ -145,7 +145,7 @@
 					<td>
 						<input type="text" name="rekening_pelanggan" class="form-control" placeholder="Nama Pemilik Rekening"
 						value="<?php echo  $header_transaksi->rekening_pelanggan ?>">
-						<small>Misal : Andrew</small>
+						<small class="text text-info">Misal : Andrew</small>
 					</td>
 				</tr>
 				<tr>
@@ -188,3 +188,12 @@
 </div>
 </div>
 </section>
+
+<style type="text/css" media="screen">
+	.form-control-lg, .input-group-lg>.form-control, .input-group-lg>.input-group-addon, .input-group-lg>.input-group-btn>.btn {
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+}
+</style>

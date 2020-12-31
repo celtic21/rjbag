@@ -1,5 +1,5 @@
-<h4 class="m-text14 p-b-7">
-	Menu Pelanggan
+<h4 class="m-text14 p-b-7" style="text-align: left: ">
+	MENU
 </h4>
 
 <ul class="p-b-54">

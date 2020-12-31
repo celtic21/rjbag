@@ -47,14 +47,11 @@ Kategori Produk
 	</div>
 </div>
 
-<div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
-
+	<div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
 	<!-- Product -->
 	<div class="row">
 		<?php foreach($produk as $produk) {?>
-
-		<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
-
+	<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
 	<!-- form proses belanja -->
 	<?php echo form_open(base_url('belanja/add')); 
 	//elemen yg dibawa
@@ -67,6 +64,8 @@ Kategori Produk
 	echo form_hidden('redirect_page', str_replace('index.php/','',current_url()));
 	?>
 
+
+
 			<!-- Block2 -->
 			<div class="block2">
 				<div class="block2-img wrap-pic-w of-hidden pos-relative">
@@ -74,7 +73,7 @@ Kategori Produk
 					alt="<?php echo $produk->nama_produk ?>">
 
 					<div class="block2-overlay trans-0-4">
-						<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+						<a href="<?php echo base_url('produk/detail/'.$produk->slug_produk) ?>" class="block2-btn-addwishlist hov-pointer trans-0-4">
 							<i class="fa fa-eye" aria-hidden="true"></i>
 							<i class="fa fa-eye dis-none" aria-hidden="true"></i>
 						</a>

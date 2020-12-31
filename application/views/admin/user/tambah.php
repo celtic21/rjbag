@@ -28,7 +28,7 @@ echo form_open(base_url('admin/user/tambah'),' class="form-horizontal"');
   </div>
 </div>
 
-<div class="form-group">
+<!-- <div class="form-group">
   <label  class="col-md-2 control-label">Jenis Kelamin</label>
   <div class="col-md-5">
   	<select name="jenis_kelamin" class="form-control">
@@ -36,7 +36,24 @@ echo form_open(base_url('admin/user/tambah'),' class="form-horizontal"');
   		<option value="perempuan">Perempuan</option>
   	</select>
   </div>
-</div>
+</div> -->
+
+ <!-- radio -->
+               <div class="form-group">
+                <label  class="col-md-2 control-label">Jenis Kelamin</label>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="jenis_kelamin" id="optionsRadios1" value="Laki Laki" checked>
+                      Laki Laki
+                    </label>
+                    &nbsp; &emsp;
+                    <label>
+                      <input type="radio" name="jenis_kelamin" id="optionsRadios2" value="Perempuan">
+                     Perempuan
+                    </label>
+                  </div>
+                </div>
+<!-- radio -->
 
  <div class="form-group">
   <label  class="col-md-2 control-label">Alamat</label>
@@ -65,7 +82,7 @@ echo form_open(base_url('admin/user/tambah'),' class="form-horizontal"');
   <label  class="col-md-2 control-label">Hak Akses</label>
   <div class="col-md-5">
   	<select name="level" class="form-control">
-  		<option value="Owner">Owner</option>
+  		<option value="Pemilik">Pemilik</option>
   		<option value="Admin">Admin</option>
   	</select>
   </div>

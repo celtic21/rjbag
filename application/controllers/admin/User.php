@@ -127,7 +127,7 @@ public function tambah()
 
 		if(strlen($i->post('password')) >= 3) {
 				$data = array ( 'id_user'	   => $id_user,
-					'nama'  	    => $i->post('nama'),
+						'nama'  	    => $i->post('nama'),
 						'jenis_kelamin' => $i->post('jenis_kelamin'),
 						'alamat'        => $i->post('alamat'),
 						'telepon'       => $i->post('telepon'),
@@ -138,7 +138,7 @@ public function tambah()
 			}else{
 			//kalau passwornya kurang dari 6 ,maka password tidak di ganti
 				$data = array ( 'id_user'	   => $id_user,
-					'nama'  	    => $i->post('nama'),
+						'nama'  	    => $i->post('nama'),
 						'jenis_kelamin' => $i->post('jenis_kelamin'),
 						'alamat'        => $i->post('alamat'),
 						'telepon'       => $i->post('telepon'),

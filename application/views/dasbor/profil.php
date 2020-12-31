@@ -13,7 +13,7 @@
 <div class="col-sm-6 col-md-9 col-lg-9 p-b-50">
 
 
-		<h4><?php echo $title ?></h4>
+		<h5><?php echo $title ?></h5>
 		<br>
 		
 				<?php 
@@ -46,7 +46,7 @@
 						<tr>
 							<td>Password</td>
 							<td><input type="password" name="password" class="form-control" placeholder="Password">
-							<span class="text-warning">Ketik minimal 6 karakter baru untuk mengganti password baru</span>
+							<span class="text-warning">* Ketik minimal 6 karakter baru untuk mengganti password baru</span>
 						</td>
 						</tr>
 						<tr>
@@ -56,24 +56,20 @@
 						</tr>
 						<tr>
 							<td>Alamat</td>
-							<td><textarea name="alamat" class="form-control" placeholder="Alamat"  >
-							<?php echo $pelanggan->alamat ?></textarea></td>
+							<td><input type="text" name="alamat" class="form-control" placeholder="Telepon"
+							value="<?php echo $pelanggan->alamat ?>" required></td>
 						</tr>
-						<tr>
-							<td></td>
-							<td>
-								<button class="btn btn-dark btn-md" type="submit">
-									<i class="fa fa-save"></i> Update Profil
-								</button>
-
-								<button class="btn btn-default btn-md"  type="reset">
-									<i class="fa fa-times"></i> Reset
-								</button>
-							</td>
-						</tr>
+						<td></td>
+						<td colspan="" rowspan="" headers=""></td>
 
 					</tbody>
 				</table>
+
+			
+								<button class="btn btn-dark btn-md pull-right" type="submit">
+									<i class="fa fa-save"></i> Update Profil
+								</button>
+
 
 				<?php echo form_close(); ?>
 

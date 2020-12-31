@@ -1,3 +1,26 @@
+<style type="text/css" media="screen">
+	.main_menu > li > a {
+    font-family: Montserrat-Regular;
+    font-size: 16px;
+    
+    color: #333333;
+    padding: 0;
+    border-bottom: 1px solid transparent;
+}
+.s-text3 {
+    font-family: Montserrat-Regular;
+    font-size: 15px;
+    color: #000000;
+    line-height: 1.5;
+}
+.m-text6 {
+    font-family: Montserrat-Regular;
+    font-size: 16px;
+    color: #000000;
+    text-transform: uppercase;
+}
+</style>
+
 	<!-- ambil data nav menu -->
 	<?php 
 	$nav_produk 		= $this->konfigurasi_model->nav_produk();

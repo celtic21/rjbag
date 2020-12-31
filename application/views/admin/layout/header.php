@@ -33,13 +33,13 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           
-              <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'perempuan') { ?>
+              <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'Perempuan') { ?>
                <img src="<?php echo base_url() ?>assets/tampilan/adminp.png" class="user-image" alt="User Image">
              <?php } ?>
-             <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'laki laki') { ?>
+             <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
                <img src="<?php echo base_url() ?>assets/tampilan/adminl.png" class="user-image" alt="User Image">
              <?php } ?>
-              <?php if ($this->session->userdata('level') == 'Owner' && $this->session->userdata('jenis_kelamin') == 'laki laki') { ?>
+              <?php if ($this->session->userdata('level') == 'Pemilik' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
                <img src="<?php echo base_url() ?>assets/tampilan/owner.png" class="user-image" alt="User Image">
              <?php } ?>
 
@@ -49,14 +49,14 @@
               <!-- User image -->
               <li class="user-header">
 
-                 <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'perempuan') { ?>
+                 <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'Perempuan') { ?>
                 <img src="<?php echo base_url() ?>assets/tampilan/adminp.png" class="img-circle" alt="User Image">
                 <?php } ?>
-                <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'laki laki') { ?>
+                <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
                 <img src="<?php echo base_url() ?>assets/tampilan/adminl.png" class="img-circle" alt="User Image">
                 <?php } ?>
-                <?php if ($this->session->userdata('level') == 'Owner' && $this->session->userdata('jenis_kelamin') == 'laki laki') { ?>
-                <img src="<?php echo base_url() ?>assets/tampilan/Owner.png" class="img-circle" alt="User Image">
+                <?php if ($this->session->userdata('level') == 'Pemilik' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
+                <img src="<?php echo base_url() ?>assets/tampilan/Pemilik.png" class="img-circle" alt="User Image">
                 <?php } ?>
 
                 <p>

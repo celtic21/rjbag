@@ -46,7 +46,7 @@
 						</div>
 					</td>
 					<td class="column-2"><?php echo $keranjang['name'] ?></td>
-					<td class="column-3">Rp. <?php echo number_format($keranjang['price'],'0',',','.') ?></td>
+					<td class="column-3" align="left">Rp. <?php echo number_format($keranjang['price'],'0',',','.') ?></td>
 					<td class="column-4" align="center">
 						<div class="flex-w bo5 of-hidden w-size17" >
 							<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">

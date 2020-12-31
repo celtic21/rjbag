@@ -1,17 +1,17 @@
-  <!-- Left side column. contains the logo and sidebar -->
+ <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'perempuan') { ?>
+          <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'Perempuan') { ?>
           <img src="<?php echo base_url() ?>assets/tampilan/adminp.png"  class="img-circle" alt="User Image">
         <?php } ?>
-         <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'laki laki') { ?>
+         <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
           <img src="<?php echo base_url() ?>assets/tampilan/adminl.png"  class="img-circle" alt="User Image">
         <?php } ?>
-         <?php if ($this->session->userdata('level') == 'Owner' && $this->session->userdata('jenis_kelamin') == 'laki laki') { ?>
+         <?php if ($this->session->userdata('level') == 'Pemilik' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
           <img src="<?php echo base_url() ?>assets/tampilan/owner.png"  class="img-circle" alt="User Image">
         <?php } ?>
         </div>
@@ -21,7 +21,6 @@
         </div>
       </div>
      
-      <!-- sidebar menu: : style can be found in sidebar.less -->
 
 
 
@@ -56,15 +55,12 @@
           </ul>
         </li>
 
-                <!-- menu profil -->
-        <li><a href="<?php echo base_url('admin/profil') ?>"><i class="fa  fa-user text-aqua"></i> <span> Profil</span></a></li>
-
-      
-        
+        <!-- menu profil -->
+        <li><a href="<?php echo base_url('admin/profil') ?>"><i class="fa  fa-user text-aqua"></i> <span> Profil</span></a></li>       
 <?php } ?>
 
 
-<?php if ($this->session->userdata('level') == 'Owner') { ?>
+<?php if ($this->session->userdata('level') == 'Pemilik') { ?>
       <!-- menu dasbor -->
         <li><a href="<?php echo base_url('admin/dasbor') ?>"><i class="fa fa-dashboard text-aqua"></i> <span>DASHBOARD</span></a></li>
 

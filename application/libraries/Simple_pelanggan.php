@@ -45,7 +45,7 @@ class Simple_pelanggan
 		$this->CI->session->unset_userdata('nama_pelanggan');
 		$this->CI->session->unset_userdata('email');
 		//redirek
-		$this->CI->session->set_flashdata('sukses', 'Anda berhasil logout');
+		$this->CI->session->set_flashdata('sukses', 'Anda berhasil logout !');
 		redirect(base_url('masuk'),'refresh');
 	}
 

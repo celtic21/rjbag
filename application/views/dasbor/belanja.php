@@ -18,6 +18,8 @@
 		//kalau ada transaksi tampilkan tabel
 		if($header_transaksi) { 
 		?>
+		<h5>Riwayat Belanja Anda</h5>
+		<hr>
 		<table class="table table-hover table-sm" width="30%">
 			<thead>
 				<tr class="bg-light" >

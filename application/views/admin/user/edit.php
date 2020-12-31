@@ -24,7 +24,7 @@ echo form_open(base_url('admin/user/edit/'.$user->id_user),' class="form-horizon
   <label  class="col-md-2 control-label">Hak Akses</label>
   <div class="col-md-5">
     <select name="level" class="form-control">
-      <option value="Owner">Owner</option>
+      <option value="Pemilik">Pemilik</option>
       <option value="Admin">Admin <?php if($user->level=="Admin") { echo "selected"; } ?>>Admin</option>
     </select>
   </div>
@@ -37,7 +37,7 @@ echo form_open(base_url('admin/user/edit/'.$user->id_user),' class="form-horizon
   </div>
 </div>
 
-<div class="form-group">
+<!-- <div class="form-group">
   <label  class="col-md-2 control-label">Jenis Kelamin</label>
   <div class="col-md-5">
   	<select name="jenis_kelamin" class="form-control">
@@ -45,7 +45,24 @@ echo form_open(base_url('admin/user/edit/'.$user->id_user),' class="form-horizon
   		<option value="perempuan">Perempuan <?php if($user->level=="perempuan") { echo "selected"; } ?>>Perempuan</option>
   	</select>
   </div>
-</div>
+</div> -->
+
+<!-- radio -->
+               <div class="form-group">
+                <label  class="col-md-2 control-label">Jenis Kelamin</label>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="jenis_kelamin" id="optionsRadios1" value="Laki Laki">
+                      Laki Laki
+                    </label>
+                    &nbsp; &emsp;
+                    <label>
+                      <input type="radio" name="jenis_kelamin" id="optionsRadios2" value="Perempuan">
+                     Perempuan
+                    </label>
+                  </div>
+                </div>
+<!-- radio -->
 
  <div class="form-group">
   <label  class="col-md-2 control-label">Alamat</label>

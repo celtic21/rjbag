@@ -100,6 +100,26 @@ $site  =  $this->konfigurasi_model->listing();
     background-color: transparent;
     opacity: 1;
 }
+.s-text13 {
+    font-family: Montserrat-Regular;
+    font-size: 15px;
+    color: #000000;
+    line-height: 1.8;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .5rem .75rem;
+    font-size: 1.1rem;
+    line-height: 1.25;
+    color: #495057;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
 
 </style>
 

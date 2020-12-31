@@ -4,10 +4,9 @@ redirect(base_url('admin/user/blok'),'refresh');
 }
 
 ?>
-
 <div class="row">
    <div class="col-xs-12">
-      <div >
+      <div class="box box-info">
          <!-- /.box-header -->
          <?= $this->session->flashdata('message'); ?>
          <div class="box-body table-responsive">
