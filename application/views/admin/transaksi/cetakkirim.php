@@ -54,7 +54,7 @@
 
   <div style="width: 19cm; height: 27cm; padding-top: 1cm; ">
 <div style="text-align: left; font-weight: bold;">
-     <img src="<?php echo base_url() ?>assets/tampilan/logo.jpg" style="height :50px; width: 50px;" >
+     <img src="<?php echo base_url() ?>assets/tampilan/kop.png" style="height :95px; width: 650px; text-align: center;" >
  </div>
   <H1 style="text-align: center; font-size: 18px; font-weight: bold; border-top: solid thin #EEE;
   padding-top: 20px;">PENGIRIMAN</H1>

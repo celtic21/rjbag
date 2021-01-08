@@ -9,7 +9,24 @@ class Header_transaksi_model extends CI_Model {
 		$this->load->database();
 	}
 
-
+	public function total_data()
+{
+	    $this->db->select('*');
+		$this->db->from('tb_detail_transaksi');
+		$this->db->where('status_bayar','Konfirmasi');
+		$query = $this->db->get();
+		$rowcount = $query->num_rows();
+		return $rowcount;
+} 
+	public function total_datanew()
+{
+	    $this->db->select('*');
+		$this->db->from('tb_detail_transaksi');
+		$this->db->where('status_bayar','Belum');
+		$query = $this->db->get();
+		$rowcount = $query->num_rows();
+		return $rowcount;
+} 
 
 	// //listing all user
 	// public function listing()

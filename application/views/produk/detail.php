@@ -77,10 +77,12 @@
 	    <span class="m-text12">
 			Stok : <?php echo $produk->stok ?>
 		</span>
+		<br>
+
 
 		<!--  -->
 		<div class="p-t-33 p-b-60">
-
+<a href="#" data-toggle="tooltip" data-placement="top" title="Pembelian hanya bisa 1 lusin atau lebih">*nb</a>
 			<div class="flex-r-m flex-w p-t-10">
 				<div class="w-size16 flex-m flex-w">
 					<div class="flex-w bo5 of-hidden m-r-22 m-t-10 m-b-10">
@@ -89,7 +91,7 @@
 						</button>
 
 						<input class="size8 m-text18 t-center num-product" type="number" name="qty" value="12" min="12" 
-						 max="<?php echo $produk->stok?>"    >
+						 max="<?php echo $produk->stok?>">
 
 						<button type="submit" value="submit" class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
 							<i class="fs-12 fa fa-plus" aria-hidden="true"></i>

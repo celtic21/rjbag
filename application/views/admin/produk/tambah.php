@@ -11,6 +11,7 @@ echo validation_errors('<div class="alert alert-warning">','</div>');
 
 //form open
 echo form_open_multipart(base_url('admin/produk/tambah'),' class="form-horizontal"');
+$kode_produk = random_string('alnum', 5);
  ?>
 
  <div class="form-group ">
@@ -24,7 +25,7 @@ echo form_open_multipart(base_url('admin/produk/tambah'),' class="form-horizonta
  <div class="form-group">
   <label  class="col-md-2 control-label">Kode</label>
   <div class="col-md-5">
-    <input type="text" name="kode_produk" class="form-control" placeholder="Kode Produk" value="<?php echo set_value('kode_produk') ?>" required >
+    <input type="text" name="kode_produk" class="form-control" placeholder="Kode Produk" value="<?php echo $kode_produk ?>" readonly required >
   </div>
 </div>
 
@@ -56,8 +57,9 @@ echo form_open_multipart(base_url('admin/produk/tambah'),' class="form-horizonta
 <div class="form-group">
   <label  class="col-md-2 control-label">Berat</label>
   <div class="col-md-5">
-    <input type="number" name="berat" class="form-control" placeholder="Berat Produk" min="1" value="<?php echo set_value('berat') ?>" required >
+    <input type="number" name="berat" class="form-control" placeholder="Berat Produk" min="1" value="<?php echo set_value('berat') ?>"  required>
   </div>
+  <label>gram</label>
 </div>
 
 <div class="form-group">
@@ -65,6 +67,7 @@ echo form_open_multipart(base_url('admin/produk/tambah'),' class="form-horizonta
   <div class="col-md-5">
     <input type="text" name="ukuran" class="form-control" placeholder="Ukuran Produk" value="<?php echo set_value('ukuran') ?>" required >
   </div>
+   <label>cm</label>
 </div>
 
 <div class="form-group">

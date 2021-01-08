@@ -29,8 +29,8 @@
 			<td> <?php echo date('d-m-y',strtotime($header_transaksi->tgl_konfirmasi)) ?></td>
 		</tr>
 		<tr>
-			<td>JUMLAH TOTAL</td>
-			<td>Rp. <?php echo number_format($header_transaksi->jumlah_transaksi) ?></td>
+			<td>BIAYA KIRIM</td>
+			<td>Rp. <?php echo number_format($header_transaksi->ongkir) ?></td>
 		</tr>
 		<tr>
 			<td>STATUS BAYAR</td>
@@ -44,10 +44,6 @@
 				  <img src="<?php echo base_url('assets/upload/image/' .$header_transaksi->bukti_bayar) ?>" class="img img-thumbnail" width="100">
 				<?php } ?>
 		    </td>
-		</tr>
-		<tr>
-			<td>TANGGAL BAYAR</td>
-			<td> <?php echo date('d-m-y', strtotime($header_transaksi->status_bayar)) ?></td>
 		</tr>
 		<tr>
 			<td>JUMLAH BAYAR</td>
@@ -94,8 +90,8 @@
 			<td><?php echo $transaksi->kode_produk ?></td>
 			<td><?php echo $transaksi->nama_produk ?></td>	
 			<td><?php echo number_format($transaksi->jumlah) ?></td>
-			<td><?php echo number_format($transaksi->harga) ?></td>
-			<td><?php echo number_format($transaksi->total_harga) ?></td>
+			<td>Rp. <?php echo number_format($transaksi->harga) ?></td>
+			<td>Rp. <?php echo number_format($transaksi->total_harga) ?></td>
 		</tr>
 		<?php $i++; } ?>
 	</tbody>

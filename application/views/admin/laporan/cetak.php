@@ -51,7 +51,7 @@
 
 <body onload="print()">
 
-   
+   <h3>Laporan Penjualan</h3>
    <table id="example1" class="table table-bordered table-striped">
       <thead>
          <tr>

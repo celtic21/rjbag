@@ -130,6 +130,8 @@ $kode_transaksi = random_string('alnum', 11);
 							<td>Ongkir</td>
 							<td><input class="sizefull s-text7 p-l-22 p-r-22" type="text" readonly name="ongkir" id="ongkir"></td>
 						</tr>
+
+						
 					</tbody>
 
 				</table>
@@ -157,7 +159,8 @@ $kode_transaksi = random_string('alnum', 11);
 					<th class="column-2"  style="text-align: center"		>PRODUK</th>
 					<th class="column-3"  style="text-align: center"	 	>HARGA</th>
 					<th class="column-4"  style="text-align: center"		>JUMLAH</th>
-					<th class="column-5"   width="15%">SUB TOTAL</th>
+					<th class="column-5"  style="text-align: center"	 	>BERAT SUB TOTAL</th>
+					<th class="column-6"  style="text-align: center"       >HARGA SUB TOTAL</th>
 					
 				</tr>
 
@@ -168,12 +171,15 @@ $kode_transaksi = random_string('alnum', 11);
 				// echo "</pre>";
 
 				$berat_total = 0;
+				$jumlah_item = 0;
 				//start looping
 				foreach($keranjang as $keranjang) {
 					//ambil data produk
 					$id_produk = $keranjang['id'];
 					$produk    = $this->produk_model->detail($id_produk);
 					$berat_subtotal = $keranjang['weight']*$keranjang['qty'];
+					$jumlah_peritem = $keranjang['qty'];
+					$jumlah_item += $jumlah_peritem;
 					$berat_total += $berat_subtotal;
 
 				?>
@@ -188,7 +194,16 @@ $kode_transaksi = random_string('alnum', 11);
 					<td class="column-2" style="text-align: center"><?php echo $keranjang['name'] ?></td>
 					<td class="column-3" style="text-align: center">Rp. <?php echo number_format($keranjang['price'],'0',',','.') ?></td>
 					<td class="column-4" style="text-align: center"><?php echo $keranjang['qty'] ?></td>
-					<td class="column-5" >Rp.
+					
+					<td class="column-5" style="text-align: center" >
+
+						<?php echo 
+						$berat_subtotal/1000;
+						?> kg
+
+					</td>	
+
+					<td class="column-6" style="text-align: center">Rp.
 
 						<?php  
 						$sub_total = $keranjang['price'] * $keranjang['qty'];
@@ -203,20 +218,43 @@ $kode_transaksi = random_string('alnum', 11);
 				}
 				?>
 
-				<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
-					<td colspan="4" class="column-1">TOTAL BELANJA</td>
-					<td colspan="2" class="column-2">Rp. <?php echo number_format($this->cart->total(),'0',',','.') ?></td>
+				<tr class="table-row" >
+					<td class="column-1" style="text-align: center;font-weight: bold;">TOTAL ITEM</td>
+					<td class="column-2" style="text-align: center"></td>
+					<td class="column-3" style="text-align: center"></td>
+					<td class="column-4" style="text-align: center;font-weight: bold;"><?php echo $jumlah_item ?> Item</td>
+					<td class="column-5" style="text-align: center;font-weight: bold;" ><?php echo $berat_total/1000 ?> Kg</td>	
+					<input type="hidden" name="berat_total" value="<?php echo $berat_total/1000; ?>" >
+					<td class="column-6" style="text-align: center"></td>		
 				</tr>
 
-				<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
-							<td colspan="4" class="column-1">BIAYA PENGIRIMAN</td>
-							<td colspan="2" class="column-2 " id="ongkir2"></td>
+				<tr class="table-row" >
+					<td class="column-1" style="text-align: center;font-weight: bold;">TOTAL BELANJA</td>
+					<td class="column-2" style="text-align: center"></td>
+					<td class="column-3" style="text-align: center"></td>
+					<td class="column-4" style="text-align: center"></td>
+					<td class="column-5" style="text-align: center" ></td>	
+					<td class="column-6" style="text-align: center;font-weight: bold;">Rp. <?php echo number_format($this->cart->total(),'0',',','.') ?></td>		
 				</tr>
 
-				<tr class="table-row bg-light" style="font-weight: bold; color;white !important;">
-							<td colspan="4" class="column-1">TOTAL PEMBAYARAN</td>
-							<td colspan="2" class="column-2"><input style="background-color: unset; font-weight: bold;" id="total_pembayaran" type="text" name="total_pembayaran" readonly></td>
+				<tr class="table-row" >
+					<td class="column-1" style="text-align: center;font-weight: bold;">BIAYA PENGIRIMAN</td>
+					<td class="column-2" style="text-align: center"></td>
+					<td class="column-3" style="text-align: center"></td>
+					<td class="column-4" style="text-align: center"></td>
+					<td class="column-5" style="text-align: center" ></td>	
+					<td class="column-6" style="text-align: center;font-weight: bold; " id="ongkir2" readonly></td>		
 				</tr>
+
+					<tr class="table-row" >
+					<td class="column-1" style="text-align: center;font-weight: bold;">TOTAL PEMBAYARAN</td>
+					<td class="column-2" style="text-align: center"></td>
+					<td class="column-3" style="text-align: center"></td>
+					<td class="column-4" style="text-align: center"></td>
+					<td class="column-5" style="text-align: center" ></td>	
+					<td class="column-6" style="font-weight: bold;text-align: center;" >Rp. <input style="text-align: center;font-weight: bold;"id="total_pembayaran" type="text" name="total_pembayaran" readonly ></td>		
+				</tr>
+
 
 			</table>
 
@@ -303,7 +341,7 @@ echo form_close();
 					dataType : 'json',
 					success : function(data){
 					var parse = JSON.parse(data);
-					//console.log(parse.rajaongkir);
+					// console.log(parse.rajaongkir);
 					var costs = parse.rajaongkir.results[0].costs;
 					for(var i=0; i<costs.length; i++)
 						{
@@ -328,6 +366,8 @@ echo form_close();
 					$("#ongkir").val(ongkir);
 					$("#estimasi").val(estimasi+" hari");
 					$("#total_pembayaran").val(total_pembayaran);
+			
+
 
 					document.getElementById('ongkir2').innerHTML=new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(ongkir);
 				

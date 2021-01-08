@@ -10,6 +10,7 @@ class Dasbor extends CI_Controller {
 		$this->load->model('produk_model');
 		$this->load->model('user_model');
 		$this->load->model('transaksi_model');
+		$this->load->model('header_transaksi_model');
 	}
 
 	public function index()
@@ -17,11 +18,15 @@ class Dasbor extends CI_Controller {
 		$total_produk 	    = $this->produk_model->total_data();
 		$total_user 	    = $this->user_model->total_data();
 		$total_transaksi	= $this->transaksi_model->total_data();
+		$header_transaksi_model = $this->header_transaksi_model->total_data();
+		$newheader_transaksi_model = $this->header_transaksi_model->total_datanew();
 
 		$data = array(
 			'total_produk' 		=> $total_produk,
 			'total_user' 		=> $total_user,
 			'total_transaksi' 	=> $total_transaksi,	
+			'header_transaksi_model'=> $header_transaksi_model,
+			'newheader_transaksi_model' => $newheader_transaksi_model,
 			'title' 			=> 'Halaman Administrator',
 			'isi' 				=> 'admin/dasbor/list'	
 		);

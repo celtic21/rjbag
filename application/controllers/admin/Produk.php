@@ -11,6 +11,7 @@ public function __construct()
 	$this->load->model('kategori_model');
 	//proteksi halaman
 	$this->simple_login->cek_login();
+	$this->load->helper('string');
 }
 
 
@@ -25,6 +26,10 @@ public function __construct()
 	);
 		$this->load->view('admin/layout/wrapper', $data, FALSE);
 	}
+
+
+
+
 
 //gambar
 public function gambar($id_produk)
@@ -42,9 +47,9 @@ public function gambar($id_produk)
 		if($valid->run()){
 			$config['upload_path']   = './assets/upload/image/';
 			$config['allowed_types'] = 'gif|jpg|png|jpeg';
-			$config['max_size']      = '2400'; //dalam kb
-			$config['max_width']     = '2024';
-			$config['max_height']    = '2024';
+			$config['max_size']      = '5400'; //dalam kb
+			$config['max_width']     = '5024';
+			$config['max_height']    = '5024';
 			  
 			$this->load->library('upload', $config);
 			

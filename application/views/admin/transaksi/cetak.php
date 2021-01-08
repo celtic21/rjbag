@@ -109,10 +109,6 @@
 		    </td>
 		</tr>
 		<tr>
-			<td>TANGGAL BAYAR</td>
-			<td>: <?php echo date('d-m-y', strtotime($header_transaksi->status_bayar)) ?></td>
-		</tr>
-		<tr>
 			<td>JUMLAH BAYAR</td>
 			<td>: Rp. <?php echo number_format($header_transaksi->jumlah_bayar,'0',',','.') ?></td>
 		</tr>

@@ -47,8 +47,8 @@ class Konfigurasi extends CI_Controller {
 						'alamat'    			=> $i->post('alamat'),
 						'facebook'    			=> $i->post('facebook'),
 						'instagram'    			=> $i->post('instagram'),
-						'deskripsi'    			=> $i->post('deskripsi'),
-						'rekening_pembayaran'   => $i->post('rekening_pembayaran')
+						'deskripsi'    			=> $i->post('deskripsi')
+						
 		);
 
 		$this->konfigurasi_model->edit($data);

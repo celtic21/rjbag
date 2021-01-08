@@ -14,7 +14,6 @@ class User_model extends CI_Model {
 {
 	    $this->db->select('*');
 		$this->db->from('tb_user');
-		$this->db->where('level','Admin');
 		$query = $this->db->get();
 		$rowcount = $query->num_rows();
 		return $rowcount;

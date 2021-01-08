@@ -24,7 +24,7 @@ echo form_open_multipart(base_url('admin/produk/edit/' .$produk->id_produk),' cl
  <div class="form-group">
   <label  class="col-md-2 control-label">Kode Produk</label>
   <div class="col-md-5">
-    <input type="text" name="kode_produk" class="form-control" placeholder="Kode Produk" value="<?php echo $produk->kode_produk ?>" required >
+    <input type="text" name="kode_produk" class="form-control" placeholder="Kode Produk" value="<?php echo $produk->kode_produk ?>" required readonly>
   </div>
 </div>
 

@@ -119,6 +119,7 @@ class Belanja extends CI_Controller {
 					'tgl_post'         => date('Y-m-d H:i:s'),
 					'ekpedisi'         => $i->post('ekpedisi'),
 					'estimasi'         => $i->post('estimasi'),
+					'berat_total'      => $i->post('berat_total'),
 					'ongkir'           => $i->post('ongkir')
 				);
 				//proses masuk ke header transaksi
@@ -126,16 +127,21 @@ class Belanja extends CI_Controller {
 				// proses masuk ke tabel transaksi
 				foreach($keranjang as $keranjang) {
 					$sub_total = $keranjang['price'] * $keranjang['qty'];
+					$berat_subtotal = $keranjang['weight']*$keranjang['qty'];
+					$berat_subtotal = $berat_subtotal/1000;
 					$data = array( 'id_pelanggan'	=> $pelanggan->id_pelanggan,
 						'kode_transaksi'  => $i->post('kode_transaksi'),
 						'id_produk'		  => $keranjang['id'],
 						'harga'			  => $keranjang['price'],
 						'jumlah'		  => $keranjang['qty'],
+						'berat'	  		  => $berat_subtotal,
 						'total_harga'	  => $sub_total,
 						'tgl_cekout'	  => $i->post('tgl_cekout')
 					);
 					$this->transaksi_model->tambah($data);
-
+// echo "<pre>";
+// print_r ($keranjang);
+// echo exit();
 				}
 				//end proses masuk ke tabel transaksi
 				//setelah masuk ke tabel transaksi, keranjang dikosongkan lagi

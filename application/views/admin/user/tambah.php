@@ -43,7 +43,7 @@ echo form_open(base_url('admin/user/tambah'),' class="form-horizontal"');
                 <label  class="col-md-2 control-label">Jenis Kelamin</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="jenis_kelamin" id="optionsRadios1" value="Laki Laki" checked>
+                      <input type="radio" name="jenis_kelamin" id="optionsRadios1" value="Laki Laki">
                       Laki Laki
                     </label>
                     &nbsp; &emsp;

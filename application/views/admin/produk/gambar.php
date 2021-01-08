@@ -11,12 +11,13 @@ echo validation_errors('<div class="alert alert-warning">','</div>');
 
 //form open
 echo form_open_multipart(base_url('admin/produk/gambar/' .$produk->id_produk),' class="form-horizontal"');
+$kode_gambar = random_string('alnum', 5);
  ?>
 
  <div class="form-group form-group-lg">
   <label  class="col-md-2 control-label">Judul Gambar</label>
   <div class="col-md-8">
-    <input type="text" name="judul_gambar" class="form-control" placeholder="Judul Gambar Produk" value="<?php echo set_value('judul_gambar') ?>" required >
+    <input type="text" name="judul_gambar" class="form-control" placeholder="Judul Gambar Produk" value="<?php echo $kode_gambar ?>" readonly required >
   </div>
 </div>
 

@@ -46,37 +46,31 @@ $nav_produk_footer = $this->konfigurasi_model->nav_produk();
 
 			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
 				<h4 class="s-text12 p-b-30">
-					Links
+					Customer Service
 				</h4>
 
 				<ul>
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Search
-						</a>
+						<p class="s-text7 w-size27">
+							<a>Rudy</a>
+							<br>
+						<i class="fa fa-phone"></i> 081 575 123 357
+					</p>
 					</li>
 
 					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							About Us
-						</a>
+						<p class="s-text7 w-size27">
+							<a>Junias</a>
+							<br>
+						<i class="fa fa-phone"></i> 085 888 999 469
+					</p>
 					</li>
 
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Contact Us
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Returns
-						</a>
-					</li>
+			
 				</ul>
 			</div>
 
-			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
+			<!-- <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
 				<h4 class="s-text12 p-b-30">
 					Help
 				</h4>
@@ -106,7 +100,7 @@ $nav_produk_footer = $this->konfigurasi_model->nav_produk();
 						</a>
 					</li>
 				</ul>
-			</div>
+			</div> -->
 
 
 			<div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">

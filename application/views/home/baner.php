@@ -3,31 +3,31 @@
 		<div class="flex-w p-l-15 p-r-15">
 			<div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
 				<h4 class="m-text12 t-center">
-					Free Delivery Worldwide
+					Harga Termurah
 				</h4>
 
 				<a href="#" class="s-text11 t-center">
-					Click here for more info
+					Hemat dan Terjangkau
 				</a>
 			</div>
 
 			<div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 bo2 respon2">
 				<h4 class="m-text12 t-center">
-					30 Days Return
+					Pelayanan Maksimal
 				</h4>
 
 				<span class="s-text11 t-center">
-					Simply return it within 30 days for an exchange.
+					Melayani Dengan Sepenuh Hati
 				</span>
 			</div>
 
 			<div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
 				<h4 class="m-text12 t-center">
-					Store Opening
+					Kualitas Optimal
 				</h4>
 
 				<span class="s-text11 t-center">
-					Shop open from Monday to Sunday
+					Mengedepankan kualitas Produk
 				</span>
 			</div>
 		</div>
