@@ -82,7 +82,7 @@
 
 		<!--  -->
 		<div class="p-t-33 p-b-60">
-<a href="#" data-toggle="tooltip" data-placement="top" title="Pembelian hanya bisa 1 lusin atau lebih">*nb</a>
+<a href="#" data-toggle="tooltip" data-placement="top" title="Pembelian hanya bisa 12 item atau lebih">*note</a>
 			<div class="flex-r-m flex-w p-t-10">
 				<div class="w-size16 flex-m flex-w">
 					<div class="flex-w bo5 of-hidden m-r-22 m-t-10 m-b-10">
