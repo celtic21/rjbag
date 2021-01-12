@@ -36,12 +36,27 @@
               <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'Perempuan') { ?>
                <img src="<?php echo base_url() ?>assets/tampilan/adminp.png" class="user-image" alt="User Image">
              <?php } ?>
+
+
              <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
                <img src="<?php echo base_url() ?>assets/tampilan/adminl.png" class="user-image" alt="User Image">
              <?php } ?>
-              <?php if ($this->session->userdata('level') == 'Pemilik' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
-               <img src="<?php echo base_url() ?>assets/tampilan/owner.png" class="user-image" alt="User Image">
+
+
+             <?php if ($this->session->userdata('level') == 'Packing' && $this->session->userdata('jenis_kelamin') == 'Perempuan') { ?>
+               <img src="<?php echo base_url() ?>assets/tampilan/adminp.png" class="user-image" alt="User Image">
              <?php } ?>
+
+
+             <?php if ($this->session->userdata('level') == 'Packing' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
+               <img src="<?php echo base_url() ?>assets/tampilan/adminl.png" class="user-image" alt="User Image">
+             <?php } ?>
+
+
+              <?php if ($this->session->userdata('level') == 'Pemilik' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
+               <img src="<?php echo base_url() ?>assets/tampilan/Pemilik.png" class="user-image" alt="User Image">
+             <?php } ?>
+
 
               <span class="hidden-xs"><?php echo $this->session->userdata('nama'); ?></span>
             </a>
@@ -52,18 +67,29 @@
                  <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'Perempuan') { ?>
                 <img src="<?php echo base_url() ?>assets/tampilan/adminp.png" class="img-circle" alt="User Image">
                 <?php } ?>
+
+
                 <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
                 <img src="<?php echo base_url() ?>assets/tampilan/adminl.png" class="img-circle" alt="User Image">
                 <?php } ?>
+
+                 <?php if ($this->session->userdata('level') == 'Packing' && $this->session->userdata('jenis_kelamin') == 'Perempuan') { ?>
+                <img src="<?php echo base_url() ?>assets/tampilan/adminp.png" class="img-circle" alt="User Image">
+                <?php } ?>
+
+
+                <?php if ($this->session->userdata('level') == 'Packing' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
+                <img src="<?php echo base_url() ?>assets/tampilan/adminl.png" class="img-circle" alt="User Image">
+                <?php } ?>
+
+
                 <?php if ($this->session->userdata('level') == 'Pemilik' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
                 <img src="<?php echo base_url() ?>assets/tampilan/Pemilik.png" class="img-circle" alt="User Image">
                 <?php } ?>
 
                 <p>
-
                   <?php echo $this->session->userdata('nama'); ?> - <?php echo $this->session->userdata('level'); ?>
                   <small><?php echo date ('d-m-y') ?></small>
-
                 </p>
 
               </li>

@@ -5,15 +5,27 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
+
           <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'Perempuan') { ?>
           <img src="<?php echo base_url() ?>assets/tampilan/adminp.png"  class="img-circle" alt="User Image">
         <?php } ?>
+
          <?php if ($this->session->userdata('level') == 'Admin' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
           <img src="<?php echo base_url() ?>assets/tampilan/adminl.png"  class="img-circle" alt="User Image">
         <?php } ?>
-         <?php if ($this->session->userdata('level') == 'Pemilik' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
-          <img src="<?php echo base_url() ?>assets/tampilan/owner.png"  class="img-circle" alt="User Image">
+
+         <?php if ($this->session->userdata('level') == 'Packing' && $this->session->userdata('jenis_kelamin') == 'Perempuan') { ?>
+          <img src="<?php echo base_url() ?>assets/tampilan/adminp.png"  class="img-circle" alt="User Image">
         <?php } ?>
+
+         <?php if ($this->session->userdata('level') == 'Packing' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
+          <img src="<?php echo base_url() ?>assets/tampilan/adminl.png"  class="img-circle" alt="User Image">
+        <?php } ?>
+
+         <?php if ($this->session->userdata('level') == 'Pemilik' && $this->session->userdata('jenis_kelamin') == 'Laki Laki') { ?>
+          <img src="<?php echo base_url() ?>assets/tampilan/Pemilik.png"  class="img-circle" alt="User Image">
+        <?php } ?>
+
         </div>
         <div class="pull-left info">
           <p><?php echo $this->session->userdata('nama'); ?></p>
@@ -34,11 +46,9 @@
 <?php if ($this->session->userdata('level') == 'Admin') { ?>
       <!-- menu dasbor -->
         <li><a href="<?php echo base_url('admin/dasbor') ?>"><i class="fa fa-dashboard text-aqua"></i> <span>DASHBOARD</span></a></li>
-
  
       <!-- menu transaksi -->
         <li><a href="<?php echo base_url('admin/transaksi') ?>"><i class="fa fa-check text-aqua"></i> <span>TRANSAKSI</span></a></li>
-
 
         <!-- menu produk -->
         <li class="treeview">
@@ -60,14 +70,24 @@
 <?php } ?>
 
 
+<?php if ($this->session->userdata('level') == 'Packing') { ?>
+      <!-- menu dasbor -->
+        <li><a href="<?php echo base_url('admin/dasbor') ?>"><i class="fa fa-dashboard text-aqua"></i> <span>DASHBOARD</span></a></li>
+ 
+      <!-- menu transaksi -->
+        <li><a href="<?php echo base_url('admin/transaksi') ?>"><i class="fa fa-check text-aqua"></i> <span>TRANSAKSI</span></a></li>
+
+        <!-- menu profil -->
+        <li><a href="<?php echo base_url('admin/profil') ?>"><i class="fa  fa-user text-aqua"></i> <span> Profil</span></a></li>       
+<?php } ?>
+
+
 <?php if ($this->session->userdata('level') == 'Pemilik') { ?>
       <!-- menu dasbor -->
         <li><a href="<?php echo base_url('admin/dasbor') ?>"><i class="fa fa-dashboard text-aqua"></i> <span>DASHBOARD</span></a></li>
 
-
       <!-- menu transaksi -->
         <li><a href="<?php echo base_url('admin/transaksi') ?>"><i class="fa fa-check text-aqua"></i> <span>TRANSAKSI</span></a></li>
-
 
          <!-- menu dasbor -->
         <li><a href="<?php echo base_url('admin/rekening') ?>"><i class="fa fa-dollar text-aqua"></i> <span>REKENING</span></a></li>

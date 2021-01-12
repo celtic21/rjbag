@@ -25,7 +25,8 @@ echo form_open(base_url('admin/user/edit/'.$user->id_user),' class="form-horizon
   <div class="col-md-5">
     <select name="level" class="form-control">
       <option value="Pemilik">Pemilik</option>
-      <option value="Admin">Admin <?php if($user->level=="Admin") { echo "selected"; } ?>>Admin</option>
+      <option value="Packing">Packing</option>
+      <option value="Admin">Admin</option>
     </select>
   </div>
 </div>
