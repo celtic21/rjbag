@@ -139,9 +139,9 @@ class Belanja extends CI_Controller {
 						'tgl_cekout'	  => $i->post('tgl_cekout')
 					);
 					$this->transaksi_model->tambah($data);
-echo "<pre>";
-print_r ($keranjang);
-exit();
+// echo "<pre>";
+// print_r ($keranjang);
+// exit();
 				}
 				//end proses masuk ke tabel transaksi
 				//setelah masuk ke tabel transaksi, keranjang dikosongkan lagi
